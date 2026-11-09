@@ -1,0 +1,64 @@
+{
+ "name": "CustomNodeSankey",
+ "kind": "Sankey",
+ "width": 960,
+ "height": 500,
+ "margin": {
+  "top": 20,
+  "bottom": 20,
+  "left": 20,
+  "right": 150
+ },
+ "source": "recharts demo/component/DemoSankeyNode.tsx and Sankey's docs example (a custom node with its name and value beside it)",
+ "data": {
+  "nodes": [
+   {
+    "name": "Visit"
+   },
+   {
+    "name": "Direct-Favourite"
+   },
+   {
+    "name": "Page-Click"
+   },
+   {
+    "name": "Detail-Favourite"
+   },
+   {
+    "name": "Lost"
+   }
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1,
+    "value": 3728.3
+   },
+   {
+    "source": 0,
+    "target": 2,
+    "value": 354170
+   },
+   {
+    "source": 2,
+    "target": 3,
+    "value": 291741
+   },
+   {
+    "source": 2,
+    "target": 4,
+    "value": 62429
+   }
+  ]
+ },
+ "props": {
+  "nodePadding": 50,
+  "link": {
+   "stroke": "#77c878"
+  },
+  "node": {
+   "$content": "DemoSankeyNode"
+  }
+ },
+ "children": []
+}

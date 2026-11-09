@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:a="https://aioros.dev" xmlns:c="using:Gallery.Compare"
+             x:DataType="c:FamilyComparison">
+  <StackPanel Spacing="24">
+    <TextBlock Classes="h1" Text="{Binding Title}" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="{Binding Summary}" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="{Binding FamilyHref}"><TextBlock Text="The family's page" /></Border>
+      <Border Classes="textlink" a:Web.Href="/compare"><TextBlock Text="Every family" /></Border>
+      <Border Classes="textlink" a:Web.Href="/interactions"><TextBlock Text="Interactions compared" /></Border>
+    </WrapPanel>
+    <TextBlock Classes="muted small" TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left"
+               Text="{Binding Measured, StringFormat='Left: Recharts 2.15.4 mounted in Chromium (Inter 14 px, device scale 1). Right: Pictor, written on the server. Pixels measured with {0}; examples with custom content are on the custom content page, where their templates are set.'}" />
+    <ItemsControl ItemsSource="{Binding Examples}">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate><StackPanel Spacing="24" /></ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate x:DataType="c:ComparedExample">
+          <Border Classes="card">
+            <StackPanel Spacing="10">
+              <WrapPanel ItemSpacing="10" LineSpacing="6">
+                <TextBlock Classes="title" Text="{Binding Name}" VerticalAlignment="Center" />
+                <Border Classes="pill" Classes.good="{Binding Matches}"><TextBlock Text="{Binding Verdict}" /></Border>
+              </WrapPanel>
+              <TextBlock Classes="muted small" TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="{Binding Source}" />
+              <TextBlock Classes="small" Text="{Binding Structure}" />
+              <TextBlock Classes="small" Text="{Binding Pixels}" />
+              <WrapPanel ItemSpacing="24" LineSpacing="16">
+                <StackPanel Spacing="6">
+                  <TextBlock Classes="caption" Text="RECHARTS" />
+                  <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"><Border Background="#FFFFFF" CornerRadius="6"><c:RechartsReference Example="{Binding Name}" /></Border></ScrollViewer>
+                </StackPanel>
+                <StackPanel Spacing="6">
+                  <TextBlock Classes="caption" Text="PICTOR" />
+                  <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"><Border Background="#FFFFFF" CornerRadius="6"><c:PictorReference Example="{Binding Name}" /></Border></ScrollViewer>
+                </StackPanel>
+              </WrapPanel>
+            </StackPanel>
+          </Border>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models"
+             x:Class="Gallery.Views.Live.LiveScatter" x:DataType="m:LiveFamilies">
+  <Border Classes="card">
+    <StackPanel Spacing="8">
+      <TextBlock Classes="title" Text="Scatter chart" />
+      <TextBlock Classes="muted small" Text="{Binding Updated}" />
+      <p:ScatterChart Data="{Binding Points}" MaxWidth="500" Aspect="1.25" Padding="20">
+        <p:CartesianGrid />
+        <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+        <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+        <p:Tooltip CursorStrokeDashArray="3 3" />
+        <p:Scatter Fill="#8884d8" />
+      </p:ScatterChart>
+    </StackPanel>
+  </Border>
+</UserControl>

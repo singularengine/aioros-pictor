@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:a="https://aioros.dev" xmlns:c="using:Gallery.Compare"
+             x:DataType="c:ComparisonIndex" a:Page.Title="Compared with Recharts">
+  <StackPanel Spacing="24">
+    <TextBlock Classes="h1" Text="Compared with Recharts" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left"
+               Text="Pictor ports Recharts 2.15.4 operation for operation. Each family's page shows every Recharts reference example drawn by Pictor beside Recharts' own render (its screenshot in Chromium), with the verdict the tests compute: Pictor's markup compared element by element with Recharts' (geometry within 0.01 px, colors, classes and texts), and the share of inked pixels that differ strongly from Recharts' screenshot." />
+    <TextBlock Classes="muted small" Text="{Binding Measured, StringFormat='Pixels measured with {0}.'}" />
+    <ItemsControl ItemsSource="{Binding Families}">
+      <ItemsControl.ItemsPanel>
+        <ItemsPanelTemplate><WrapPanel ItemSpacing="16" LineSpacing="16" /></ItemsPanelTemplate>
+      </ItemsControl.ItemsPanel>
+      <ItemsControl.ItemTemplate>
+        <DataTemplate x:DataType="c:FamilyVerdict">
+          <Border Classes="card" Width="280" a:Web.Href="{Binding Href}">
+            <StackPanel Spacing="6">
+              <TextBlock Classes="title" Text="{Binding Title}" />
+              <TextBlock Classes="muted small" TextWrapping="Wrap" Text="{Binding Summary}" />
+            </StackPanel>
+          </Border>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
+</UserControl>

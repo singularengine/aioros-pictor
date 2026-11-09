@@ -1,0 +1,93 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:ScatterData" a:Page.Title="Scatter charts">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Scatter charts" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/compare/scatter"><TextBlock Text="Every reference example beside Recharts' render" /></Border>
+      <Border Classes="textlink" a:Web.Href="/families"><TextBlock Text="Every interaction" /></Border>
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live update" /></Border>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Replay plays the enter animation of every chart on this page again (Recharts' animation when a chart mounts). Change data moves the data on to its next version, and this chart animates from its previous geometry to the new, as Recharts' update animation does (on the web Aioros morphs the page and moves each shape frame by frame from the numbers the chart declares)." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+        <p:ScatterChart Data="{Binding Motion.Points}" MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Scatter Name="A school" Fill="#8884d8" />
+        </p:ScatterChart>
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="SimpleScatterChart" />
+        <p:ScatterChart MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Scatter Name="A school" Data="{x:Static m:ScatterSets.SchoolA}" Fill="#8884d8" />
+        </p:ScatterChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ThreeDimScatterChart" />
+        <p:ScatterChart MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:ZAxis DataKey="Z" Range="60,400" Name="score" Unit="km" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Legend />
+          <p:Scatter Name="A school" Data="{x:Static m:ScatterSets.SchoolA}" Fill="#8884d8" Shape="Star" />
+          <p:Scatter Name="B school" Data="{x:Static m:ScatterSets.SchoolB}" Fill="#82ca9d" Shape="Triangle" />
+        </p:ScatterChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="JointLineScatterChart" />
+        <p:ScatterChart MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:ZAxis Range="100" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Legend />
+          <p:Scatter Name="A school" Data="{x:Static m:ScatterSets.JointA}" Fill="#8884d8" Line="True" Shape="Cross" />
+          <p:Scatter Name="B school" Data="{x:Static m:ScatterSets.JointB}" Fill="#82ca9d" Line="True" Shape="Diamond" />
+        </p:ScatterChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ScatterChartWithLabels" />
+        <p:ScatterChart MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Scatter Name="A school" Data="{x:Static m:ScatterSets.SchoolA}" Fill="#8884d8">
+            <p:LabelList DataKey="X" />
+          </p:Scatter>
+        </p:ScatterChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ScatterChartWithErrorBars" />
+        <p:ScatterChart MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:ReferenceArea X1="150" X2="180" Y1="200" Y2="300" Stroke="red" StrokeOpacity="0.3" />
+          <p:Scatter Name="A school" Data="{x:Static m:ScatterSets.Measured}" Fill="#8884d8">
+            <p:ErrorBar DataKey="ErrorY" Width="4" StrokeWidth="2" Stroke="green" Direction="y" />
+            <p:ErrorBar DataKey="ErrorX" Width="0" StrokeWidth="1" Stroke="blue" Direction="x" />
+          </p:Scatter>
+        </p:ScatterChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

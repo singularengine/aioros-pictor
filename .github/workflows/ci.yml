@@ -1,0 +1,49 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: sdk
+        run: |
+          eng/install-sdk.sh
+          echo "$GITHUB_WORKSPACE/.dotnet" >> "$GITHUB_PATH"
+      - name: tools
+        run: |
+          set -eu
+          sudo apt-get update -q > /dev/null
+          sudo apt-get install -y -q libfontconfig1 libfreetype6 > /dev/null
+          npx -y playwright@1.63.0 install --with-deps chromium > /dev/null
+          sudo ln -sf "$(ls -d "$HOME"/.cache/ms-playwright/chromium-*/chrome-linux*/chrome | head -1)" /usr/bin/chromium
+      - name: Build
+        run: dotnet build Aioros.Pictor.slnx -c Release
+      - name: Test
+        run: dotnet test --solution Aioros.Pictor.slnx -c Release --no-build
+      - name: Pack
+        run: eng/pack.sh ci.${{ github.run_number }}
+
+  advisories:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: sdk
+        run: |
+          eng/install-sdk.sh
+          echo "$GITHUB_WORKSPACE/.dotnet" >> "$GITHUB_PATH"
+      - name: Restore
+        run: dotnet restore Aioros.Pictor.slnx
+      - name: Security releases and package advisories
+        run: python3 -I eng/check-dependencies.py

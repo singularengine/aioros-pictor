@@ -1,0 +1,75 @@
+{
+ "name": "RadialBarItemTooltip",
+ "kind": "RadialBarChart",
+ "width": 500,
+ "height": 300,
+ "margin": null,
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "innerRadius": "10%",
+  "outerRadius": "90%",
+  "barSize": 14
+ },
+ "source": "Recharts' RadialBar and Pie API (recharts.org/en-US/api): shared={false}: a tooltip per radial bar",
+ "data": [
+  {
+   "name": "18-24",
+   "uv": 31.47,
+   "amt": 12,
+   "fill": "#8884d8"
+  },
+  {
+   "name": "25-29",
+   "uv": 26.69,
+   "amt": 20,
+   "fill": "#83a6ed"
+  },
+  {
+   "name": "30-34",
+   "uv": 15.69,
+   "amt": 8,
+   "fill": "#8dd1e1"
+  },
+  {
+   "name": "35-39",
+   "uv": 8.22,
+   "amt": 30,
+   "fill": "#82ca9d"
+  },
+  {
+   "name": "40-49",
+   "uv": 0.6,
+   "amt": 5,
+   "fill": "#a4de6c"
+  }
+ ],
+ "children": [
+  {
+   "type": "RadialBar",
+   "props": {
+    "dataKey": "uv",
+    "background": true,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {
+    "shared": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     262,
+     61
+    ]
+   }
+  ]
+ ]
+}

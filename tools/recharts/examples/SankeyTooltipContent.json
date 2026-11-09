@@ -1,0 +1,78 @@
+{
+ "name": "SankeyTooltipContent",
+ "kind": "Sankey",
+ "width": 800,
+ "height": 400,
+ "margin": {
+  "bottom": 30
+ },
+ "source": "a Sankey's item tooltip with a content element (the link's name and value)",
+ "data": {
+  "nodes": [
+   {
+    "name": "Visit"
+   },
+   {
+    "name": "Direct-Favourite"
+   },
+   {
+    "name": "Page-Click"
+   },
+   {
+    "name": "Detail-Favourite"
+   },
+   {
+    "name": "Lost"
+   }
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1,
+    "value": 3728.3
+   },
+   {
+    "source": 0,
+    "target": 2,
+    "value": 354170
+   },
+   {
+    "source": 2,
+    "target": 3,
+    "value": 62429
+   },
+   {
+    "source": 2,
+    "target": 4,
+    "value": 291741
+   }
+  ]
+ },
+ "props": {
+  "nodePadding": 50,
+  "link": {
+   "stroke": "#77c878"
+  }
+ },
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {
+    "content": {
+     "$content": "ItemTooltip"
+    }
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     400,
+     200
+    ]
+   }
+  ]
+ ]
+}

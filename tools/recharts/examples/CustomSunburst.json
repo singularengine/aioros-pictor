@@ -1,0 +1,75 @@
+{
+ "name": "CustomSunburst",
+ "kind": "SunburstChart",
+ "width": 600,
+ "height": 400,
+ "margin": null,
+ "source": "A partial sunburst written for Pictor: dataKey, center, radii, ring padding, angles, colors and text options",
+ "data": {
+  "name": "Budget",
+  "size": 1000,
+  "children": [
+   {
+    "name": "Housing",
+    "size": 450,
+    "children": [
+     {
+      "name": "Rent",
+      "size": 350
+     },
+     {
+      "name": "Utilities",
+      "size": 100
+     }
+    ]
+   },
+   {
+    "name": "Food",
+    "size": 250,
+    "fill": "#82ca9d",
+    "children": [
+     {
+      "name": "Groceries",
+      "size": 180
+     },
+     {
+      "name": "Restaurants",
+      "size": 70
+     }
+    ]
+   },
+   {
+    "name": "Savings",
+    "size": 300,
+    "fill": "#ffc658"
+   }
+  ]
+ },
+ "props": {
+  "dataKey": "size",
+  "cx": 250,
+  "cy": 220,
+  "innerRadius": 30,
+  "outerRadius": 170,
+  "ringPadding": 6,
+  "padding": 1,
+  "startAngle": 30,
+  "endAngle": 300,
+  "fill": "#8884d8",
+  "stroke": "#eee",
+  "textOptions": {
+   "fontSize": "11px",
+   "fontWeight": "normal",
+   "fill": "#fff",
+   "stroke": "none",
+   "fontFamily": "Inter"
+  }
+ },
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ]
+}

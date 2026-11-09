@@ -1,0 +1,29 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <AiorosGraphsVersion>0.1.0-preview.2</AiorosGraphsVersion>
+    <AiorosVersion>0.1.0-preview.1</AiorosVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Aioros" Version="$(AiorosVersion)" />
+    <PackageVersion Include="Aioros.Runtime" Version="$(AiorosVersion)" />
+    <PackageVersion Include="Aioros.Markup" Version="$(AiorosVersion)" />
+    <PackageVersion Include="Aioros.Graphs" Version="$(AiorosGraphsVersion)" />
+    <PackageVersion Include="Aioros.Graphs.Svg" Version="$(AiorosGraphsVersion)" />
+    <PackageVersion Include="Aioros.Graphs.Avalonia" Version="$(AiorosGraphsVersion)" />
+    <PackageVersion Include="Avalonia" Version="12.1.3" />
+    <PackageVersion Include="Avalonia.Desktop" Version="12.1.3" />
+    <PackageVersion Include="Avalonia.Headless" Version="12.1.3" />
+    <PackageVersion Include="Avalonia.Fonts.Inter" Version="12.1.3" />
+    <PackageVersion Include="Avalonia.Skia" Version="12.1.3" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="12.1.3" />
+    <PackageVersion Include="BenchmarkDotNet" Version="0.15.8" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" Version="5.6.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.Playwright" Version="1.63.0" />
+    <PackageVersion Include="Microsoft.VisualStudio.Threading.Analyzers" Version="18.7.23" />
+    <PackageVersion Include="Semi.Avalonia" Version="12.1.0.1" />
+    <PackageVersion Include="SonarAnalyzer.CSharp" Version="10.35.0.4138" />
+    <PackageVersion Include="xunit.v3" Version="4.0.1" />
+  </ItemGroup>
+</Project>

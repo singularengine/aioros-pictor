@@ -1,0 +1,233 @@
+{
+ "name": "GapsLabelsChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 320,
+ "margin": {
+  "top": 20,
+  "right": 40,
+  "bottom": 30,
+  "left": 30
+ },
+ "source": "Pictor's gaps catalog: several labels per element: an axis' label prop then its Label children, {x, y} positions, formatters on a text and a number, labels on references",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name",
+    "label": {
+     "value": "pages",
+     "position": "insideBottomRight",
+     "offset": 0
+    }
+   },
+   "children": [
+    {
+     "type": "Label",
+     "props": {
+      "value": "left",
+      "position": "insideBottomLeft",
+      "offset": 0,
+      "fill": "#c00"
+     },
+     "children": []
+    },
+    {
+     "type": "Label",
+     "props": {
+      "value": "at",
+      "position": {
+       "x": "50%",
+       "y": 28
+      },
+      "fontSize": 11
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "label": {
+     "value": "views",
+     "angle": -90,
+     "position": "insideLeft"
+    }
+   },
+   "children": [
+    {
+     "type": "Label",
+     "props": {
+      "value": "unit",
+      "position": "insideTopLeft",
+      "formatter": {
+       "$format": "[{0}]"
+      }
+     },
+     "children": []
+    },
+    {
+     "type": "Label",
+     "props": {
+      "value": 42,
+      "position": {
+       "x": 10,
+       "y": 0
+      },
+      "formatter": {
+       "$format": "{0} kg"
+      }
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "ReferenceLine",
+   "props": {
+    "y": 5000,
+    "stroke": "red",
+    "label": "max"
+   },
+   "children": [
+    {
+     "type": "Label",
+     "props": {
+      "value": "start",
+      "position": "insideTopLeft"
+     },
+     "children": []
+    },
+    {
+     "type": "Label",
+     "props": {
+      "value": "end",
+      "position": "insideBottomRight",
+      "fill": "#00f"
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "ReferenceArea",
+   "props": {
+    "x1": "Page B",
+    "x2": "Page D",
+    "fill": "#82ca9d",
+    "fillOpacity": 0.2
+   },
+   "children": [
+    {
+     "type": "Label",
+     "props": {
+      "value": "zone",
+      "position": "insideTop"
+     },
+     "children": []
+    },
+    {
+     "type": "Label",
+     "props": {
+      "value": "below",
+      "position": "bottom",
+      "angle": 20
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "ReferenceDot",
+   "props": {
+    "x": "Page F",
+    "y": 3800,
+    "r": 8,
+    "fill": "#ff7300",
+    "stroke": "none"
+   },
+   "children": [
+    {
+     "type": "Label",
+     "props": {
+      "value": "dot",
+      "position": "top"
+     },
+     "children": []
+    },
+    {
+     "type": "Label",
+     "props": {
+      "value": 3800,
+      "position": "right",
+      "formatter": {
+       "$format": "~{0}"
+      }
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "pv",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:an="using:PictorStarter.Analytics"
+             x:Class="PictorStarter.Views.EventFeed" x:DataType="an:FeedModel">
+  <StackPanel Spacing="4">
+    <TextBlock Classes="muted small" Text="{Binding Data.Rate}" Margin="0,0,0,6" />
+    <ItemsControl ItemsSource="{Binding Data.Events}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate x:DataType="an:FeedEvent">
+          <Border Classes="row">
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+              <Border Classes="tone" Classes.signup="{Binding Signup}" Classes.purchase="{Binding Purchase}" Classes.error="{Binding Error}" />
+              <StackPanel Grid.Column="1" Spacing="1">
+                <TextBlock Text="{Binding Title}" FontWeight="Medium" TextTrimming="CharacterEllipsis" />
+                <TextBlock TextWrapping="NoWrap" Classes="muted small" Text="{Binding Place}" TextTrimming="CharacterEllipsis" />
+              </StackPanel>
+              <StackPanel Grid.Column="2" Spacing="1">
+                <TextBlock Classes="figure" Text="{Binding Amount}" FontWeight="SemiBold" HorizontalAlignment="Right" />
+                <TextBlock Classes="muted small figure" Text="{Binding Time}" HorizontalAlignment="Right" />
+              </StackPanel>
+            </Grid>
+          </Border>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
+</UserControl>

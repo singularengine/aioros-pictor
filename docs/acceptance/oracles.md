@@ -1,0 +1,12 @@
+# Test oracles
+
+The comparisons the other criteria rely on (Recharts' markup, its hover states, its screenshots, the browsers), checked
+for themselves: each must fail when what it compares differs, so a criterion that "matches Recharts" cannot pass on a
+difference the comparison does not look at (decided after the audit of 2026-10-15 "Test quality
+after the audit").
+
+| Id | Criterion |
+|---|---|
+| ORACLE-01 | Given Pictor's markup of SimpleLineChart and SimpleBarChart (which match Recharts') and Recharts' own renders of CustomizedLabelTickLineChart, CustomShapeRadarChart and RadialBarLabelLists, when one attribute is changed or removed and the markup is compared with Recharts', then the comparison reports it: the grid's `stroke-dasharray` removed (`3 3 in Recharts, none in Pictor`) or changed, a curve's `fill="none"` removed (SVG's initial `black`), a curve's `stroke` removed (`none`), the ticks' `text-anchor` removed (`start`), a bar's `fill` removed, a tick group's `transform` moved or removed, the surface's `width` changed, a polygon's `points` moved and the path a `textPath` runs along moved; a paint equal to its initial value or drawing nothing on both sides (`fill="transparent"` for `none`, a stroke width of 1 left out) is no difference. |
+| ORACLE-02 | Given the hover states of TooltipFormats and DetailsFollowLineChart (which match Recharts'), when Pictor's tooltip box style is changed (its own `padding`, its own `background-color` removed so the page rule's `#fff` shows, the page rule's border color), a line's color is changed or the cursor's path is moved, then the hover comparison reports each (`box padding: 6px in Recharts, 8px in Pictor`, the box's declarations compared after the page rule, its variables' fallbacks and the box's own style). |
+| ORACLE-03 | Given SimpleBarChart drawn by the desktop control and Recharts' screenshot, when they are compared, then the comparison runs over the union of both images (a pixel only one image has is inked and differs strongly) and the verdict holds only when the frame has the screenshot's size and fewer of its inked pixels differ by more than 64 in a channel than the example's limit: each desktop example's limit is the share measured with the texts' antialiasing (Skia against Chromium) plus a tenth and 0.1 point (2.7% here); a frame one column wider fails on its size (its extra column counted as differing), and the frame with its x-axis tick labels painted white fails on its share; an example without a measured limit fails. |

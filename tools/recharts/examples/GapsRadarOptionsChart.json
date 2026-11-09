@@ -1,0 +1,138 @@
+{
+ "name": "GapsRadarOptionsChart",
+ "kind": "RadarChart",
+ "width": 500,
+ "height": 400,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "outerRadius": "70%",
+  "startAngle": 0,
+  "endAngle": 360
+ },
+ "source": "Pictor's gaps catalog: a radar's stroke width, unit and legend type, a hidden radar, a circular angle axis line with a tick format, a stroked radius axis with a format, no decimals and an overflowing domain",
+ "data": [
+  {
+   "subject": "Math",
+   "A": 120,
+   "B": 110,
+   "fullMark": 150
+  },
+  {
+   "subject": "Chinese",
+   "A": 98,
+   "B": 130,
+   "fullMark": 150
+  },
+  {
+   "subject": "English",
+   "A": 86,
+   "B": 130,
+   "fullMark": 150
+  },
+  {
+   "subject": "Geography",
+   "A": 99,
+   "B": 100,
+   "fullMark": 150
+  },
+  {
+   "subject": "Physics",
+   "A": 85,
+   "B": 90,
+   "fullMark": 150
+  },
+  {
+   "subject": "History",
+   "A": 65,
+   "B": 85,
+   "fullMark": 150
+  }
+ ],
+ "children": [
+  {
+   "type": "PolarGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "PolarAngleAxis",
+   "props": {
+    "dataKey": "subject",
+    "axisLineType": "circle",
+    "tickFormatter": "{0}:"
+   },
+   "children": []
+  },
+  {
+   "type": "PolarRadiusAxis",
+   "props": {
+    "angle": 30,
+    "stroke": "#e33",
+    "domain": [
+     0,
+     100
+    ],
+    "allowDataOverflow": true,
+    "allowDecimals": false,
+    "tickCount": 4,
+    "tickFormatter": "{0} pts"
+   },
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Mike",
+    "dataKey": "A",
+    "stroke": "#8884d8",
+    "fill": "#8884d8",
+    "fillOpacity": 0.6,
+    "strokeWidth": 3,
+    "unit": " pts",
+    "legendType": "diamond",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Lily",
+    "dataKey": "B",
+    "stroke": "#82ca9d",
+    "fill": "#82ca9d",
+    "fillOpacity": 0.6,
+    "hide": true,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     282.64,
+     143.47
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="pictor-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#pictor-bg)"/>
+  <g stroke="#C7D2FE" stroke-width="3.2" stroke-linecap="round">
+    <path d="M25 39 L19 55"/>
+    <path d="M39 39 L45 55"/>
+    <path d="M32 39 L32 52"/>
+  </g>
+  <rect x="11" y="37" width="42" height="3.6" rx="1.8" fill="#E0E7FF"/>
+  <rect x="13" y="9" width="38" height="28" rx="4.5" fill="#FFFFFF"/>
+  <path d="M19 31 L27 23.5 L35 26.5 L45 15.5" fill="none" stroke="#2563EB" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#7C3AED">
+    <path d="M19 27.6 L19.9 30.1 L22.4 31 L19.9 31.9 L19 34.4 L18.1 31.9 L15.6 31 L18.1 30.1 Z"/>
+    <path d="M27 20.1 L27.9 22.6 L30.4 23.5 L27.9 24.4 L27 26.9 L26.1 24.4 L23.6 23.5 L26.1 22.6 Z"/>
+    <path d="M35 23.1 L35.9 25.6 L38.4 26.5 L35.9 27.4 L35 29.9 L34.1 27.4 L31.6 26.5 L34.1 25.6 Z"/>
+    <path d="M45 11.6 L46.1 14.4 L48.9 15.5 L46.1 16.6 L45 19.4 L43.9 16.6 L41.1 15.5 L43.9 14.4 Z"/>
+  </g>
+</svg>

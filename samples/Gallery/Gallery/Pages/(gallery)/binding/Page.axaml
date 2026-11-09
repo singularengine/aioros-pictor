@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:BindingData" a:Page.Title="Data binding">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Data binding" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="The button changes the value of every reading in place: the same items, each notifying its property change. In the native app the charts follow the items' changes as an ItemsControl's bindings would, laid out once at the next frame however many values changed; on the web the step is a field of the page, so each post carries it, the command runs on the server and the page is rendered again from the items at the next step." />
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <Button Content="Change the values" Command="{Binding Step}" />
+      <TextBlock Text="Step" VerticalAlignment="Center" />
+      <NumericUpDown Value="{Binding Count}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Bars over notifying items" />
+        <p:BarChart Data="{Binding Readings}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Value" Name="value" Fill="#8884d8" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A line over the same items" />
+        <p:LineChart Data="{Binding Readings}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Value" Name="value" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Bound brushes, corners, padding and dashes" />
+        <TextBlock Classes="muted small" TextWrapping="Wrap" Text="The bars' Fill is bound to a brush (a gradient, then solid colors), their Radius to a CornerRadius, the chart's Padding to a Thickness and the grid's dashes to a list of numbers: the web plan follows each, so the page stays compiled." />
+        <p:BarChart Data="{Binding Readings}" MaxWidth="500" Aspect="1.6666666666666667" Padding="{Binding Inner}">
+          <p:CartesianGrid StrokeDashArray="{Binding Dash}" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Value" Name="value" Fill="{Binding Paint}" Radius="{Binding Corner}" />
+        </p:BarChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" />
+    <ProjectReference Include="..\..\src\Aioros.Pictor\Aioros.Pictor.csproj" />
+    <ProjectReference Include="..\..\src\Aioros.Pictor.Avalonia\Aioros.Pictor.Avalonia.csproj" />
+    <Compile Include="..\..\samples\Demo\Reference\*Examples.cs" Link="Reference\%(Filename)%(Extension)" />
+    <Compile Include="..\..\samples\Demo\Reference\ExampleAnimations.cs" Link="Reference\ExampleAnimations.cs" />
+  </ItemGroup>
+</Project>

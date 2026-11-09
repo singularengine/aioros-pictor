@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <InvariantGlobalization>false</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aioros" />
+    <ProjectReference Include="..\..\..\src\Aioros.Pictor.Avalonia\Aioros.Pictor.Avalonia.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Demo\Reference\*.cs" Exclude="..\..\Demo\Reference\DesktopRender.cs;..\..\Demo\Reference\HoverComparison.cs" Link="Compare\Reference\%(Filename)%(Extension)" />
+    <None Include="..\..\..\tools\recharts\examples\*.json" Link="Reference\examples\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\..\tools\recharts\out\*.png" Link="Reference\png\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\..\tools\recharts\out\*.client.html" Exclude="..\..\..\tools\recharts\out\*.*.client.html" Link="Reference\recharts\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\..\tools\recharts\out\recharts3\*.png" Link="Reference\png3\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\..\tools\recharts\out\recharts3\*.client.html" Exclude="..\..\..\tools\recharts\out\recharts3\*.*.client.html" Link="Reference\recharts3\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="Reference\pixels.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Remove="$(MSBuildThisFileDirectory)..\..\..\BannedSymbols.txt" />
+    <AdditionalFiles Include="BannedSymbols.Gallery.txt" />
+  </ItemGroup>
+</Project>

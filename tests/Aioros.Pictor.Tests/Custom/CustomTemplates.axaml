@@ -1,0 +1,405 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:t="using:Aioros.Pictor.Tests.Custom"
+             x:Class="Aioros.Pictor.Tests.Custom.CustomTemplates" x:CompileBindings="True">
+  <UserControl.Resources>
+    <!-- CustomShapeBarChart's TriangleBar: Recharts' path through the bar's corners, as a unit triangle stretched over the bar. -->
+    <DataTemplate x:Key="TriangleBar" x:DataType="p:BarShapeContext">
+      <Path Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Stretch="Fill" Fill="{Binding Fill}">
+        <Path.Data>
+          <PathGeometry Figures="M0,1 C0.3333333333333333,1 0.5,0.3333333333333333 0.5,0 C0.5,0.3333333333333333 0.6666666666666666,1 1,1 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <!-- The triangle with its height through a converter with logic (a square root), which the compiler refuses. -->
+    <DataTemplate x:Key="RootTriangleBar" x:DataType="p:BarShapeContext">
+      <Path Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height, Converter={x:Static t:TestConverters.Root}}" Stretch="Fill" Fill="{Binding Fill}">
+        <Path.Data>
+          <PathGeometry Figures="M0,1 C0.3333333333333333,1 0.5,0.3333333333333333 0.5,0 C0.5,0.3333333333333333 0.6666666666666666,1 1,1 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <!-- CustomizedDotLineChart's CustomizedDot: a happy face above 2500, a sad one below, as icons scaled into 20 px boxes. -->
+    <DataTemplate x:Key="CustomizedDot" x:DataType="p:DotContext">
+      <Canvas>
+        <Viewbox Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-10,-10,0,0" Width="20" Height="20" IsVisible="{Binding Converter={p:Calc 'Value &gt; 2500'}}">
+          <Canvas Width="1024" Height="1024">
+            <Path Fill="Red"><Path.Data><PathGeometry Figures="M512 1009.984c-274.912 0-497.76-222.848-497.76-497.76s222.848-497.76 497.76-497.76c274.912 0 497.76 222.848 497.76 497.76s-222.848 497.76-497.76 497.76zM340.768 295.936c-39.488 0-71.52 32.8-71.52 73.248s32.032 73.248 71.52 73.248c39.488 0 71.52-32.8 71.52-73.248s-32.032-73.248-71.52-73.248zM686.176 296.704c-39.488 0-71.52 32.8-71.52 73.248s32.032 73.248 71.52 73.248c39.488 0 71.52-32.8 71.52-73.248s-32.032-73.248-71.52-73.248zM772.928 555.392c-18.752-8.864-40.928-0.576-49.632 18.528-40.224 88.576-120.256 143.552-208.832 143.552-85.952 0-164.864-52.64-205.952-137.376-9.184-18.912-31.648-26.592-50.08-17.28-18.464 9.408-21.216 21.472-15.936 32.64 52.8 111.424 155.232 186.784 269.76 186.784 117.984 0 217.12-70.944 269.76-186.784 8.672-19.136 9.568-31.2-9.12-40.096z" /></Path.Data></Path>
+          </Canvas>
+        </Viewbox>
+        <Viewbox Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-10,-10,0,0" Width="20" Height="20" IsVisible="{Binding Converter={p:Calc 'Value &lt;= 2500'}}">
+          <Canvas Width="1024" Height="1024">
+            <Path Fill="Green"><Path.Data><PathGeometry Figures="M517.12 53.248q95.232 0 179.2 36.352t145.92 98.304 98.304 145.92 36.352 179.2-36.352 179.2-98.304 145.92-145.92 98.304-179.2 36.352-179.2-36.352-145.92-98.304-98.304-145.92-36.352-179.2 36.352-179.2 98.304-145.92 145.92-98.304 179.2-36.352zM663.552 261.12q-15.36 0-28.16 6.656t-23.04 18.432-15.872 27.648-5.632 33.28q0 35.84 21.504 61.44t51.2 25.6 51.2-25.6 21.504-61.44q0-17.408-5.632-33.28t-15.872-27.648-23.04-18.432-28.16-6.656zM373.76 261.12q-29.696 0-50.688 25.088t-20.992 60.928 20.992 61.44 50.688 25.6 50.176-25.6 20.48-61.44-20.48-60.928-50.176-25.088zM520.192 602.112q-51.2 0-97.28 9.728t-82.944 27.648-62.464 41.472-35.84 51.2q-1.024 1.024-1.024 2.048-1.024 3.072-1.024 8.704t2.56 11.776 7.168 11.264 12.8 6.144q25.6-27.648 62.464-50.176 31.744-19.456 79.36-35.328t114.176-15.872q67.584 0 116.736 15.872t81.92 35.328q37.888 22.528 63.488 50.176 17.408-5.12 19.968-18.944t0.512-18.944-3.072-7.168-1.024-3.072q-26.624-55.296-100.352-88.576t-176.128-33.28z" /></Path.Data></Path>
+          </Canvas>
+        </Viewbox>
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomizedLabelLineChart's CustomizedLabel: the value 4 px above the point, in 10 px, centered (with the label's fill, which Recharts leaves unset). -->
+    <DataTemplate x:Key="CustomizedLabel" x:DataType="p:LabelContext">
+      <p:SvgText X="{Binding X}" Y="{Binding Y}" Dy="-4" Fill="{Binding Fill}" FontSize="10" TextAnchor="Middle" Content="{Binding Text}" />
+    </DataTemplate>
+    <!-- CustomizedLabelLineChart's CustomizedAxisTick: a group at the tick's point holding its text, turned by 35 degrees and ending there. -->
+    <DataTemplate x:Key="CustomizedAxisTick" x:DataType="p:TickContext">
+      <Canvas Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}">
+        <p:SvgText Dy="16" TextAnchor="End" Fill="#666" Angle="-35" Content="{Binding Value}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomActiveShapePieChart's renderActiveShape: the name in the middle, the sector and a thin ring around it, a leader line to a dot, the value and the share beside it. -->
+    <DataTemplate x:Key="RenderActiveShape" x:DataType="p:SectorContext">
+      <Canvas>
+        <p:SvgText X="{Binding Cx}" Y="{Binding Cy}" Dy="8" TextAnchor="Middle" Fill="{Binding Fill}" Content="{Binding Name}" />
+        <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" InnerRadius="{Binding InnerRadius}" OuterRadius="{Binding OuterRadius}" StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}" Fill="{Binding Fill}" />
+        <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}"
+                  InnerRadius="{Binding Converter={p:Calc 'OuterRadius + 6'}}" OuterRadius="{Binding Converter={p:Calc 'OuterRadius + 10'}}" Fill="{Binding Fill}" />
+        <Path Stroke="{Binding Fill}" StrokeThickness="1">
+          <Path.Data>
+            <PathGeometry>
+              <PathFigure IsClosed="False" IsFilled="False" StartPoint="{Binding Converter={p:Calc 'OuterX + 10*Cos, OuterY + 10*Sin'}}">
+                <LineSegment Point="{Binding Converter={p:Calc 'OuterX + 30*Cos, OuterY + 30*Sin'}}" />
+                <LineSegment Point="{Binding Converter={p:Calc 'OuterX + 30*Cos + 22*Side, OuterY + 30*Sin'}}" />
+              </PathFigure>
+            </PathGeometry>
+          </Path.Data>
+        </Path>
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'OuterX + 30*Cos + 22*Side - 2'}}" Canvas.Top="{Binding Converter={p:Calc 'OuterY + 30*Sin - 2'}}" Width="4" Height="4" Fill="{Binding Fill}" />
+        <p:SvgText X="{Binding Converter={p:Calc 'OuterX + 30*Cos + 34*Side'}}" Y="{Binding Converter={p:Calc 'OuterY + 30*Sin'}}" TextAnchor="{Binding TextAnchor}" Fill="#333" Value="{Binding Value}" Format="PV {0}" />
+        <p:SvgText X="{Binding Converter={p:Calc 'OuterX + 30*Cos + 34*Side'}}" Y="{Binding Converter={p:Calc 'OuterY + 30*Sin'}}" Dy="18" TextAnchor="{Binding TextAnchor}" Fill="#999" Value="{Binding Percent}" Format="(Rate {0:0.00%})" />
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomShapeScatterChart's shapes: a 16 px diamond at each point, and a 24 px outlined one on the hovered point. -->
+    <DataTemplate x:Key="DiamondShape" x:DataType="p:ScatterShapeContext">
+      <Path Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-8,-8,0,0" Width="16" Height="16" Stretch="Fill" Fill="{Binding Fill}">
+        <Path.Data>
+          <PathGeometry Figures="M0.5,0 L1,0.5 L0.5,1 L0,0.5 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="ActiveDiamond" x:DataType="p:ScatterShapeContext">
+      <Path Fill="{Binding Fill}" Stroke="#333" StrokeThickness="2">
+        <Path.Data>
+          <PathGeometry>
+            <PathFigure IsClosed="True" StartPoint="{Binding Converter={p:Calc 'Cx, Cy - 12'}}">
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx + 12, Cy'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx, Cy + 12'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx - 12, Cy'}}" />
+            </PathFigure>
+          </PathGeometry>
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <!-- CustomShapeFunnelChart's shape: each item's upper edge as a rectangle with rounded corners. -->
+    <DataTemplate x:Key="RoundedTrapezoid" x:DataType="p:TrapezoidContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding UpperWidth}" Height="{Binding Height}" RadiusX="4" RadiusY="4" Fill="{Binding Fill}" />
+    </DataTemplate>
+    <!-- CustomShapeRadarChart's shape: the radar's points as a polygon filled at 0.3 and stroked. -->
+    <DataTemplate x:Key="RadarPolygon" x:DataType="p:RadarShapeContext">
+      <Polygon Points="{Binding Points}" Fill="{Binding Fill}" p:ShapePaint.FillOpacity="0.3" Stroke="{Binding Fill}" StrokeThickness="1" />
+    </DataTemplate>
+    <!-- CustomShapeRadialBarChart's shape: each bar a sector 1 px thinner on both sides, its corners rounded by 4 px. -->
+    <DataTemplate x:Key="RoundedSector" x:DataType="p:SectorContext">
+      <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" InnerRadius="{Binding Converter={p:Calc 'InnerRadius + 1'}}" OuterRadius="{Binding Converter={p:Calc 'OuterRadius - 1'}}"
+                StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}" CornerRadius="4" Fill="{Binding Fill}" />
+    </DataTemplate>
+    <!-- CustomContentTreemap's CustomizedContent: each node's box (the root's and the groups' in the panel's color, the leaves' transparent, their white stroke thinner with depth), and a group's name and number. -->
+    <DataTemplate x:Key="CustomizedContent" x:DataType="p:TreemapNodeContext">
+      <Canvas>
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth &lt; 1'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="{Binding Fill}" Stroke="White" StrokeThickness="20000000000" p:ShapePaint.StrokeOpacity="10000000000" />
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth == 1'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="{Binding Fill}" Stroke="White" StrokeThickness="2" />
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth == 2'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="#00FFFFFF" Stroke="White" StrokeThickness="1" p:ShapePaint.StrokeOpacity="0.5" />
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth &gt; 2'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="#00FFFFFF" Stroke="White" StrokeThickness="0.6666666666666666" p:ShapePaint.StrokeOpacity="0.333333" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'Depth == 1'}}" X="{Binding Converter={p:Calc 'X + Width/2'}}" Y="{Binding Converter={p:Calc 'Y + Height/2 + 7'}}"
+                   TextAnchor="Middle" Fill="White" FontSize="14" Content="{Binding Name}" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'Depth == 1'}}" X="{Binding Converter={p:Calc 'X + 4'}}" Y="{Binding Converter={p:Calc 'Y + 18'}}"
+                   Fill="White" FontSize="16" FillOpacity="0.9" Value="{Binding Converter={p:Calc 'Index + 1'}}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- Recharts' DemoSankeyNode: the node as a Recharts rectangle in a layer, its name and value beside it, on its left when they would leave the chart. -->
+    <DataTemplate x:Key="DemoSankeyNode" x:DataType="p:SankeyNodeContext">
+      <p:Layer>
+        <p:Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Fill="#5192ca" FillOpacity="1" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &gt; ContainerWidth'}}" TextAnchor="End" X="{Binding Converter={p:Calc 'X - 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2'}}"
+                   FontSize="14" Stroke="#333" Content="{Binding Name}" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &lt;= ContainerWidth'}}" TextAnchor="Start" X="{Binding Converter={p:Calc 'X + Width + 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2'}}"
+                   FontSize="14" Stroke="#333" Content="{Binding Name}" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &gt; ContainerWidth'}}" TextAnchor="End" X="{Binding Converter={p:Calc 'X - 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2 + 13'}}"
+                   FontSize="12" Stroke="#333" StrokeOpacity="0.5" Value="{Binding Value}" Format="{}{0}k" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &lt;= ContainerWidth'}}" TextAnchor="Start" X="{Binding Converter={p:Calc 'X + Width + 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2 + 13'}}"
+                   FontSize="12" Stroke="#333" StrokeOpacity="0.5" Value="{Binding Value}" Format="{}{0}k" />
+      </p:Layer>
+    </DataTemplate>
+    <!-- CustomLinkSankey's BandLink: each link as the band between its curve shifted up and down by half its width. -->
+    <DataTemplate x:Key="BandLink" x:DataType="p:SankeyLinkContext">
+      <Path Fill="#77c878" p:ShapePaint.FillOpacity="0.3">
+        <Path.Data>
+          <PathGeometry>
+            <PathFigure IsClosed="True" StartPoint="{Binding Converter={p:Calc 'SourceX, SourceY - LinkWidth/2'}}">
+              <BezierSegment Point1="{Binding Converter={p:Calc 'SourceControlX, SourceY - LinkWidth/2'}}" Point2="{Binding Converter={p:Calc 'TargetControlX, TargetY - LinkWidth/2'}}" Point3="{Binding Converter={p:Calc 'TargetX, TargetY - LinkWidth/2'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'TargetX, TargetY + LinkWidth/2'}}" />
+              <BezierSegment Point1="{Binding Converter={p:Calc 'TargetControlX, TargetY + LinkWidth/2'}}" Point2="{Binding Converter={p:Calc 'SourceControlX, SourceY + LinkWidth/2'}}" Point3="{Binding Converter={p:Calc 'SourceX, SourceY + LinkWidth/2'}}" />
+            </PathFigure>
+          </PathGeometry>
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <!-- CustomTravellerBrush's CustomTraveller: a rounded rectangle in the brush's stroke with a white grip line. -->
+    <DataTemplate x:Key="CustomTraveller" x:DataType="p:TravellerContext">
+      <Canvas>
+        <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" RadiusX="3" RadiusY="3" Fill="{Binding Stroke}" />
+        <Line StartPoint="{Binding Converter={p:Calc 'X + Width/2, Y + 8'}}" EndPoint="{Binding Converter={p:Calc 'X + Width/2, Y + Height - 8'}}" Stroke="White" StrokeThickness="2" />
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomReferenceShapes' shapes: a line ending in a dot, a dashed translucent area, a star. -->
+    <DataTemplate x:Key="ArrowLine" x:DataType="p:ReferenceLineContext">
+      <Canvas>
+        <Line StartPoint="{Binding Converter={p:Calc 'X1, Y1'}}" EndPoint="{Binding Converter={p:Calc 'X2, Y2'}}" Stroke="{Binding Stroke}" StrokeThickness="2" />
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'X2 - 4'}}" Canvas.Top="{Binding Converter={p:Calc 'Y2 - 4'}}" Width="8" Height="8" Fill="{Binding Stroke}" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="HatchedArea" x:DataType="p:ReferenceAreaContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Fill="#ffc658" p:ShapePaint.FillOpacity="0.3"
+                 Stroke="#ffc658" StrokeThickness="1" StrokeDashArray="4,2" />
+    </DataTemplate>
+    <DataTemplate x:Key="StarDot" x:DataType="p:ReferenceDotContext">
+      <Path Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-10,-10,0,0" Width="20" Height="20" Stretch="Fill" Fill="{Binding Fill}">
+        <Path.Data>
+          <PathGeometry Figures="M10,0 L13,7 L20,10 L13,13 L10,20 L7,13 L0,10 L7,7 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <!-- CustomizedChart's PlotFrame: a dashed frame around the plot and a word at the chart's center. -->
+    <DataTemplate x:Key="PlotFrame" x:DataType="p:LayoutContext">
+      <Canvas>
+        <Rectangle Canvas.Left="{Binding Left}" Canvas.Top="{Binding Top}" Width="{Binding PlotWidth}" Height="{Binding PlotHeight}" Stroke="#8884d8" StrokeThickness="1" StrokeDashArray="2,2" />
+        <p:SvgText X="{Binding Converter={p:Calc 'Width/2'}}" Y="{Binding Converter={p:Calc 'Height/2'}}" TextAnchor="Middle" Fill="#ccc" FontSize="24" Content="Draft" />
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomContentOfTooltip's CustomTooltip: the label and value, the page's intro (read from its item) and a sentence, as paragraphs spaced as the browser's default margins space them. -->
+    <DataTemplate x:Key="CustomTooltip" x:DataType="p:TooltipContentContext">
+      <StackPanel p:SvgElement.Class="custom-tooltip">
+        <TextBlock p:SvgElement.Class="label" Margin="0,14,0,0">
+          <TextBlock.Text>
+            <MultiBinding StringFormat="{}{0} : {1}">
+              <Binding Path="Label" />
+              <Binding Path="Value" />
+            </MultiBinding>
+          </TextBlock.Text>
+        </TextBlock>
+        <TextBlock p:SvgElement.Class="intro" Margin="0,14,0,0" Text="{Binding Payload[intro]}" />
+        <TextBlock p:SvgElement.Class="desc" Margin="0,14,0,14" Text="Anything you want can be displayed here." />
+      </StackPanel>
+    </DataTemplate>
+    <!-- shadcn/ui's ChartTooltipContent: a box of 128 px minimum width with a shadow, the label, and a row of a square, the name and the value at the row's end. -->
+    <DataTemplate x:Key="ChartTooltip" x:DataType="p:TooltipContentContext">
+      <Border MinWidth="128" Padding="10,6" CornerRadius="8" BorderThickness="1" BorderBrush="#e5e5e5" Background="#ffffff" BoxShadow="0 20 25 -5 #1A000000, 0 8 10 -6 #1A000000">
+        <StackPanel Spacing="6">
+          <TextBlock Text="{Binding Label}" FontSize="12" LineHeight="16" FontWeight="Medium" />
+          <StackPanel Orientation="Horizontal" Spacing="8">
+            <Border Width="10" Height="10" CornerRadius="2" Background="{Binding Color}" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding Name}" FontSize="12" LineHeight="12" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding Value}" FontSize="12" LineHeight="12" FontFamily="Geist Mono" HorizontalAlignment="Right" VerticalAlignment="Center" />
+          </StackPanel>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <!-- A row per line of the tooltip: the first line, then the second and the third while the payload holds them. -->
+    <!-- shadcn/ui's ChartTooltipContent shape: the label, then a row per payload line where TooltipItems stands. -->
+    <DataTemplate x:Key="ItemsTooltip" x:DataType="p:TooltipContentContext">
+      <Border p:SvgElement.Class="box" Background="#ffffff" BorderBrush="#cccccc" BorderThickness="1" Padding="8">
+        <StackPanel Spacing="6">
+          <TextBlock p:SvgElement.Class="label" Text="{Binding Label}" />
+          <p:TooltipItems Spacing="6" />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="TooltipLine" x:DataType="p:TooltipItemContext">
+      <StackPanel p:SvgElement.Class="line" Orientation="Horizontal" Spacing="8">
+        <Border p:SvgElement.Class="indicator" p:SvgElement.BorderStyle="dashed" Width="0" Height="12" BorderBrush="{Binding Color}" BorderThickness="1.5" />
+        <TextBlock p:SvgElement.Class="name" Text="{Binding Name}" />
+        <TextBlock p:SvgElement.Class="value" Text="{Binding Value}" HorizontalAlignment="Right" />
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="LinesTooltip" x:DataType="p:TooltipContentContext">
+      <StackPanel p:SvgElement.Class="lines">
+        <TextBlock p:SvgElement.Class="first" Foreground="{Binding Color}">
+          <TextBlock.Text>
+            <MultiBinding StringFormat="{}{0} {1}">
+              <Binding Path="Name" />
+              <Binding Path="Value" />
+            </MultiBinding>
+          </TextBlock.Text>
+        </TextBlock>
+        <TextBlock p:SvgElement.Class="second" Foreground="{Binding Color2}" IsVisible="{Binding Converter={p:Calc 'Count &gt; 1'}}">
+          <TextBlock.Text>
+            <MultiBinding StringFormat="{}{0} {1}">
+              <Binding Path="Name2" />
+              <Binding Path="Value2" />
+            </MultiBinding>
+          </TextBlock.Text>
+        </TextBlock>
+        <TextBlock p:SvgElement.Class="third" IsVisible="{Binding Converter={p:Calc 'Count &gt; 2'}}">
+          <TextBlock.Text>
+            <MultiBinding StringFormat="{}{0} {1}">
+              <Binding Path="Name3" />
+              <Binding Path="Value3" />
+            </MultiBinding>
+          </TextBlock.Text>
+        </TextBlock>
+      </StackPanel>
+    </DataTemplate>
+    <!-- The Legend API's renderLegend: each entry's value as a list item. -->
+    <DataTemplate x:Key="RenderLegend" x:DataType="p:LegendEntryContext">
+      <TextBlock Text="{Binding Value}" />
+    </DataTemplate>
+    <!-- CustomActiveBarChart's OutlinedTriangleBar: the hovered triangle outlined in #333. -->
+    <DataTemplate x:Key="OutlinedTriangleBar" x:DataType="p:BarShapeContext">
+      <Path Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Stretch="Fill" Fill="{Binding Fill}" Stroke="#333" StrokeThickness="2">
+        <Path.Data>
+          <PathGeometry Figures="M0,1 C0.3333333333333333,1 0.5,0.3333333333333333 0.5,0 C0.5,0.3333333333333333 0.6666666666666666,1 1,1 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <!-- CustomNestIndexTreemap's nestIndexContent: each trail box's index and name in bold. -->
+    <DataTemplate x:Key="NestIndexContent" x:DataType="p:NestIndexContext">
+      <TextBlock FontWeight="Bold">
+        <TextBlock.Text>
+          <MultiBinding StringFormat="{}{0}: {1}">
+            <Binding Path="Index" />
+            <Binding Path="Name" />
+          </MultiBinding>
+        </TextBlock.Text>
+      </TextBlock>
+    </DataTemplate>
+    <!-- CustomActiveFunnelChart's OutlinedTrapezoid: the hovered item's rounded rectangle outlined in #333. -->
+    <DataTemplate x:Key="OutlinedTrapezoid" x:DataType="p:TrapezoidContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding UpperWidth}" Height="{Binding Height}" RadiusX="4" RadiusY="4" Fill="{Binding Fill}" Stroke="#333" StrokeThickness="2" />
+    </DataTemplate>
+    <!-- CustomActiveRadialBarChart's GrownSector: the hovered bar 2 px wider on both sides, outlined in #333. -->
+    <DataTemplate x:Key="GrownSector" x:DataType="p:SectorContext">
+      <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" InnerRadius="{Binding Converter={p:Calc 'InnerRadius - 2'}}" OuterRadius="{Binding Converter={p:Calc 'OuterRadius + 2'}}"
+                StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}" Fill="{Binding Fill}" Stroke="#333" />
+    </DataTemplate>
+    <!-- CustomizedBarLabel's renderCustomizedLabel: a circle 10 px above each bar holding its value in thousands. -->
+    <DataTemplate x:Key="CustomizedBarLabel" x:DataType="p:LabelContext">
+      <Canvas>
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'X + Width/2 - 10'}}" Canvas.Top="{Binding Converter={p:Calc 'Y - 20'}}" Width="20" Height="20" Fill="#8884d8" />
+        <p:SvgText X="{Binding Converter={p:Calc 'X + Width/2'}}" Y="{Binding Converter={p:Calc 'Y - 10'}}" Dy="4" Fill="White" FontSize="10" TextAnchor="Middle" Value="{Binding Converter={p:Calc 'Value/1000'}}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomElementLabels' TargetLabel: a red badge at the reference line's right end holding the label's value. -->
+    <DataTemplate x:Key="TargetLabel" x:DataType="p:LabelContext">
+      <Canvas>
+        <Rectangle Canvas.Left="{Binding Converter={p:Calc 'X + Width - 50'}}" Canvas.Top="{Binding Converter={p:Calc 'Y - 20'}}" Width="50" Height="18" RadiusX="3" RadiusY="3" Fill="Red" />
+        <p:SvgText X="{Binding Converter={p:Calc 'X + Width - 25'}}" Y="{Binding Converter={p:Calc 'Y - 7'}}" Fill="White" FontSize="12" TextAnchor="Middle" Content="{Binding Text}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomElementLabels' AxisTitle: the axis label's value above the axis' box. -->
+    <DataTemplate x:Key="AxisTitle" x:DataType="p:LabelContext">
+      <p:SvgText X="{Binding Converter={p:Calc 'X + 4'}}" Y="{Binding Converter={p:Calc 'Y - 6'}}" Fill="#666" FontSize="11" Content="{Binding Text}" />
+    </DataTemplate>
+    <!-- PieLabelListContent's SectorValueLabel: each value at its sector's middle, white. -->
+    <DataTemplate x:Key="SectorValueLabel" x:DataType="p:LabelContext">
+      <p:SvgText X="{Binding X}" Y="{Binding Y}" Dy="4" Fill="White" FontSize="12" TextAnchor="Middle" Content="{Binding Text}" />
+    </DataTemplate>
+    <!-- RadialBarLabelListContent's BarValueLabel: each value at its bar's middle, small and dark. -->
+    <DataTemplate x:Key="BarValueLabel" x:DataType="p:LabelContext">
+      <p:SvgText X="{Binding X}" Y="{Binding Y}" Dy="3" Fill="#333" FontSize="8" TextAnchor="Middle" Content="{Binding Text}" />
+    </DataTemplate>
+    <!-- RadarLabelListContent's RadarPointLabel: each value in a dot above its point. -->
+    <DataTemplate x:Key="RadarPointLabel" x:DataType="p:LabelContext">
+      <Canvas>
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'X - 10'}}" Canvas.Top="{Binding Converter={p:Calc 'Y - 22'}}" Width="20" Height="20" Fill="#8884d8" />
+        <p:SvgText X="{Binding X}" Y="{Binding Converter={p:Calc 'Y - 12'}}" Dy="4" Fill="White" FontSize="10" TextAnchor="Middle" Content="{Binding Text}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- FunnelLabelListContent's FunnelBadge: each value in a white badge at its label box's center. -->
+    <DataTemplate x:Key="FunnelBadge" x:DataType="p:LabelContext">
+      <Canvas>
+        <Rectangle Canvas.Left="{Binding Converter={p:Calc 'X + Width/2 - 30'}}" Canvas.Top="{Binding Converter={p:Calc 'Y + Height/2 - 10'}}" Width="60" Height="20" RadiusX="10" RadiusY="10" Fill="White" p:ShapePaint.FillOpacity="0.8" />
+        <p:SvgText X="{Binding Converter={p:Calc 'X + Width/2'}}" Y="{Binding Converter={p:Calc 'Y + Height/2'}}" Dy="4" Fill="#333" FontSize="12" TextAnchor="Middle" Content="{Binding Text}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- PolarTickContent's AngleTick (Recharts' docs' renderPolarAngleAxis): each name pushed out from the center by a tenth of its distance. -->
+    <DataTemplate x:Key="AngleTick" x:DataType="p:TickContext">
+      <p:SvgText X="{Binding Converter={p:Calc 'X + (X - Cx)/10'}}" Y="{Binding Converter={p:Calc 'Y + (Y - Cy)/10'}}" Dy="4" TextAnchor="Middle" Fill="#8884d8" FontSize="12" Content="{Binding Value}" />
+    </DataTemplate>
+    <!-- PolarTickContent's RadiusTick: each value in a group at its point, 4 px past it. -->
+    <DataTemplate x:Key="RadiusTick" x:DataType="p:TickContext">
+      <Canvas Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}">
+        <p:SvgText Dx="4" Fill="#999" FontSize="10" Content="{Binding Value}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- PolarTickContent's RadiusTitle: the radius axis' label 8 px above the axis' middle. -->
+    <DataTemplate x:Key="RadiusTitle" x:DataType="p:LabelContext">
+      <p:SvgText X="{Binding X}" Y="{Binding Y}" Dy="-8" TextAnchor="Middle" Fill="#666" FontSize="11" Content="{Binding Text}" />
+    </DataTemplate>
+    <!-- CustomActiveDotChart's ActiveRing: the hovered point's ring around a dot, in the line's color. -->
+    <DataTemplate x:Key="ActiveRing" x:DataType="p:DotContext">
+      <Canvas>
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'Cx - 10'}}" Canvas.Top="{Binding Converter={p:Calc 'Cy - 10'}}" Width="20" Height="20" Stroke="{Binding Fill}" StrokeThickness="2" />
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'Cx - 4'}}" Canvas.Top="{Binding Converter={p:Calc 'Cy - 4'}}" Width="8" Height="8" Fill="{Binding Fill}" />
+      </Canvas>
+    </DataTemplate>
+    <!-- CustomActiveDotChart's ActiveSquare: the hovered point's square in the area's color, outlined in white. -->
+    <DataTemplate x:Key="ActiveSquare" x:DataType="p:DotContext">
+      <Rectangle Canvas.Left="{Binding Converter={p:Calc 'Cx - 6'}}" Canvas.Top="{Binding Converter={p:Calc 'Cy - 6'}}" Width="12" Height="12" Fill="{Binding Fill}" Stroke="White" StrokeThickness="2" />
+    </DataTemplate>
+    <!-- ItemTooltip: an item tooltip's first entry, its name and value in a paragraph. -->
+    <DataTemplate x:Key="ItemTooltip" x:DataType="p:TooltipContentContext">
+      <StackPanel p:SvgElement.Class="custom-tooltip">
+        <TextBlock p:SvgElement.Class="label" Margin="0,14,0,14">
+          <TextBlock.Text>
+            <MultiBinding StringFormat="{}{0} : {1}">
+              <Binding Path="Name" />
+              <Binding Path="Value" />
+            </MultiBinding>
+          </TextBlock.Text>
+        </TextBlock>
+      </StackPanel>
+    </DataTemplate>
+    <!-- AxisTooltip: an axis tooltip's category, then its first entry's name and value. -->
+    <DataTemplate x:Key="AxisTooltip" x:DataType="p:TooltipContentContext">
+      <StackPanel p:SvgElement.Class="custom-tooltip">
+        <TextBlock p:SvgElement.Class="label" Margin="0,14,0,0" Text="{Binding Label}" />
+        <TextBlock p:SvgElement.Class="value" Margin="0,14,0,14">
+          <TextBlock.Text>
+            <MultiBinding StringFormat="{}{0} : {1}">
+              <Binding Path="Name" />
+              <Binding Path="Value" />
+            </MultiBinding>
+          </TextBlock.Text>
+        </TextBlock>
+      </StackPanel>
+    </DataTemplate>
+    <!-- shadcn/ui's ChartLegendContent: the entries in a centered row 16 px apart below a 12 px padding. -->
+    <DataTemplate x:Key="RowLegend" x:DataType="p:LegendContext">
+      <Border Padding="0,12,0,0">
+        <p:LegendItems Orientation="Horizontal" Spacing="16" />
+      </Border>
+    </DataTemplate>
+    <!-- The same row with each entry in a quarter of it, as shadcn/ui's pie legend's basis-1/4. -->
+    <DataTemplate x:Key="QuarterLegend" x:DataType="p:LegendContext">
+      <Border Padding="0,12,0,0">
+        <p:LegendItems Orientation="Horizontal" Spacing="8" ItemBasis="0.25" />
+      </Border>
+    </DataTemplate>
+    <!-- A legend entry as shadcn/ui's: an 8 px square of its color beside its name. -->
+    <DataTemplate x:Key="SquareEntry" x:DataType="p:LegendEntryContext">
+      <StackPanel Orientation="Horizontal" Spacing="6">
+        <Border Width="8" Height="8" CornerRadius="2" Background="{Binding Color}" VerticalAlignment="Center" />
+        <TextBlock Text="{Binding Value}" FontSize="12" VerticalAlignment="Center" />
+      </StackPanel>
+    </DataTemplate>
+    <!-- CustomFramedLegend's FramedLegend: a bordered column with the entries' count in bold above Recharts' default list. -->
+    <DataTemplate x:Key="FramedLegend" x:DataType="p:LegendContext">
+      <Border p:SvgElement.Class="legend-frame" Padding="0,4" BorderBrush="#ccc" BorderThickness="1">
+        <StackPanel>
+          <TextBlock p:SvgElement.Class="legend-title" FontWeight="Bold" Text="{Binding Count, StringFormat='{}{0} series'}" />
+          <p:LegendItems />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+</UserControl>

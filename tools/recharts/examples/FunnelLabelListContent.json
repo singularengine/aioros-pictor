@@ -1,0 +1,68 @@
+{
+ "name": "FunnelLabelListContent",
+ "kind": "FunnelChart",
+ "width": 700,
+ "height": 432,
+ "margin": {
+  "right": 30
+ },
+ "source": "a funnel's LabelList with a content element (each value in a white badge at its label box's center) beside its names",
+ "data": null,
+ "children": [
+  {
+   "type": "Funnel",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "value": 100,
+      "name": "Impression",
+      "fill": "#8884d8"
+     },
+     {
+      "value": 80,
+      "name": "Click",
+      "fill": "#83a6ed"
+     },
+     {
+      "value": 50,
+      "name": "Visit",
+      "fill": "#8dd1e1"
+     },
+     {
+      "value": 40,
+      "name": "Consult",
+      "fill": "#82ca9d"
+     },
+     {
+      "value": 26,
+      "name": "Order",
+      "fill": "#a4de6c"
+     }
+    ],
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "right",
+      "fill": "#000",
+      "stroke": "none",
+      "dataKey": "name"
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "content": {
+       "$content": "FunnelBadge"
+      }
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

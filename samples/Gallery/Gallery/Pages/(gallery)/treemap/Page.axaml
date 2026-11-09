@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:Hierarchies" a:Page.Title="Treemaps">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Treemaps" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/compare/treemap"><TextBlock Text="Every reference example beside Recharts' render" /></Border>
+      <Border Classes="textlink" a:Web.Href="/families"><TextBlock Text="Every interaction" /></Border>
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live update" /></Border>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Replay plays the enter animation of every chart on this page again (Recharts' animation when a chart mounts). Change data moves the data on to its next version, and this chart animates from its previous geometry to the new, as Recharts' update animation does (on the web Aioros morphs the page and moves each shape frame by frame from the numbers the chart declares)." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+        <p:Treemap Data="{Binding Motion.Packages}" MaxWidth="500" Aspect="1.3333333333333333" DataKey="Size" AspectRatio="1.3333333333333333" Stroke="{DynamicResource SampleRing}" Fill="#8884d8" />
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="SimpleTreemap" />
+        <p:Treemap Data="{Binding Flare}" MaxWidth="500" Aspect="1.3333333333333333" DataKey="Size" AspectRatio="1.3333333333333333" Stroke="{DynamicResource SampleRing}" Fill="#8884d8" />
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ColorPanelTreemap" />
+        <p:Treemap Data="{Binding Flare}" MaxWidth="500" Aspect="1.3333333333333333" DataKey="Size" AspectRatio="1.3333333333333333"
+                   ColorPanel="#8889DD,#9597E4,#8DC77B,#A5D297,#E2CF45,#F8C12D">
+          <p:Tooltip />
+        </p:Treemap>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="NestedTreemap" />
+        <p:Treemap Data="{Binding FlareTop}" MaxWidth="500" Aspect="1.3333333333333333" DataKey="Size" NameKey="Name" AspectRatio="1.3333333333333333" Type="nest" Zoom="{Binding Zoom}">
+          <p:Tooltip />
+        </p:Treemap>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

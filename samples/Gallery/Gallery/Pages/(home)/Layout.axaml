@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:a="https://aioros.dev" a:Page.Title="Pictor" a:Page.TitleTemplate="%s · Pictor">
+  <DockPanel Background="{DynamicResource AppBg}">
+    <Border DockPanel.Dock="Top" a:Web.Tag="header" Padding="20,12" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource Line}" Background="{DynamicResource Surface}">
+      <DockPanel MaxWidth="1200">
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+          <Border Classes="textlink" a:Web.Href="/line"><TextBlock Text="Gallery" /></Border>
+          <Border Classes="textlink" a:Web.Href="/en"><TextBlock Text="EN" /></Border>
+          <Border Classes="textlink" a:Web.Href="/es"><TextBlock Text="ES" /></Border>
+          <Border Classes="textlink" a:Web.Href="/zh"><TextBlock Text="中文" /></Border>
+          <Border Classes="textlink" a:Web.Href="/ja"><TextBlock Text="日本語" /></Border>
+          <Border Classes="iconbtn" a:Web.Href="/theme/toggle" AutomationProperties.Name="Theme"><a:Icon Kind="moon" Size="16" /></Border>
+        </StackPanel>
+        <Border Classes="brand" a:Web.Href="/" AutomationProperties.Name="Pictor home" HorizontalAlignment="Left">
+          <TextBlock Text="Pictor" FontSize="18" FontWeight="SemiBold" />
+        </Border>
+      </DockPanel>
+    </Border>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+      <a:Outlet />
+    </ScrollViewer>
+  </DockPanel>
+</UserControl>

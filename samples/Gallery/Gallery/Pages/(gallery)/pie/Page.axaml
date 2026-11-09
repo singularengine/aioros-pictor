@@ -1,0 +1,88 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:PolarData" a:Page.Title="Pie charts">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Pie charts" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/compare/pie"><TextBlock Text="Every reference example beside Recharts' render" /></Border>
+      <Border Classes="textlink" a:Web.Href="/families"><TextBlock Text="Every interaction" /></Border>
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live update" /></Border>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Replay plays the enter animation of every chart on this page again (Recharts' animation when a chart mounts). Change data moves the data on to its next version, and this chart animates from its previous geometry to the new, as Recharts' update animation does (on the web Aioros morphs the page and moves each shape frame by frame from the numbers the chart declares)." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+        <p:PieChart Data="{Binding Motion.Groups}" MaxWidth="400" Aspect="1.3333333333333333">
+          <p:Pie DataKey="Value" NameKey="Name" OuterRadius="100" Fill="#8884d8" Label="True" />
+          <p:Tooltip />
+        </p:PieChart>
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="TwoLevelPieChart" />
+        <p:PieChart MaxWidth="400" Aspect="1">
+          <p:Pie Data="{x:Static m:PolarData.Groups}" DataKey="Value" NameKey="Name" OuterRadius="60" Fill="#8884d8" />
+          <p:Pie Data="{x:Static m:PolarData.Ring}" DataKey="Value" NameKey="Name" InnerRadius="70" OuterRadius="90" Fill="#82ca9d" Label="True" />
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="StraightAnglePieChart" />
+        <p:PieChart Data="{Binding Pie}" MaxWidth="400" Aspect="1">
+          <p:Pie DataKey="Value" NameKey="Name" StartAngle="180" EndAngle="0" OuterRadius="80" Fill="#8884d8" Label="True" />
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="800" Spacing="8">
+        <TextBlock Classes="h2" Text="TwoSimplePieChart" />
+        <p:PieChart MaxWidth="800" Aspect="2">
+          <p:Pie Data="{x:Static m:PolarData.SixGroups}" DataKey="Value" NameKey="Name" Cx="200" OuterRadius="80" Fill="#8884d8" Label="True" />
+          <p:Pie Data="{x:Static m:PolarData.BigGroups}" DataKey="Value" NameKey="Name" Cx="500" Cy="200" InnerRadius="40" OuterRadius="80" Fill="#82ca9d" />
+          <p:Tooltip />
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="800" Spacing="8">
+        <TextBlock Classes="h2" Text="PieChartWithPaddingAngle" />
+        <p:PieChart MaxWidth="800" Aspect="2">
+          <p:Pie Data="{x:Static m:PolarData.Groups}" DataKey="Value" NameKey="Name" Cx="120" Cy="200" InnerRadius="60" OuterRadius="80" Fill="#8884d8" PaddingAngle="5">
+            <p:Cell Fill="#0088FE" />
+            <p:Cell Fill="#00C49F" />
+            <p:Cell Fill="#FFBB28" />
+            <p:Cell Fill="#FF8042" />
+          </p:Pie>
+          <p:Pie Data="{x:Static m:PolarData.Groups}" DataKey="Value" NameKey="Name" Cx="420" Cy="200" StartAngle="180" EndAngle="0" InnerRadius="60" OuterRadius="80" Fill="#8884d8" PaddingAngle="5">
+            <p:Cell Fill="#0088FE" />
+            <p:Cell Fill="#00C49F" />
+            <p:Cell Fill="#FFBB28" />
+            <p:Cell Fill="#FF8042" />
+          </p:Pie>
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="ActiveShapePieChart" />
+        <p:PieChart MaxWidth="400" Aspect="1">
+          <p:Pie Data="{x:Static m:PolarData.ActiveGroups}" DataKey="Value" NameKey="Name" ActiveIndex="1" InnerRadius="60" OuterRadius="80" Fill="#8884d8">
+            <p:Pie.ActiveShape>
+              <p:ActiveShape OuterRadius="90" Fill="#ff7300" />
+            </p:Pie.ActiveShape>
+          </p:Pie>
+          <p:Tooltip />
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="Active shape on hover" />
+        <p:PieChart MaxWidth="400" Aspect="1">
+          <p:Pie Data="{x:Static m:PolarData.ActiveGroups}" DataKey="Value" NameKey="Name" InnerRadius="60" OuterRadius="80" Fill="#8884d8">
+            <p:Pie.ActiveShape>
+              <p:ActiveShape OuterRadius="90" Fill="#ff7300" />
+            </p:Pie.ActiveShape>
+          </p:Pie>
+          <p:Tooltip />
+        </p:PieChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

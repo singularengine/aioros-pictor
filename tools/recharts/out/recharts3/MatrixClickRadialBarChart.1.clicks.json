@@ -1,0 +1,12 @@
+[
+ {
+  "handler": "bar",
+  "index": 5,
+  "label": "50+"
+ },
+ {
+  "handler": "chart",
+  "index": "5",
+  "label": "5"
+ }
+]

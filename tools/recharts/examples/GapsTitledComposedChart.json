@@ -1,0 +1,148 @@
+{
+ "name": "GapsTitledComposedChart",
+ "kind": "ComposedChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "chartProps": {
+  "title": "Visits per page",
+  "desc": "Views, visitors and amounts with gaps"
+ },
+ "source": "Pictor's gaps catalog: a chart title and description, null values bridged by connectNulls on a line and an area, units in the tooltip, a legend of a fixed height",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210
+  },
+  {
+   "name": "Page C",
+   "uv": null,
+   "pv": 9800,
+   "amt": 2290
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": null
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": null,
+   "amt": 2181
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {
+    "height": 60
+   },
+   "children": []
+  },
+  {
+   "type": "Area",
+   "props": {
+    "type": "monotone",
+    "dataKey": "amt",
+    "fill": "#ffc658",
+    "stroke": "#ffc658",
+    "connectNulls": true,
+    "unit": " $",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotone",
+    "dataKey": "pv",
+    "stroke": "#8884d8",
+    "connectNulls": true,
+    "unit": " views",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotone",
+    "dataKey": "uv",
+    "stroke": "#82ca9d",
+    "unit": " visitors",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     250,
+     5
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     330,
+     5
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:a="https://aioros.dev" xmlns:l="using:Gallery.Views.Live" a:Page.Title="Live charts" a:Web.Live="True">
+  <StackPanel Spacing="24">
+    <TextBlock Classes="h1" Text="Live charts" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left"
+               Text="Every chart family updated live. Each chart is a view whose loader reads a key of its own, and each second the server invalidates the keys of a quarter of the families, so each family moves every fourth second and its animation settles before the next: on the web each open page receives those views' new regions over its live stream, and the charts Recharts animates morph from their previous geometry into the new data (the Sankey and the sunburst are drawn at once, as Recharts draws them); on the desktop each view's model receives the new data and the chart animates the same way." />
+    <WrapPanel ItemSpacing="24" LineSpacing="24">
+      <l:LiveLine />
+      <l:LiveArea />
+      <l:LiveBar />
+      <l:LiveComposed />
+      <l:LiveScatter />
+      <l:LivePie />
+      <l:LiveRadar />
+      <l:LiveRadialBar />
+      <l:LiveFunnel />
+      <l:LiveTreemap />
+      <l:LiveSankey />
+      <l:LiveSunburst />
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

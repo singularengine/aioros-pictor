@@ -1,0 +1,121 @@
+{
+ "name": "MultiSeriesLineChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "www/src/docs/exampleComponents/LineChart/LineChartHasMultiSeries.tsx (fixed values instead of random ones)",
+ "data": null,
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "category",
+    "type": "category",
+    "allowDuplicatedCategory": false
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "dataKey": "value"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "category": "A",
+      "value": 10
+     },
+     {
+      "category": "B",
+      "value": 22
+     },
+     {
+      "category": "C",
+      "value": 15
+     }
+    ],
+    "name": "Series 1",
+    "key": "Series 1",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "category": "B",
+      "value": 31
+     },
+     {
+      "category": "C",
+      "value": 18
+     },
+     {
+      "category": "D",
+      "value": 25
+     }
+    ],
+    "name": "Series 2",
+    "key": "Series 2",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "category": "C",
+      "value": 12
+     },
+     {
+      "category": "D",
+      "value": 27
+     },
+     {
+      "category": "E",
+      "value": 20
+     }
+    ],
+    "name": "Series 3",
+    "key": "Series 3",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

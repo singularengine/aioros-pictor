@@ -1,0 +1,11 @@
+[
+ {
+  "handler": "line",
+  "index": null
+ },
+ {
+  "handler": "chart",
+  "index": 1,
+  "label": "Page B"
+ }
+]

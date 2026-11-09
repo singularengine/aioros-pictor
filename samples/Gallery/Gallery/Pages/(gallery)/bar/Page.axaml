@@ -1,0 +1,112 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:Datasets" a:Page.Title="Bar charts">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Bar charts" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/compare/bar"><TextBlock Text="Every reference example beside Recharts' render" /></Border>
+      <Border Classes="textlink" a:Web.Href="/families"><TextBlock Text="Every interaction" /></Border>
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live update" /></Border>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Replay plays the enter animation of every chart on this page again (Recharts' animation when a chart mounts). Change data moves the data on to its next version, and this chart animates from its previous geometry to the new, as Recharts' update animation does (on the web Aioros morphs the page and moves each shape frame by frame from the numbers the chart declares)." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+        <p:BarChart Data="{Binding Motion.Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="SimpleBarChart" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="StackedBarChart" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" StackId="a" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" StackId="a" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="MixBarChart" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" StackId="a" Fill="#8884d8" />
+          <p:Bar DataKey="Amt" Name="amt" StackId="a" Fill="#82ca9d" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#ffc658" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="PositiveAndNegativeBarChart" />
+        <p:BarChart Data="{Binding PositiveAndNegative}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:ReferenceLine Y="0" Stroke="{DynamicResource SampleInk}" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="BarChartWithCell" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#8884d8" Label="Top">
+            <p:Cell Fill="#0088FE" />
+            <p:Cell Fill="#00C49F" />
+            <p:Cell Fill="#FFBB28" />
+            <p:Cell Fill="#FF8042" />
+            <p:Cell Fill="red" />
+            <p:Cell Fill="pink" />
+            <p:Cell Fill="#0088FE" />
+          </p:Bar>
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="BarChartHasBackground" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" Background="{DynamicResource SampleWash}" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

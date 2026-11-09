@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace>Aioros.Pictor</RootNamespace>
+    <Description>Recharts' cartesian charts as Avalonia XAML controls: drawn through DrawingContext on the desktop, written by Aioros as Recharts' SVG per request on the web.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" />
+    <PackageReference Include="Aioros.Graphs.Avalonia" />
+    <PackageReference Include="Aioros.Markup" />
+    <ProjectReference Include="..\Aioros.Pictor\Aioros.Pictor.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aioros.Pictor.Tests" />
+    <InternalsVisibleTo Include="Aioros.Pictor.Benchmarks" />
+  </ItemGroup>
+</Project>

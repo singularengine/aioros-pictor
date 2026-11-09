@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:a="using:Aioros.Pictor.Tests.Audit"
+             x:Class="Aioros.Pictor.Tests.Audit.AuditTemplates" x:CompileBindings="True">
+  <UserControl.Resources>
+    <DataTemplate x:Key="PayloadColorBar" x:DataType="p:BarShapeContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Fill="{Binding Payload[color]}" />
+    </DataTemplate>
+    <DataTemplate x:Key="TranslucentBar" x:DataType="p:BarShapeContext">
+      <Border Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Background="#80000000" />
+    </DataTemplate>
+    <DataTemplate x:Key="TranslucentTooltip" x:DataType="p:TooltipContentContext">
+      <Border Background="#80000000" Padding="4">
+        <TextBlock Foreground="#80ff0000" Text="{Binding Label}" />
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="ExponentBar" x:DataType="p:BarShapeContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Converter={p:Calc 'Height*1e-3 + Height'}}" Fill="{Binding Fill}" />
+    </DataTemplate>
+    <DataTemplate x:Key="TinyValueBar" x:DataType="p:BarShapeContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Fill="{Binding Fill}" IsVisible="{Binding Converter={p:Calc 'Value &gt; 1e-7'}}" />
+    </DataTemplate>
+    <DataTemplate x:Key="OneOrDeepNode" x:DataType="p:TreemapNodeContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Fill="#8884d8" IsVisible="{Binding Depth, Converter={x:Static a:AuditConverters.OneOrDeep}}" />
+    </DataTemplate>
+  </UserControl.Resources>
+</UserControl>

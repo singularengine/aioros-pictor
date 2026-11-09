@@ -1,0 +1,416 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:CustomData" a:Page.Title="Custom content">
+  <UserControl.Resources>
+    <DataTemplate x:Key="TriangleBar" x:DataType="p:BarShapeContext">
+      <Path Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Stretch="Fill" Fill="{Binding Fill}">
+        <Path.Data>
+          <PathGeometry Figures="M0,1 C0.3333333333333333,1 0.5,0.3333333333333333 0.5,0 C0.5,0.3333333333333333 0.6666666666666666,1 1,1 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="CustomizedDot" x:DataType="p:DotContext">
+      <Canvas>
+        <Viewbox Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-10,-10,0,0" Width="20" Height="20" IsVisible="{Binding Converter={p:Calc 'Value &gt; 2500'}}">
+          <Canvas Width="1024" Height="1024">
+            <Path Fill="Red"><Path.Data><PathGeometry Figures="M512 1009.984c-274.912 0-497.76-222.848-497.76-497.76s222.848-497.76 497.76-497.76c274.912 0 497.76 222.848 497.76 497.76s-222.848 497.76-497.76 497.76zM340.768 295.936c-39.488 0-71.52 32.8-71.52 73.248s32.032 73.248 71.52 73.248c39.488 0 71.52-32.8 71.52-73.248s-32.032-73.248-71.52-73.248zM686.176 296.704c-39.488 0-71.52 32.8-71.52 73.248s32.032 73.248 71.52 73.248c39.488 0 71.52-32.8 71.52-73.248s-32.032-73.248-71.52-73.248zM772.928 555.392c-18.752-8.864-40.928-0.576-49.632 18.528-40.224 88.576-120.256 143.552-208.832 143.552-85.952 0-164.864-52.64-205.952-137.376-9.184-18.912-31.648-26.592-50.08-17.28-18.464 9.408-21.216 21.472-15.936 32.64 52.8 111.424 155.232 186.784 269.76 186.784 117.984 0 217.12-70.944 269.76-186.784 8.672-19.136 9.568-31.2-9.12-40.096z" /></Path.Data></Path>
+          </Canvas>
+        </Viewbox>
+        <Viewbox Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-10,-10,0,0" Width="20" Height="20" IsVisible="{Binding Converter={p:Calc 'Value &lt;= 2500'}}">
+          <Canvas Width="1024" Height="1024">
+            <Path Fill="Green"><Path.Data><PathGeometry Figures="M517.12 53.248q95.232 0 179.2 36.352t145.92 98.304 98.304 145.92 36.352 179.2-36.352 179.2-98.304 145.92-145.92 98.304-179.2 36.352-179.2-36.352-145.92-98.304-98.304-145.92-36.352-179.2 36.352-179.2 98.304-145.92 145.92-98.304 179.2-36.352zM663.552 261.12q-15.36 0-28.16 6.656t-23.04 18.432-15.872 27.648-5.632 33.28q0 35.84 21.504 61.44t51.2 25.6 51.2-25.6 21.504-61.44q0-17.408-5.632-33.28t-15.872-27.648-23.04-18.432-28.16-6.656zM373.76 261.12q-29.696 0-50.688 25.088t-20.992 60.928 20.992 61.44 50.688 25.6 50.176-25.6 20.48-61.44-20.48-60.928-50.176-25.088zM520.192 602.112q-51.2 0-97.28 9.728t-82.944 27.648-62.464 41.472-35.84 51.2q-1.024 1.024-1.024 2.048-1.024 3.072-1.024 8.704t2.56 11.776 7.168 11.264 12.8 6.144q25.6-27.648 62.464-50.176 31.744-19.456 79.36-35.328t114.176-15.872q67.584 0 116.736 15.872t81.92 35.328q37.888 22.528 63.488 50.176 17.408-5.12 19.968-18.944t0.512-18.944-3.072-7.168-1.024-3.072q-26.624-55.296-100.352-88.576t-176.128-33.28z" /></Path.Data></Path>
+          </Canvas>
+        </Viewbox>
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="CustomizedLabel" x:DataType="p:LabelContext">
+      <p:SvgText X="{Binding X}" Y="{Binding Y}" Dy="-4" Fill="#8884d8" FontSize="10" TextAnchor="Middle" Content="{Binding Text}" />
+    </DataTemplate>
+    <DataTemplate x:Key="CustomizedAxisTick" x:DataType="p:TickContext">
+      <Canvas Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}">
+        <p:SvgText Dy="16" TextAnchor="End" Fill="{DynamicResource SampleTickSoftBrush}" Angle="-35" Content="{Binding Value}" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="RenderActiveShape" x:DataType="p:SectorContext">
+      <Canvas>
+        <p:SvgText X="{Binding Cx}" Y="{Binding Cy}" Dy="8" TextAnchor="Middle" Fill="{Binding Fill}" Content="{Binding Name}" />
+        <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" InnerRadius="{Binding InnerRadius}" OuterRadius="{Binding OuterRadius}" StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}" Fill="{Binding Fill}" />
+        <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}"
+                  InnerRadius="{Binding Converter={p:Calc 'OuterRadius + 6'}}" OuterRadius="{Binding Converter={p:Calc 'OuterRadius + 10'}}" Fill="{Binding Fill}" />
+        <Path Stroke="{Binding Fill}" StrokeThickness="1">
+          <Path.Data>
+            <PathGeometry>
+              <PathFigure IsClosed="False" IsFilled="False" StartPoint="{Binding Converter={p:Calc 'OuterX + 10*Cos, OuterY + 10*Sin'}}">
+                <LineSegment Point="{Binding Converter={p:Calc 'OuterX + 30*Cos, OuterY + 30*Sin'}}" />
+                <LineSegment Point="{Binding Converter={p:Calc 'OuterX + 30*Cos + 22*Side, OuterY + 30*Sin'}}" />
+              </PathFigure>
+            </PathGeometry>
+          </Path.Data>
+        </Path>
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'OuterX + 30*Cos + 22*Side - 2'}}" Canvas.Top="{Binding Converter={p:Calc 'OuterY + 30*Sin - 2'}}" Width="4" Height="4" Fill="{Binding Fill}" />
+        <p:SvgText X="{Binding Converter={p:Calc 'OuterX + 30*Cos + 34*Side'}}" Y="{Binding Converter={p:Calc 'OuterY + 30*Sin'}}" TextAnchor="{Binding TextAnchor}" Fill="{DynamicResource SampleInkSoftBrush}" Value="{Binding Value}" Format="PV {0}" />
+        <p:SvgText X="{Binding Converter={p:Calc 'OuterX + 30*Cos + 34*Side'}}" Y="{Binding Converter={p:Calc 'OuterY + 30*Sin'}}" Dy="18" TextAnchor="{Binding TextAnchor}" Fill="#999" Value="{Binding Percent}" Format="(Rate {0:0.00%})" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="DiamondShape" x:DataType="p:ScatterShapeContext">
+      <Path Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-8,-8,0,0" Width="16" Height="16" Stretch="Fill" Fill="{Binding Fill}">
+        <Path.Data>
+          <PathGeometry Figures="M0.5,0 L1,0.5 L0.5,1 L0,0.5 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="ActiveDiamond" x:DataType="p:ScatterShapeContext">
+      <Path Fill="{Binding Fill}" Stroke="{DynamicResource SampleInkSoftBrush}" StrokeThickness="2">
+        <Path.Data>
+          <PathGeometry>
+            <PathFigure IsClosed="True" StartPoint="{Binding Converter={p:Calc 'Cx, Cy - 12'}}">
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx + 12, Cy'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx, Cy + 12'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx - 12, Cy'}}" />
+            </PathFigure>
+          </PathGeometry>
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="RoundedTrapezoid" x:DataType="p:TrapezoidContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding UpperWidth}" Height="{Binding Height}" RadiusX="4" RadiusY="4" Fill="{Binding Fill}" />
+    </DataTemplate>
+    <DataTemplate x:Key="RadarPolygon" x:DataType="p:RadarShapeContext">
+      <Polygon Points="{Binding Points}" Fill="{Binding Fill}" p:ShapePaint.FillOpacity="0.3" Stroke="{Binding Fill}" StrokeThickness="1" />
+    </DataTemplate>
+    <DataTemplate x:Key="RoundedSector" x:DataType="p:SectorContext">
+      <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" InnerRadius="{Binding Converter={p:Calc 'InnerRadius + 1'}}" OuterRadius="{Binding Converter={p:Calc 'OuterRadius - 1'}}"
+                StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}" CornerRadius="4" Fill="{Binding Fill}" />
+    </DataTemplate>
+    <DataTemplate x:Key="CustomizedContent" x:DataType="p:TreemapNodeContext">
+      <Canvas>
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth &lt; 1'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="{Binding Fill}" Stroke="{DynamicResource SampleRingBrush}" StrokeThickness="20000000000" p:ShapePaint.StrokeOpacity="10000000000" />
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth == 1'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="{Binding Fill}" Stroke="{DynamicResource SampleRingBrush}" StrokeThickness="2" />
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth == 2'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="#00FFFFFF" Stroke="{DynamicResource SampleRingBrush}" StrokeThickness="1" p:ShapePaint.StrokeOpacity="0.5" />
+        <Rectangle IsVisible="{Binding Converter={p:Calc 'Depth &gt; 2'}}" Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}"
+                   Fill="#00FFFFFF" Stroke="{DynamicResource SampleRingBrush}" StrokeThickness="0.6666666666666666" p:ShapePaint.StrokeOpacity="0.333333" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'Depth == 1'}}" X="{Binding Converter={p:Calc 'X + Width/2'}}" Y="{Binding Converter={p:Calc 'Y + Height/2 + 7'}}"
+                   TextAnchor="Middle" Fill="White" FontSize="14" Content="{Binding Name}" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'Depth == 1'}}" X="{Binding Converter={p:Calc 'X + 4'}}" Y="{Binding Converter={p:Calc 'Y + 18'}}"
+                   Fill="White" FontSize="16" FillOpacity="0.9" Value="{Binding Converter={p:Calc 'Index + 1'}}" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="DemoSankeyNode" x:DataType="p:SankeyNodeContext">
+      <p:Layer>
+        <p:Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Fill="#5192ca" FillOpacity="1" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &gt; ContainerWidth'}}" TextAnchor="End" X="{Binding Converter={p:Calc 'X - 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2'}}"
+                   FontSize="14" Stroke="{DynamicResource SampleInkSoftBrush}" Content="{Binding Name}" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &lt;= ContainerWidth'}}" TextAnchor="Start" X="{Binding Converter={p:Calc 'X + Width + 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2'}}"
+                   FontSize="14" Stroke="{DynamicResource SampleInkSoftBrush}" Content="{Binding Name}" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &gt; ContainerWidth'}}" TextAnchor="End" X="{Binding Converter={p:Calc 'X - 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2 + 13'}}"
+                   FontSize="12" Stroke="{DynamicResource SampleInkSoftBrush}" StrokeOpacity="0.5" Value="{Binding Value}" Format="{}{0}k" />
+        <p:SvgText IsVisible="{Binding Converter={p:Calc 'X + Width + 6 &lt;= ContainerWidth'}}" TextAnchor="Start" X="{Binding Converter={p:Calc 'X + Width + 6'}}" Y="{Binding Converter={p:Calc 'Y + Height/2 + 13'}}"
+                   FontSize="12" Stroke="{DynamicResource SampleInkSoftBrush}" StrokeOpacity="0.5" Value="{Binding Value}" Format="{}{0}k" />
+      </p:Layer>
+    </DataTemplate>
+    <DataTemplate x:Key="BandLink" x:DataType="p:SankeyLinkContext">
+      <Path Fill="#77c878" p:ShapePaint.FillOpacity="0.3">
+        <Path.Data>
+          <PathGeometry>
+            <PathFigure IsClosed="True" StartPoint="{Binding Converter={p:Calc 'SourceX, SourceY - LinkWidth/2'}}">
+              <BezierSegment Point1="{Binding Converter={p:Calc 'SourceControlX, SourceY - LinkWidth/2'}}" Point2="{Binding Converter={p:Calc 'TargetControlX, TargetY - LinkWidth/2'}}" Point3="{Binding Converter={p:Calc 'TargetX, TargetY - LinkWidth/2'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'TargetX, TargetY + LinkWidth/2'}}" />
+              <BezierSegment Point1="{Binding Converter={p:Calc 'TargetControlX, TargetY + LinkWidth/2'}}" Point2="{Binding Converter={p:Calc 'SourceControlX, SourceY + LinkWidth/2'}}" Point3="{Binding Converter={p:Calc 'SourceX, SourceY + LinkWidth/2'}}" />
+            </PathFigure>
+          </PathGeometry>
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="CustomTraveller" x:DataType="p:TravellerContext">
+      <Canvas>
+        <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" RadiusX="3" RadiusY="3" Fill="{Binding Stroke}" />
+        <Line StartPoint="{Binding Converter={p:Calc 'X + Width/2, Y + 8'}}" EndPoint="{Binding Converter={p:Calc 'X + Width/2, Y + Height - 8'}}" Stroke="{DynamicResource SampleRingBrush}" StrokeThickness="2" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="ArrowLine" x:DataType="p:ReferenceLineContext">
+      <Canvas>
+        <Line StartPoint="{Binding Converter={p:Calc 'X1, Y1'}}" EndPoint="{Binding Converter={p:Calc 'X2, Y2'}}" Stroke="{Binding Stroke}" StrokeThickness="2" />
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'X2 - 4'}}" Canvas.Top="{Binding Converter={p:Calc 'Y2 - 4'}}" Width="8" Height="8" Fill="{Binding Stroke}" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="HatchedArea" x:DataType="p:ReferenceAreaContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Fill="#ffc658" p:ShapePaint.FillOpacity="0.3"
+                 Stroke="#ffc658" StrokeThickness="1" StrokeDashArray="4,2" />
+    </DataTemplate>
+    <DataTemplate x:Key="StarDot" x:DataType="p:ReferenceDotContext">
+      <Path Canvas.Left="{Binding Cx}" Canvas.Top="{Binding Cy}" Margin="-10,-10,0,0" Width="20" Height="20" Stretch="Fill" Fill="{Binding Fill}">
+        <Path.Data>
+          <PathGeometry Figures="M10,0 L13,7 L20,10 L13,13 L10,20 L7,13 L0,10 L7,7 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="PlotFrame" x:DataType="p:LayoutContext">
+      <Canvas>
+        <Rectangle Canvas.Left="{Binding Left}" Canvas.Top="{Binding Top}" Width="{Binding PlotWidth}" Height="{Binding PlotHeight}" Stroke="#8884d8" StrokeThickness="1" StrokeDashArray="2,2" />
+        <p:SvgText X="{Binding Converter={p:Calc 'Width/2'}}" Y="{Binding Converter={p:Calc 'Height/2'}}" TextAnchor="Middle" Fill="{DynamicResource SampleWatermarkBrush}" FontSize="24" Content="Draft" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="CustomTooltip" x:DataType="p:TooltipContentContext">
+      <StackPanel p:SvgElement.Class="custom-tooltip">
+        <TextBlock p:SvgElement.Class="label" Margin="0,14,0,0">
+          <TextBlock.Text>
+            <MultiBinding StringFormat="{}{0} : {1}">
+              <Binding Path="Label" />
+              <Binding Path="Value" />
+            </MultiBinding>
+          </TextBlock.Text>
+        </TextBlock>
+        <TextBlock p:SvgElement.Class="intro" Margin="0,14,0,0" Text="{Binding Payload[Intro]}" />
+        <TextBlock p:SvgElement.Class="desc" Margin="0,14,0,14" Text="Anything you want can be displayed here." />
+      </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="RenderLegend" x:DataType="p:LegendEntryContext">
+      <TextBlock Text="{Binding Value}" />
+    </DataTemplate>
+    <DataTemplate x:Key="OutlinedTriangleBar" x:DataType="p:BarShapeContext">
+      <Path Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding Width}" Height="{Binding Height}" Stretch="Fill" Fill="{Binding Fill}" Stroke="{DynamicResource SampleInkSoftBrush}" StrokeThickness="2">
+        <Path.Data>
+          <PathGeometry Figures="M0,1 C0.3333333333333333,1 0.5,0.3333333333333333 0.5,0 C0.5,0.3333333333333333 0.6666666666666666,1 1,1 Z" />
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="NestIndexContent" x:DataType="p:NestIndexContext">
+      <TextBlock FontWeight="Bold">
+        <TextBlock.Text>
+          <MultiBinding StringFormat="{}{0}: {1}">
+            <Binding Path="Index" />
+            <Binding Path="Name" />
+          </MultiBinding>
+        </TextBlock.Text>
+      </TextBlock>
+    </DataTemplate>
+    <DataTemplate x:Key="OutlinedTrapezoid" x:DataType="p:TrapezoidContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding UpperWidth}" Height="{Binding Height}" RadiusX="4" RadiusY="4" Fill="{Binding Fill}" Stroke="{DynamicResource SampleInkSoftBrush}" StrokeThickness="2" />
+    </DataTemplate>
+    <DataTemplate x:Key="GrownSector" x:DataType="p:SectorContext">
+      <p:Sector Cx="{Binding Cx}" Cy="{Binding Cy}" InnerRadius="{Binding Converter={p:Calc 'InnerRadius - 2'}}" OuterRadius="{Binding Converter={p:Calc 'OuterRadius + 2'}}"
+                StartAngle="{Binding StartAngle}" EndAngle="{Binding EndAngle}" Fill="{Binding Fill}" Stroke="{DynamicResource SampleInkSoftBrush}" />
+    </DataTemplate>
+    <DataTemplate x:Key="CustomizedBarLabel" x:DataType="p:LabelContext">
+      <Canvas>
+        <Ellipse Canvas.Left="{Binding Converter={p:Calc 'X + Width/2 - 10'}}" Canvas.Top="{Binding Converter={p:Calc 'Y - 20'}}" Width="20" Height="20" Fill="#8884d8" />
+        <p:SvgText X="{Binding Converter={p:Calc 'X + Width/2'}}" Y="{Binding Converter={p:Calc 'Y - 10'}}" Dy="4" Fill="White" FontSize="10" TextAnchor="Middle" Value="{Binding Converter={p:Calc 'Value/1000'}}" />
+      </Canvas>
+    </DataTemplate>
+  </UserControl.Resources>
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Custom content" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Recharts' shape, dot, label, tick, content, node, link, traveller and component props as XAML data templates, each bound to a typed context (a bar's corners, a dot's center, a sector's angles). The desktop lays the template out with Avalonia for each item; the web compiles it once to SVG with holes the server fills per item, so the page needs no script. A template the web cannot write (a converter with logic, a StreamGeometry) is refused with its reason and falls back to what Avalonia lays out when the page renders." />
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Change data moves the data on to its next version. A templated shape is written again where its template puts it for the new data, its holes filled with the new numbers; Recharts animates a custom shape through the props it is given, which a compiled template does not declare, so the web moves it at once while the engine's shapes around it morph." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+      <WrapPanel ItemSpacing="32" LineSpacing="32">
+        <p:BarChart Data="{Binding Motion.Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#8884d8" ShapeTemplate="{StaticResource TriangleBar}" ActiveShapeTemplate="{StaticResource OutlinedTriangleBar}" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#82ca9d" />
+        </p:BarChart>
+        <p:LineChart Data="{Binding Motion.Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" DotTemplate="{StaticResource CustomizedDot}" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </WrapPanel>
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomShapeBarChart" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Bar DataKey="Uv" Fill="#8884d8" Label="Top" ShapeTemplate="{StaticResource TriangleBar}">
+            <p:Cell Fill="#1f77b4" />
+            <p:Cell Fill="#ff7f0e" />
+            <p:Cell Fill="#2ca02c" />
+            <p:Cell Fill="#d62728" />
+            <p:Cell Fill="#9467bd" />
+            <p:Cell Fill="#8c564b" />
+            <p:Cell Fill="#e377c2" />
+          </p:Bar>
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Bar label content" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,25,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d">
+            <p:LabelList ContentTemplate="{StaticResource CustomizedBarLabel}" />
+          </p:Bar>
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomActiveBarChart (with the keyboard)" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5" AccessibilityLayer="True">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#8884d8" ShapeTemplate="{StaticResource TriangleBar}" ActiveShapeTemplate="{StaticResource OutlinedTriangleBar}" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomizedDotLineChart" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" DotTemplate="{StaticResource CustomizedDot}" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomizedLabelLineChart" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,10">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" Height="60" TickTemplate="{StaticResource CustomizedAxisTick}" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8">
+            <p:LabelList ContentTemplate="{StaticResource CustomizedLabel}" />
+          </p:Line>
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomContentOfTooltip" />
+        <p:BarChart Data="{Binding IntroPages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip ContentTemplate="{StaticResource CustomTooltip}" />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" BarSize="20" Fill="#8884d8" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Legend content" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Legend ContentTemplate="{StaticResource RenderLegend}" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Reference shapes" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:ReferenceArea X1="Page B" X2="Page D" ShapeTemplate="{StaticResource HatchedArea}" />
+          <p:ReferenceLine Y="4000" Stroke="red" ShapeTemplate="{StaticResource ArrowLine}" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:ReferenceDot X="Page C" Y="9800" R="10" Fill="#8884d8" Stroke="none" ShapeTemplate="{StaticResource StarDot}" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Customized" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Customized Template="{StaticResource PlotFrame}" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Brush traveller" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Brush DataKey="Name" Height="30" Stroke="#8884d8" TravellerWidth="10" TravellerTemplate="{StaticResource CustomTraveller}" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomShapeScatterChart" />
+        <p:ScatterChart Data="{Binding SchoolA}" MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Scatter Name="A school" Fill="#8884d8" ShapeTemplate="{StaticResource DiamondShape}" ActiveShapeTemplate="{StaticResource ActiveDiamond}" />
+        </p:ScatterChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomActiveShapePieChart" />
+        <p:PieChart Data="{Binding Groups}" MaxWidth="400" Aspect="1">
+          <p:Pie DataKey="Value" NameKey="Name" ActiveIndex="0" InnerRadius="60" OuterRadius="80" Fill="#8884d8" ActiveShapeTemplate="{StaticResource RenderActiveShape}" />
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomShapeRadialBarChart" />
+        <p:RadialBarChart Data="{Binding Ages}" MaxWidth="500" Aspect="1.6666666666666667" InnerRadius="10%" OuterRadius="80%" BarSize="10">
+          <p:Tooltip />
+          <p:RadialBar DataKey="Uv" Name="uv" NameKey="Name" FillKey="Fill" Background="{DynamicResource SampleWash}" ShapeTemplate="{StaticResource RoundedSector}" ActiveShapeTemplate="{StaticResource GrownSector}" />
+        </p:RadialBarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomShapeRadarChart" />
+        <p:RadarChart Data="{Binding Subjects}" MaxWidth="500" Aspect="1.25" OuterRadius="80%">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Name" />
+          <p:PolarRadiusAxis />
+          <p:Radar Name="Mike" DataKey="A" Stroke="#8884d8" Fill="#8884d8" ShapeTemplate="{StaticResource RadarPolygon}" />
+        </p:RadarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="700" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomShapeFunnelChart" />
+        <p:FunnelChart Data="{Binding Stages}" MaxWidth="700" Aspect="1.6203703703703705" Padding="5,5,30,5">
+          <p:Tooltip />
+          <p:Funnel DataKey="Value" NameKey="Name" FillKey="Fill" ShapeTemplate="{StaticResource RoundedTrapezoid}" ActiveShapeTemplate="{StaticResource OutlinedTrapezoid}">
+            <p:LabelList DataKey="Name" Position="Right" Fill="{DynamicResource SampleInk}" />
+          </p:Funnel>
+        </p:FunnelChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomContentTreemap" />
+        <p:Treemap Data="{Binding Flare}" MaxWidth="400" Aspect="2" DataKey="Size" Stroke="{DynamicResource SampleRing}" Fill="#8884d8"
+                   ColorPanel="#8889DD,#9597E4,#8DC77B,#A5D297,#E2CF45,#F8C12D" ContentTemplate="{StaticResource CustomizedContent}" />
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Nest index content" />
+        <p:Treemap Data="{Binding FlareTop}" MaxWidth="500" Aspect="1.3333333333333333" DataKey="Size" NameKey="Name" AspectRatio="1.3333333333333333" Type="nest" NestIndexTemplate="{StaticResource NestIndexContent}">
+          <p:Tooltip />
+        </p:Treemap>
+      </StackPanel>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="CustomNodeSankey" />
+      <p:Sankey Data="{Binding Visits}" MaxWidth="960" Aspect="1.92" Padding="20,20,150,20" NodePadding="50" LinkStroke="#77c878" NodeTemplate="{StaticResource DemoSankeyNode}" />
+    </StackPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="CustomLinkSankey" />
+      <p:Sankey Data="{Binding Visits}" MaxWidth="960" Aspect="1.92" Padding="20,20,150,20" NodePadding="50" LinkTemplate="{StaticResource BandLink}" />
+    </StackPanel>
+  </StackPanel>
+</UserControl>

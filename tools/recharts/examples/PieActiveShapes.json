@@ -1,0 +1,82 @@
+{
+ "name": "PieActiveShapes",
+ "kind": "PieChart",
+ "width": 400,
+ "height": 400,
+ "margin": null,
+ "source": "Recharts' RadialBar and Pie API (recharts.org/en-US/api): activeIndex as an array, an activeShape and an inactiveShape object, and blendStroke",
+ "data": [],
+ "children": [
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "name": "Group A",
+      "value": 400
+     },
+     {
+      "name": "Group B",
+      "value": 300
+     },
+     {
+      "name": "Group C",
+      "value": 300
+     },
+     {
+      "name": "Group D",
+      "value": 200
+     }
+    ],
+    "dataKey": "value",
+    "cx": "50%",
+    "cy": "50%",
+    "innerRadius": 50,
+    "outerRadius": 80,
+    "activeIndex": [
+     0,
+     2
+    ],
+    "activeShape": {
+     "outerRadius": 90,
+     "fill": "#ff7300"
+    },
+    "inactiveShape": {
+     "fillOpacity": 0.5
+    },
+    "blendStroke": true,
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#0088FE"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#00C49F"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#FFBB28"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#FF8042"
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

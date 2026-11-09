@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models"
+             x:Class="Gallery.Views.Live.LiveRadialBar" x:DataType="m:LiveFamilies">
+  <Border Classes="card">
+    <StackPanel Spacing="8">
+      <TextBlock Classes="title" Text="Radial bar chart" />
+      <TextBlock Classes="muted small" Text="{Binding Updated}" />
+      <p:RadialBarChart Data="{Binding Ages}" MaxWidth="500" Aspect="1.6666666666666667" InnerRadius="10%" OuterRadius="80%" BarSize="10">
+        <p:RadialBar DataKey="Uv" Name="uv" NameKey="Name" FillKey="Fill" Background="{DynamicResource SampleWash}" />
+        <p:Legend IconSize="10" Layout="vertical" VerticalAlign="middle" Align="right" />
+        <p:Tooltip />
+      </p:RadialBarChart>
+    </StackPanel>
+  </Border>
+</UserControl>

@@ -1,0 +1,20 @@
+{
+  "name": "pictor-recharts-reference",
+  "private": true,
+  "type": "module",
+  "description": "Renders the official Recharts examples on the server as the reference Pictor is compared against, and measures Recharts.",
+  "scripts": {
+    "render": "node render.mjs",
+    "screenshot": "node screenshot.mjs",
+    "bench": "node bench.mjs",
+    "bench:client": "node bench-client.mjs"
+  },
+  "dependencies": {
+    "esbuild": "0.28.2",
+    "playwright-core": "1.64.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "recharts": "2.15.4",
+    "recharts3": "npm:recharts@3.8.0"
+  }
+}

@@ -1,0 +1,166 @@
+{
+ "name": "ZAxisOptionsChart",
+ "kind": "ScatterChart",
+ "width": 500,
+ "height": 400,
+ "margin": {
+  "top": 20,
+  "right": 20,
+  "bottom": 20,
+  "left": 20
+ },
+ "source": "ThreeDimScatterChart's schools with a z-axis of scale sqrt over the domain [0, 1000], and a category z-axis of sizes S, M and L",
+ "data": null,
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "x",
+    "name": "stature",
+    "unit": "cm"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "y",
+    "name": "weight",
+    "unit": "kg"
+   },
+   "children": []
+  },
+  {
+   "type": "ZAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "z",
+    "range": [
+     60,
+     400
+    ],
+    "scale": "sqrt",
+    "domain": [
+     0,
+     1000
+    ],
+    "name": "score"
+   },
+   "children": []
+  },
+  {
+   "type": "ZAxis",
+   "props": {
+    "zAxisId": "size",
+    "type": "category",
+    "dataKey": "size",
+    "range": [
+     50,
+     500
+    ],
+    "name": "size"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {
+    "cursor": {
+     "strokeDasharray": "3 3"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Scatter",
+   "props": {
+    "name": "A school",
+    "data": [
+     {
+      "x": 100,
+      "y": 200,
+      "z": 200
+     },
+     {
+      "x": 120,
+      "y": 100,
+      "z": 260
+     },
+     {
+      "x": 170,
+      "y": 300,
+      "z": 400
+     },
+     {
+      "x": 140,
+      "y": 250,
+      "z": 280
+     },
+     {
+      "x": 150,
+      "y": 400,
+      "z": 500
+     },
+     {
+      "x": 110,
+      "y": 280,
+      "z": 200
+     }
+    ],
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Scatter",
+   "props": {
+    "name": "B school",
+    "data": [
+     {
+      "x": 200,
+      "y": 260,
+      "size": "S"
+     },
+     {
+      "x": 240,
+      "y": 290,
+      "size": "L"
+     },
+     {
+      "x": 190,
+      "y": 290,
+      "size": "M"
+     },
+     {
+      "x": 198,
+      "y": 250,
+      "size": "S"
+     },
+     {
+      "x": 180,
+      "y": 280,
+      "size": "L"
+     },
+     {
+      "x": 210,
+      "y": 220,
+      "size": "M"
+     }
+    ],
+    "zAxisId": "size",
+    "fill": "#82ca9d",
+    "shape": "square",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

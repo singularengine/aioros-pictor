@@ -1,0 +1,41 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:SunburstData" a:Page.Title="Sunbursts">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Sunbursts" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/compare/sunburst"><TextBlock Text="Every reference example beside Recharts' render" /></Border>
+      <Border Classes="textlink" a:Web.Href="/families"><TextBlock Text="Every interaction" /></Border>
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live update" /></Border>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Replay plays the enter animation of every chart on this page again (Recharts' animation when a chart mounts). Change data moves the data on to its next version: Recharts does not animate this chart, so it is drawn at once with the new data." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+        <p:SunburstChart Data="{Binding Motion.Tree}" MaxWidth="500" Aspect="1" FillKey="Fill">
+          <p:Tooltip />
+        </p:SunburstChart>
+    </StackPanel>
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Recharts' SunburstChart: the data is the root node, each ring a level of its children, each arc a node's value over the root's. Hover a sector of the first for its tooltip: Recharts' default tooltip reads the node's value member whatever the data key, so the budget, sized by its Size, has none." />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="SimpleSunburst" />
+        <p:SunburstChart Data="{Binding Tree}" MaxWidth="500" Aspect="1" FillKey="Fill">
+          <p:Tooltip />
+        </p:SunburstChart>
+      </StackPanel>
+      <StackPanel MaxWidth="600" Spacing="8">
+        <TextBlock Classes="h2" Text="CustomSunburst" />
+        <p:SunburstChart Data="{Binding Budget}" MaxWidth="600" Aspect="1.5" DataKey="Size" FillKey="Fill" Cx="250" Cy="220" InnerRadius="30" OuterRadius="170"
+                         RingPadding="6" SectorPadding="1" StartAngle="30" EndAngle="300" Fill="#8884d8" Stroke="{DynamicResource SampleWash}"
+                         TextFontSize="11px" TextFontWeight="normal" TextFill="#fff" TextStroke="none" TextFontFamily="Inter"
+                         TextPaintOrder="{x:Null}" TextPointerEvents="{x:Null}" />
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

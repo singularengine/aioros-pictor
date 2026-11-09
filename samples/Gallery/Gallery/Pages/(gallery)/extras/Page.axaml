@@ -1,0 +1,138 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:ExtrasData" a:Page.Title="Extras">
+  <UserControl.Resources>
+    <DataTemplate x:Key="ActiveDiamond" x:DataType="p:ScatterShapeContext">
+      <Path Fill="{Binding Fill}" Stroke="{DynamicResource SampleInkSoftBrush}" StrokeThickness="2">
+        <Path.Data>
+          <PathGeometry>
+            <PathFigure IsClosed="True" StartPoint="{Binding Converter={p:Calc 'Cx, Cy - 12'}}">
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx + 12, Cy'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx, Cy + 12'}}" />
+              <LineSegment Point="{Binding Converter={p:Calc 'Cx - 12, Cy'}}" />
+            </PathFigure>
+          </PathGeometry>
+        </Path.Data>
+      </Path>
+    </DataTemplate>
+    <DataTemplate x:Key="SectorValueLabel" x:DataType="p:LabelContext">
+      <p:SvgText X="{Binding X}" Y="{Binding Y}" Dy="4" Fill="White" FontSize="12" TextAnchor="Middle" Content="{Binding Text}" />
+    </DataTemplate>
+    <DataTemplate x:Key="FunnelBadge" x:DataType="p:LabelContext">
+      <Canvas>
+        <Rectangle Canvas.Left="{Binding Converter={p:Calc 'X + Width + Offset'}}" Canvas.Top="{Binding Converter={p:Calc 'Y + Height/2 - 10'}}" Width="60" Height="20" RadiusX="10" RadiusY="10" Fill="White" p:ShapePaint.FillOpacity="0.8" Stroke="#cccccc" StrokeThickness="1" />
+        <p:SvgText X="{Binding Converter={p:Calc 'X + Width + Offset + 30'}}" Y="{Binding Converter={p:Calc 'Y + Height/2'}}" Dy="4" Fill="#333" FontSize="12" TextAnchor="Middle" Content="{Binding Text}" />
+      </Canvas>
+    </DataTemplate>
+    <DataTemplate x:Key="OutlinedTrapezoid" x:DataType="p:TrapezoidContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding UpperWidth}" Height="{Binding Height}" RadiusX="4" RadiusY="4" Fill="{Binding Fill}" Stroke="{DynamicResource SampleInkSoftBrush}" StrokeThickness="2" />
+    </DataTemplate>
+    <DataTemplate x:Key="RoundedTrapezoid" x:DataType="p:TrapezoidContext">
+      <Rectangle Canvas.Left="{Binding X}" Canvas.Top="{Binding Y}" Width="{Binding UpperWidth}" Height="{Binding Height}" RadiusX="4" RadiusY="4" Fill="{Binding Fill}" />
+    </DataTemplate>
+    <DataTemplate x:Key="AngleTick" x:DataType="p:TickContext">
+      <p:SvgText X="{Binding Converter={p:Calc 'X + (X - Cx)/10'}}" Y="{Binding Converter={p:Calc 'Y + (Y - Cy)/10'}}" Dy="4" TextAnchor="Middle" Fill="#8884d8" FontSize="12" Content="{Binding Value}" />
+    </DataTemplate>
+    <DataTemplate x:Key="AxisTooltip" x:DataType="p:TooltipContentContext">
+      <Border Background="{DynamicResource SampleTipBgBrush}" BorderBrush="{DynamicResource SampleTipBorderBrush}" BorderThickness="1" Padding="10">
+        <StackPanel>
+          <TextBlock FontWeight="Bold" Text="{Binding Label}" />
+          <TextBlock>
+            <TextBlock.Text>
+              <MultiBinding StringFormat="{}{0} : {1}">
+                <Binding Path="Name" />
+                <Binding Path="Value" />
+              </MultiBinding>
+            </TextBlock.Text>
+          </TextBlock>
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+    <DataTemplate x:Key="FramedLegend" x:DataType="p:LegendContext">
+      <Border Padding="0,4" BorderBrush="{DynamicResource SampleTipBorderBrush}" BorderThickness="1">
+        <StackPanel>
+          <TextBlock FontWeight="Bold" Text="{Binding Count, StringFormat='{}{0} series'}" />
+          <p:LegendItems />
+        </StackPanel>
+      </Border>
+    </DataTemplate>
+  </UserControl.Resources>
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Extras" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="The last of Recharts' chart features: ticks that run a command, the brush's slide moving the whole window, items drawn active by activeIndex, templates for polar label lists, polar ticks, polar tooltips and a whole legend." />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Click a tick" />
+        <TextBlock Text="{Binding Tick}" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" ClickCommand="{Binding PickTick}" />
+          <p:YAxis ClickCommand="{Binding PickTick}" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Drag the brush's slide" />
+        <p:BarChart Data="{Binding Samples}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Brush DataKey="Name" Height="30" Stroke="#8884d8" StartIndex="{Binding BrushStart}" EndIndex="{Binding BrushEnd}" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="activeIndex on bars and a scatter" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" ActiveIndex="2" ActiveFill="pink" ActiveStroke="blue" Background="{DynamicResource SampleWash}" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" ActiveIndex="4" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="700" Spacing="8">
+        <TextBlock Classes="h2" Text="A funnel's active item under its labels" />
+        <p:FunnelChart Data="{Binding Stages}" MaxWidth="700" Aspect="1.6203703703703705" Padding="0,30,100,0">
+          <p:Tooltip />
+          <p:Funnel DataKey="Value" NameKey="Name" FillKey="Fill" ShapeTemplate="{StaticResource RoundedTrapezoid}" ActiveShapeTemplate="{StaticResource OutlinedTrapezoid}">
+            <p:LabelList Position="Center" Fill="#fff" Stroke="none" DataKey="Name" />
+            <p:LabelList Position="Right" Offset="25" ContentTemplate="{StaticResource FunnelBadge}" />
+          </p:Funnel>
+        </p:FunnelChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="A pie's label list template" />
+        <p:PieChart Data="{Binding Groups}" MaxWidth="400" Aspect="1">
+          <p:Pie DataKey="Value" NameKey="Name" InnerRadius="60" OuterRadius="100" Fill="#8884d8" ActiveIndex="1">
+            <p:LabelList ContentTemplate="{StaticResource SectorValueLabel}" />
+          </p:Pie>
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Polar ticks and a polar tooltip" />
+        <p:RadarChart Data="{Binding Subjects}" MaxWidth="500" Aspect="1.25" OuterRadius="70%">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Name" TickTemplate="{StaticResource AngleTick}" />
+          <p:PolarRadiusAxis Angle="30" Domain="0,150" />
+          <p:Tooltip ContentTemplate="{StaticResource AxisTooltip}" />
+          <p:Radar Name="Mike" DataKey="A" Stroke="#8884d8" Fill="#8884d8" FillOpacity="0.6" />
+        </p:RadarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A template for the whole legend" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Legend Template="{StaticResource FramedLegend}" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

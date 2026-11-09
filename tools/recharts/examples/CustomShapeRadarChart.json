@@ -1,0 +1,84 @@
+{
+ "name": "CustomShapeRadarChart",
+ "kind": "RadarChart",
+ "width": 500,
+ "height": 400,
+ "margin": null,
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "outerRadius": "80%"
+ },
+ "source": "SimpleRadarChart with a radar's shape element (a polygon element filled at 0.3 and stroked)",
+ "data": [
+  {
+   "subject": "Math",
+   "A": 120,
+   "B": 110,
+   "fullMark": 150
+  },
+  {
+   "subject": "Chinese",
+   "A": 98,
+   "B": 130,
+   "fullMark": 150
+  },
+  {
+   "subject": "English",
+   "A": 86,
+   "B": 130,
+   "fullMark": 150
+  },
+  {
+   "subject": "Geography",
+   "A": 99,
+   "B": 100,
+   "fullMark": 150
+  },
+  {
+   "subject": "Physics",
+   "A": 85,
+   "B": 90,
+   "fullMark": 150
+  },
+  {
+   "subject": "History",
+   "A": 65,
+   "B": 85,
+   "fullMark": 150
+  }
+ ],
+ "children": [
+  {
+   "type": "PolarGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "PolarAngleAxis",
+   "props": {
+    "dataKey": "subject"
+   },
+   "children": []
+  },
+  {
+   "type": "PolarRadiusAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Mike",
+    "dataKey": "A",
+    "stroke": "#8884d8",
+    "fill": "#8884d8",
+    "shape": {
+     "$content": "RadarPolygon"
+    },
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

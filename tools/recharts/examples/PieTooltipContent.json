@@ -1,0 +1,60 @@
+{
+ "name": "PieTooltipContent",
+ "kind": "PieChart",
+ "width": 400,
+ "height": 400,
+ "margin": null,
+ "source": "a pie's item tooltip with a content element (the sector's name and value)",
+ "data": [],
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {
+    "content": {
+     "$content": "ItemTooltip"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "name": "Group A",
+      "value": 400
+     },
+     {
+      "name": "Group B",
+      "value": 300
+     },
+     {
+      "name": "Group C",
+      "value": 300
+     },
+     {
+      "name": "Group D",
+      "value": 200
+     }
+    ],
+    "dataKey": "value",
+    "cx": "50%",
+    "cy": "50%",
+    "outerRadius": 120,
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     230,
+     130
+    ]
+   }
+  ]
+ ]
+}

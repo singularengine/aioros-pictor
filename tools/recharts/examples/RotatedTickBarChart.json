@@ -1,0 +1,113 @@
+{
+ "name": "RotatedTickBarChart",
+ "kind": "BarChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "a bar chart of twelve months with rotated tick labels (XAxis angle and textAnchor), the usual shape of Recharts' rotated-label recipes",
+ "data": [
+  {
+   "name": "January",
+   "uv": 4000,
+   "pv": 2400
+  },
+  {
+   "name": "February",
+   "uv": 3000,
+   "pv": 1398
+  },
+  {
+   "name": "March",
+   "uv": 2000,
+   "pv": 9800
+  },
+  {
+   "name": "April",
+   "uv": 2780,
+   "pv": 3908
+  },
+  {
+   "name": "May",
+   "uv": 1890,
+   "pv": 4800
+  },
+  {
+   "name": "June",
+   "uv": 2390,
+   "pv": 3800
+  },
+  {
+   "name": "July",
+   "uv": 3490,
+   "pv": 4300
+  },
+  {
+   "name": "August",
+   "uv": 3200,
+   "pv": 2900
+  },
+  {
+   "name": "September",
+   "uv": 2600,
+   "pv": 5100
+  },
+  {
+   "name": "October",
+   "uv": 3900,
+   "pv": 4100
+  },
+  {
+   "name": "November",
+   "uv": 2100,
+   "pv": 3600
+  },
+  {
+   "name": "December",
+   "uv": 4400,
+   "pv": 5300
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name",
+    "angle": -45,
+    "textAnchor": "end",
+    "height": 70
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "dataKey": "pv",
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

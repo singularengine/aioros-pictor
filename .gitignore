@@ -1,0 +1,21 @@
+bin/
+obj/
+*.user
+.vs/
+.idea/
+TestResults/
+artifacts/
+BenchmarkDotNet.Artifacts/
+.claude/
+.dotnet
+node_modules/
+scratch/
+samples/Demo/out/*.json
+samples/Demo/out/pictor/
+samples/Demo/out/compare.json
+samples/Demo/out/desktop/
+samples/Demo/out/animated/
+samples/Demo/out/desktop.json
+
+# the preview build
+deploy/out/

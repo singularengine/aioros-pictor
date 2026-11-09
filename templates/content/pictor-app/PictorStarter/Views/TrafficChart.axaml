@@ -1,0 +1,69 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:an="using:PictorStarter.Analytics" xmlns:a="https://aioros.dev"
+             x:Class="PictorStarter.Views.TrafficChart" x:DataType="an:TrafficView">
+  <StackPanel Spacing="16">
+    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16" RowSpacing="8" a:Web.StackBelow="640">
+      <StackPanel Spacing="2">
+        <TextBlock Classes="title" Text="{Binding Data.Title}" />
+        <TextBlock Classes="muted small" Text="{Binding Data.Caption}" />
+      </StackPanel>
+      <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <Border Classes="swatch" Background="{DynamicResource Series1}" />
+          <TextBlock Classes="muted small" Text="{Binding Data.PrimaryName}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="6">
+          <StackPanel Orientation="Horizontal" Spacing="2" VerticalAlignment="Center">
+            <Border Width="5" Height="2" Background="{DynamicResource CompareBrush}" />
+            <Border Width="5" Height="2" Background="{DynamicResource CompareBrush}" />
+          </StackPanel>
+          <TextBlock Classes="muted small" Text="{Binding Data.SecondaryName}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Spacing="6" IsVisible="{Binding Data.Live}">
+          <Border Classes="livedot" VerticalAlignment="Center" />
+          <TextBlock Classes="muted small figure" Text="{Binding Data.Updated}" />
+        </StackPanel>
+      </StackPanel>
+    </Grid>
+    <Panel IsVisible="{Binding Data.Live}">
+      <p:ComposedChart IsVisible="{a:OnPlatform Default=False, Web=True}" Data="{Binding Data.Points}" Height="340" Padding="0,8,8,0" ResponsiveWidths="320 640">
+        <p:CartesianGrid Vertical="False" />
+        <p:XAxis DataKey="Label" TickLine="False" AxisLine="False" MinTickGap="48" TickMargin="8" />
+        <p:YAxis TickLine="False" AxisLine="False" TickCount="4" Width="44" TickFormat="{Binding Data.AxisFormat}" />
+        <p:Tooltip />
+        <p:Brush DataKey="Label" Height="26" StartIndex="{Binding WindowStart}" EndIndex="{Binding WindowEnd}" Stroke="{DynamicResource PictorPalette1}" />
+        <p:Area Type="Monotone" DataKey="Primary" Name="{Binding Data.PrimaryName}" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource AreaFade}" FillOpacity="1" StrokeWidth="2" Dot="False" AnimationDuration="600" />
+        <p:Line Type="Monotone" DataKey="Secondary" Name="{Binding Data.SecondaryName}" Stroke="{DynamicResource CompareStroke}" StrokeWidth="1.5" StrokeDashArray="4 4" Dot="False" ActiveDot="0" AnimationDuration="600" />
+      </p:ComposedChart>
+      <p:ComposedChart IsVisible="{a:OnPlatform Default=True, Web=False}" Data="{Binding Data.Points}" Height="340" Padding="0,8,8,0" ResponsiveWidths="320 640">
+        <p:CartesianGrid Vertical="False" />
+        <p:XAxis DataKey="Label" TickLine="False" AxisLine="False" MinTickGap="48" TickMargin="8" />
+        <p:YAxis TickLine="False" AxisLine="False" TickCount="4" Width="44" TickFormat="{Binding Data.AxisFormat}" />
+        <p:Tooltip />
+        <p:Brush DataKey="Label" Height="26" StartIndex="{Binding BrushStart}" EndIndex="{Binding BrushEnd}" Stroke="{DynamicResource PictorPalette1}" />
+        <p:Area Type="Monotone" DataKey="Primary" Name="{Binding Data.PrimaryName}" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource AreaFade}" FillOpacity="1" StrokeWidth="2" Dot="False" AnimationDuration="600" />
+        <p:Line Type="Monotone" DataKey="Secondary" Name="{Binding Data.SecondaryName}" Stroke="{DynamicResource CompareStroke}" StrokeWidth="1.5" StrokeDashArray="4 4" Dot="False" ActiveDot="0" AnimationDuration="600" />
+      </p:ComposedChart>
+    </Panel>
+    <Panel IsVisible="{Binding Data.History}">
+      <p:ComposedChart IsVisible="{a:OnPlatform Default=False, Web=True}" Data="{Binding Data.Points}" Height="340" Padding="0,8,8,0" ResponsiveWidths="320 640">
+        <p:CartesianGrid Vertical="False" />
+        <p:XAxis DataKey="Label" TickLine="False" AxisLine="False" MinTickGap="48" TickMargin="8" />
+        <p:YAxis TickLine="False" AxisLine="False" TickCount="4" Width="44" TickFormat="{Binding Data.AxisFormat}" />
+        <p:Tooltip />
+        <p:Brush DataKey="Label" Height="26" StartIndex="{Binding WindowStart}" EndIndex="{Binding WindowEnd}" Stroke="{DynamicResource PictorPalette1}" />
+        <p:Area Type="Monotone" DataKey="Primary" Name="{Binding Data.PrimaryName}" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource AreaFade}" FillOpacity="1" StrokeWidth="2" Dot="False" IsAnimationActive="False" />
+        <p:Line Type="Monotone" DataKey="Secondary" Name="{Binding Data.SecondaryName}" Stroke="{DynamicResource CompareStroke}" StrokeWidth="1.5" StrokeDashArray="4 4" Dot="False" ActiveDot="0" IsAnimationActive="False" />
+      </p:ComposedChart>
+      <p:ComposedChart IsVisible="{a:OnPlatform Default=True, Web=False}" Data="{Binding Data.Points}" Height="340" Padding="0,8,8,0" ResponsiveWidths="320 640">
+        <p:CartesianGrid Vertical="False" />
+        <p:XAxis DataKey="Label" TickLine="False" AxisLine="False" MinTickGap="48" TickMargin="8" />
+        <p:YAxis TickLine="False" AxisLine="False" TickCount="4" Width="44" TickFormat="{Binding Data.AxisFormat}" />
+        <p:Tooltip />
+        <p:Brush DataKey="Label" Height="26" StartIndex="{Binding BrushStart}" EndIndex="{Binding BrushEnd}" Stroke="{DynamicResource PictorPalette1}" />
+        <p:Area Type="Monotone" DataKey="Primary" Name="{Binding Data.PrimaryName}" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource AreaFade}" FillOpacity="1" StrokeWidth="2" Dot="False" IsAnimationActive="False" />
+        <p:Line Type="Monotone" DataKey="Secondary" Name="{Binding Data.SecondaryName}" Stroke="{DynamicResource CompareStroke}" StrokeWidth="1.5" StrokeDashArray="4 4" Dot="False" ActiveDot="0" IsAnimationActive="False" />
+      </p:ComposedChart>
+    </Panel>
+  </StackPanel>
+</UserControl>

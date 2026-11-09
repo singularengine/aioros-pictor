@@ -1,0 +1,69 @@
+{
+ "name": "CustomActiveFunnelChart",
+ "kind": "FunnelChart",
+ "width": 700,
+ "height": 432,
+ "margin": {
+  "right": 30
+ },
+ "source": "Funnel's shape and activeShape props (a rounded rectangle per item, outlined while hovered)",
+ "data": null,
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Funnel",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "value": 100,
+      "name": "Impression",
+      "fill": "#8884d8"
+     },
+     {
+      "value": 80,
+      "name": "Click",
+      "fill": "#83a6ed"
+     },
+     {
+      "value": 50,
+      "name": "Visit",
+      "fill": "#8dd1e1"
+     },
+     {
+      "value": 40,
+      "name": "Consult",
+      "fill": "#82ca9d"
+     },
+     {
+      "value": 26,
+      "name": "Order",
+      "fill": "#a4de6c"
+     }
+    ],
+    "shape": {
+     "$content": "RoundedTrapezoid"
+    },
+    "activeShape": {
+     "$content": "OutlinedTrapezoid"
+    },
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     330,
+     130
+    ]
+   }
+  ]
+ ]
+}

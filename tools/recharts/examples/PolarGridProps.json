@@ -1,0 +1,83 @@
+{
+ "name": "PolarGridProps",
+ "kind": "RadarChart",
+ "width": 500,
+ "height": 400,
+ "margin": null,
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "outerRadius": "80%"
+ },
+ "source": "Recharts' API (recharts.org/en-US/api): PolarGrid as circles with dashes, a width and a fill, without radial lines; and a second radar chart grid's own angles and radii are in PolarGridAngles",
+ "data": [
+  {
+   "subject": "Math",
+   "A": 120,
+   "B": 110
+  },
+  {
+   "subject": "Chinese",
+   "A": 98,
+   "B": null
+  },
+  {
+   "subject": "English",
+   "A": 86,
+   "B": 130
+  },
+  {
+   "subject": "Geography",
+   "A": 99,
+   "B": 100
+  },
+  {
+   "subject": "Physics",
+   "A": 85,
+   "B": 90
+  },
+  {
+   "subject": "History",
+   "A": 65,
+   "B": 85
+  }
+ ],
+ "children": [
+  {
+   "type": "PolarGrid",
+   "props": {
+    "gridType": "circle",
+    "radialLines": false,
+    "strokeDasharray": "3 3",
+    "stroke": "#999",
+    "strokeWidth": 2,
+    "fill": "#eee"
+   },
+   "children": []
+  },
+  {
+   "type": "PolarAngleAxis",
+   "props": {
+    "dataKey": "subject"
+   },
+   "children": []
+  },
+  {
+   "type": "PolarRadiusAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Mike",
+    "dataKey": "A",
+    "stroke": "#8884d8",
+    "fill": "#8884d8",
+    "fillOpacity": 0.6,
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

@@ -1,0 +1,166 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:TipsData" a:Page.Title="Tooltips, legends, labels and shapes">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Tooltips, legends, labels and shapes" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Recharts' tooltip, legend, label list and shape props, written without script on the web (hover and click states in CSS) and drawn natively on the desktop." />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A tooltip per bar (Shared=False)" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip Shared="False" />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" ActiveFill="pink" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Formats, sorter, styles and gaps" />
+        <p:LineChart Data="{Binding Gaps}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip Separator=" = " Format="{}{0} kg" LabelFormat="Page: {0}" ItemSorter="Value" ContentStyle="background-color:#f8f8f8;border:2px solid #8884d8;border-radius:6px;padding:6px" LabelStyle="font-weight:bold" ItemStyle="color:#333" CursorStroke="red" CursorStrokeWidth="2" CursorStrokeDashArray="5 5" />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" DotRadius="5" DotFill="#8884d8" DotStroke="{DynamicResource SampleRing}" DotStrokeWidth="2" ActiveDot="8" ActiveDotFill="red" ActiveDotStroke="{DynamicResource SampleInk}" ActiveDotStrokeWidth="1" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="The box follows the pointer" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Following the pointer, reversed" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip ReverseDirectionX="True" ReverseDirectionY="True" />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Click to show, Page D shown first" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip Trigger="Click" DefaultIndex="3" CursorFill="{DynamicResource SampleGridSoft}" CursorStroke="#8884d8" />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Every legend icon (a payload of its own)" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Legend>
+            <p:LegendPayload Value="line" Type="Line" Color="#8884d8" />
+            <p:LegendPayload Value="plainline" Type="PlainLine" Color="#82ca9d" />
+            <p:LegendPayload Value="square" Type="Square" Color="#ffc658" />
+            <p:LegendPayload Value="rect" Type="Rect" Color="#ff7300" />
+            <p:LegendPayload Value="circle" Type="Circle" Color="#0088FE" />
+            <p:LegendPayload Value="cross" Type="Cross" Color="#00C49F" />
+            <p:LegendPayload Value="diamond" Type="Diamond" Color="#FFBB28" />
+            <p:LegendPayload Value="star" Type="Star" Color="#FF8042" />
+            <p:LegendPayload Value="triangle" Type="Triangle" Color="red" />
+            <p:LegendPayload Value="wye" Type="Wye" Color="purple" />
+          </p:Legend>
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Legend format, inactive color, top right" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" HorizontalFill="{DynamicResource SampleStripes}" FillOpacity="0.6" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend Format="{}{0} (k)" Align="right" VerticalAlign="top" InactiveColor="#999" Toggles="True" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" Hide="True" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" LegendType="Diamond" />
+          <p:Line Type="Monotone" DataKey="Amt" Name="amt" Stroke="#ffc658" LegendType="Star" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Several label lists, wrapped labels" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8">
+            <p:LabelList Position="Top" Fill="{DynamicResource SampleInkSoft}" />
+            <p:LabelList DataKey="Name" Position="InsideBottom" Angle="-90" Offset="30" Fill="#fff" FontSize="10" FontWeight="bold" />
+            <p:Cell Fill="#8884d8" StrokeWidth="2" Stroke="{DynamicResource SampleInkSoft}" />
+            <p:Cell Fill="#83a6ed" FillOpacity="0.6" />
+          </p:Bar>
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="Label lists on a pie, active and inactive sectors" />
+        <p:PieChart MaxWidth="400" Aspect="1">
+          <p:Pie Data="{x:Static m:PolarData.Groups}" DataKey="Value" NameKey="Name" InnerRadius="60" OuterRadius="100" Fill="#8884d8" ActiveIndexes="0 2" BlendStroke="True">
+            <p:Pie.ActiveShape>
+              <p:ActiveShape OuterRadius="110" Fill="#ff7300" />
+            </p:Pie.ActiveShape>
+            <p:Pie.InactiveShape>
+              <p:ActiveShape FillOpacity="0.5" />
+            </p:Pie.InactiveShape>
+            <p:LabelList DataKey="Name" Position="Outside" Offset="12" Stroke="none" />
+            <p:LabelList Position="Inside" Fill="#fff" Stroke="none" />
+          </p:Pie>
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Stacked radial bars with rounded caps" />
+        <p:RadialBarChart Data="{Binding Bands}" MaxWidth="500" Aspect="1.6666666666666667" InnerRadius="10%" OuterRadius="90%" BarSize="12">
+          <p:RadialBar DataKey="Uv" Name="uv" NameKey="Name" StackId="a" Fill="#8884d8" CornerRadius="6" ForceCornerRadius="True">
+            <p:LabelList Position="InsideEnd" Fill="#fff" FontSize="10" />
+          </p:RadialBar>
+          <p:RadialBar DataKey="Amt" Name="amt" NameKey="Name" StackId="a" Fill="#82ca9d" />
+          <p:Tooltip Shared="False" />
+          <p:Legend Toggles="True" />
+        </p:RadialBarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Radar dots, connected gaps, a circle grid" />
+        <p:RadarChart Data="{Binding Scores}" MaxWidth="500" Aspect="1.25" OuterRadius="80%">
+          <p:PolarGrid GridType="circle" RadialLines="False" StrokeDashArray="3 3" Stroke="#999" />
+          <p:PolarAngleAxis DataKey="Subject" />
+          <p:PolarRadiusAxis />
+          <p:Tooltip />
+          <p:Radar DataKey="A" Name="Mike" Stroke="#8884d8" Fill="#8884d8" FillOpacity="0.6" DotRadius="4" DotFill="red" ActiveDot="6" ActiveDotFill="{DynamicResource SampleInk}" Label="Top" />
+          <p:Radar DataKey="B" Name="Lily" Stroke="#82ca9d" Fill="#82ca9d" FillOpacity="0.6" ConnectNulls="True" Dot="True" />
+        </p:RadarChart>
+      </StackPanel>
+      <StackPanel Spacing="8" Width="500">
+        <TextBlock Classes="h2" Text="An aspect ratio of 2 (no height)" />
+        <p:LineChart Data="{Binding Pages}" Aspect="2" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+        </p:LineChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

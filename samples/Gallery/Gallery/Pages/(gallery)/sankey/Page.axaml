@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:Hierarchies" a:Page.Title="Sankey diagrams">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Sankey diagrams" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/compare/sankey"><TextBlock Text="Every reference example beside Recharts' render" /></Border>
+      <Border Classes="textlink" a:Web.Href="/families"><TextBlock Text="Every interaction" /></Border>
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live update" /></Border>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Replay plays the enter animation of every chart on this page again (Recharts' animation when a chart mounts). Change data moves the data on to its next version: Recharts does not animate this chart, so it is drawn at once with the new data." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+        <p:Sankey Data="{Binding Motion.Visits}" MaxWidth="800" Aspect="2" Padding="0,0,0,30" NodePadding="50" LinkStroke="#77c878">
+          <p:Tooltip />
+        </p:Sankey>
+    </StackPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="SimpleSankey" />
+      <p:Sankey Data="{Binding Visits}" MaxWidth="800" Aspect="2" Padding="0,0,0,30" NodePadding="50" LinkStroke="#77c878">
+        <p:Tooltip />
+      </p:Sankey>
+    </StackPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="BudgetSankey" />
+      <p:Sankey Data="{Binding Budget}" MaxWidth="700" Aspect="1.75" NodeWidth="15" NodePadding="20" LinkCurvature="0.6" Sort="False" NodeFill="#8884d8">
+        <p:Tooltip />
+      </p:Sankey>
+    </StackPanel>
+  </StackPanel>
+</UserControl>

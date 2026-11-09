@@ -1,0 +1,273 @@
+{
+ "name": "CurveTypesChart",
+ "kind": "ComposedChart",
+ "width": 500,
+ "height": 400,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "every curve type Recharts names, on lines and on two areas",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100
+  }
+ ],
+ "children": [
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "basis",
+    "dataKey": "pv",
+    "name": "basis",
+    "stroke": "#8884d8",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "basisClosed",
+    "dataKey": "uv",
+    "name": "basisClosed",
+    "stroke": "#82ca9d",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "basisOpen",
+    "dataKey": "pv",
+    "name": "basisOpen",
+    "stroke": "#ffc658",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "bumpX",
+    "dataKey": "uv",
+    "name": "bumpX",
+    "stroke": "#ff7300",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "bumpY",
+    "dataKey": "pv",
+    "name": "bumpY",
+    "stroke": "#0088FE",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "bump",
+    "dataKey": "uv",
+    "name": "bump",
+    "stroke": "#00C49F",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "linear",
+    "dataKey": "pv",
+    "name": "linear",
+    "stroke": "#FF8042",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "linearClosed",
+    "dataKey": "uv",
+    "name": "linearClosed",
+    "stroke": "#8884d8",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "natural",
+    "dataKey": "pv",
+    "name": "natural",
+    "stroke": "#82ca9d",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotoneX",
+    "dataKey": "uv",
+    "name": "monotoneX",
+    "stroke": "#ffc658",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotoneY",
+    "dataKey": "pv",
+    "name": "monotoneY",
+    "stroke": "#ff7300",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotone",
+    "dataKey": "uv",
+    "name": "monotone",
+    "stroke": "#0088FE",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "step",
+    "dataKey": "pv",
+    "name": "step",
+    "stroke": "#00C49F",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "stepBefore",
+    "dataKey": "uv",
+    "name": "stepBefore",
+    "stroke": "#FF8042",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "stepAfter",
+    "dataKey": "pv",
+    "name": "stepAfter",
+    "stroke": "#8884d8",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Area",
+   "props": {
+    "type": "bumpX",
+    "dataKey": "amt",
+    "stroke": "#8884d8",
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Area",
+   "props": {
+    "type": "natural",
+    "dataKey": "uv",
+    "stroke": "#82ca9d",
+    "fill": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

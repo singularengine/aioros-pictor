@@ -1,0 +1,124 @@
+{
+ "name": "GapsCentricRadialChart",
+ "kind": "RadialBarChart",
+ "layout": "centric",
+ "width": 500,
+ "height": 400,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "chartProps": {
+  "innerRadius": "10%",
+  "outerRadius": "80%"
+ },
+ "source": "Pictor's gaps catalog: a radial bar chart with layout centric: categories around the angle axis, values along the radius axis, two radial bars side by side",
+ "data": [
+  {
+   "age": "18-24",
+   "uv": 31.47,
+   "pv": 2400,
+   "small": 12,
+   "fill": "#8884d8"
+  },
+  {
+   "age": "25-29",
+   "uv": 26.69,
+   "pv": 4567,
+   "small": 20,
+   "fill": "#83a6ed"
+  },
+  {
+   "age": "30-34",
+   "uv": 15.69,
+   "pv": 1398,
+   "small": 9,
+   "fill": "#8dd1e1"
+  },
+  {
+   "age": "35-39",
+   "uv": 8.22,
+   "pv": 9800,
+   "small": 14,
+   "fill": "#82ca9d"
+  },
+  {
+   "age": "40-49",
+   "uv": 0.4,
+   "pv": 3908,
+   "small": 6,
+   "fill": "#a4de6c"
+  },
+  {
+   "age": "50+",
+   "uv": 2.63,
+   "pv": 4800,
+   "small": 3,
+   "fill": "#d0ed57"
+  }
+ ],
+ "children": [
+  {
+   "type": "PolarGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "PolarAngleAxis",
+   "props": {
+    "dataKey": "age"
+   },
+   "children": []
+  },
+  {
+   "type": "PolarRadiusAxis",
+   "props": {
+    "angle": 90
+   },
+   "children": []
+  },
+  {
+   "type": "RadialBar",
+   "props": {
+    "dataKey": "uv",
+    "name": "share",
+    "fill": "#8884d8",
+    "minPointSize": 4,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "RadialBar",
+   "props": {
+    "dataKey": "small",
+    "name": "small",
+    "fill": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     287.3,
+     135.4
+    ]
+   }
+  ]
+ ]
+}

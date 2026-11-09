@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>Recharts' cartesian charts as a layout and a painter over Aioros.Graphs, with the SVG writer Aioros calls at request time; no Avalonia.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Aioros.Graphs" />
+    <PackageReference Include="Aioros.Graphs.Svg" />
+    <PackageReference Include="Aioros.Runtime" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Aioros.Pictor.Avalonia" />
+    <InternalsVisibleTo Include="Aioros.Pictor.Tests" />
+    <InternalsVisibleTo Include="Aioros.Pictor.Benchmarks" />
+  </ItemGroup>
+</Project>

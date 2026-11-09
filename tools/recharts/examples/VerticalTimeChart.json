@@ -1,0 +1,89 @@
+{
+ "name": "VerticalTimeChart",
+ "kind": "LineChart",
+ "layout": "vertical",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 40,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "a vertical chart whose numeric XAxis has scale utc: its ticks are d3's dates, written with Date.toString (in UTC)",
+ "data": [
+  {
+   "time": 1704067200000,
+   "value": 30
+  },
+  {
+   "time": 1704758400000,
+   "value": 42
+  },
+  {
+   "time": 1705708800000,
+   "value": 28
+  },
+  {
+   "time": 1706918400000,
+   "value": 51
+  },
+  {
+   "time": 1708128000000,
+   "value": 47
+  },
+  {
+   "time": 1709337600000,
+   "value": 63
+  },
+  {
+   "time": 1711756800000,
+   "value": 58
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "time",
+    "type": "number",
+    "scale": "utc",
+    "domain": [
+     "dataMin",
+     "dataMax"
+    ],
+    "tickCount": 3
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "dataKey": "value",
+    "type": "category"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "time",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

@@ -1,0 +1,181 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:RangeData" a:Page.Title="Clipping, references and ranges">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Clipping, references and ranges" />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="DataOverflowComposedChart" />
+        <p:ComposedChart Data="{Binding Overflow}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis Domain="0,5000" AllowDataOverflow="True" />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Area Type="Monotone" DataKey="Amt" Name="amt" Fill="#8884d8" Stroke="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" BarSize="20" Fill="#413ea0" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#ff7300">
+            <p:ErrorBar DataKey="PvError" Width="4" Stroke="green" />
+          </p:Line>
+          <p:Line Type="Monotone" DataKey="Amt" Name="amt" Stroke="#82ca9d" ClipDot="False" />
+          <p:Scatter DataKey="Pv" Name="pv" Fill="red" />
+        </p:ComposedChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ReferenceOverflowLineChart" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,50,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:ReferenceLine Y="11000" Stroke="red" IfOverflow="visible" Label="visible" />
+          <p:ReferenceLine Y="10500" Stroke="green" IfOverflow="hidden" Label="hidden" />
+          <p:ReferenceLine Y="12000" Stroke="{DynamicResource SampleInk}" Label="discarded" />
+          <p:ReferenceArea Y1="8000" Y2="13000" Fill="red" FillOpacity="0.2" IfOverflow="hidden" Label="clipped" />
+          <p:ReferenceArea X1="Page E" X2="Page G" Y1="9000" Y2="12000" Fill="blue" FillOpacity="0.2" IfOverflow="visible" Radius="10" />
+          <p:ReferenceDot X="Page B" Y="10100" R="8" Fill="purple" Stroke="none" IfOverflow="hidden" />
+          <p:ReferenceDot X="Page D" Y="10600" R="8" Fill="orange" Stroke="none" IfOverflow="visible" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ReferenceSegmentBarChart" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" Orientation="Top" />
+          <p:YAxis Orientation="Right" />
+          <p:Tooltip />
+          <p:ReferenceLine X="Page B" Position="Start" Stroke="red" Label="start" />
+          <p:ReferenceLine X="Page D" Position="End" Stroke="green" />
+          <p:ReferenceLine Y="12000" Stroke="blue" IfOverflow="extendDomain" Label="goal" />
+          <p:ReferenceLine X1="Page A" Y1="1000" X2="Page F" Y2="9000" Stroke="purple" StrokeWidth="2" Label="trend" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="RangeAreaChart" />
+        <p:AreaChart Data="{Binding Temperatures}" MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:XAxis DataKey="Day" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area DataKey="Temperature" Name="temperature" Stroke="#8884d8" Fill="#8884d8" Dot="True" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="RangeBarChart" />
+        <p:BarChart Data="{Binding Temperatures}" MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:XAxis DataKey="Day" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Temperature" Name="temperature" Fill="#8884d8" Label="Top" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="AreaBaseValueChart" />
+        <p:AreaChart Data="{Binding PositiveAndNegative}" MaxWidth="500" Aspect="1.25" Padding="0,10,30,0" BaseValue="dataMin">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area DataKey="Uv" Name="uv" BaseValue="dataMax" Stroke="#8884d8" Fill="#8884d8" />
+          <p:Area DataKey="Pv" Name="pv" BaseValue="1000" Stroke="#82ca9d" Fill="#82ca9d" />
+          <p:Area DataKey="Amt" Name="amt" Stroke="#ffc658" Fill="#ffc658" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ErrorBarPairsChart" />
+        <p:ComposedChart Data="{Binding ErrorPairs}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8">
+            <p:ErrorBar DataKey="PvError" Width="4" StrokeWidth="2" Stroke="green" />
+          </p:Bar>
+          <p:Line DataKey="Uv" Name="uv" Stroke="#ff7300">
+            <p:ErrorBar DataKey="UvError" Width="6" Stroke="#ff7300" />
+          </p:Line>
+        </p:ComposedChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="StackedErrorBarChart" />
+        <p:BarChart Data="{Binding ErrorPairs}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" StackId="a" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" StackId="a" Fill="#82ca9d">
+            <p:ErrorBar DataKey="UvError" Width="4" Stroke="red" />
+          </p:Bar>
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="400" Spacing="8">
+        <TextBlock Classes="h2" Text="FittingLineScatterChart" />
+        <p:ScatterChart MaxWidth="400" Aspect="1" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Legend />
+          <p:Scatter Name="A school" Data="{x:Static m:RangeData.SpreadPoints}" Fill="#8884d8" Line="True" LineType="Fitting" LineStroke="red" LineStrokeWidth="2" LineStrokeDashArray="5 5" />
+          <p:Scatter Name="B school" Data="{x:Static m:RangeData.TrendPoints}" Fill="#82ca9d" Line="True" LineStrokeWidth="3" LineJointType="MonotoneX" Shape="Diamond" />
+        </p:ScatterChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="RangeRadarChart" />
+        <p:RadarChart Data="{Binding Scores}" MaxWidth="500" Aspect="1.25" OuterRadius="80%">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Subject" />
+          <p:PolarRadiusAxis />
+          <p:Tooltip />
+          <p:Radar Name="Mike" DataKey="Range" Stroke="#8884d8" Fill="#8884d8" FillOpacity="0.6" Dot="True" />
+        </p:RadarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="BrushPanoramaChart" />
+        <p:LineChart Data="{Binding Days}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+          <p:Brush DataKey="Name" Height="40" Stroke="#8884d8" StartIndex="{Binding TextStart}" EndIndex="{Binding TextEnd}" AlwaysShowText="True" TickFormat="on {0}">
+            <p:AreaChart>
+              <p:Area Type="Monotone" DataKey="Pv" Stroke="#8884d8" Fill="#8884d8" />
+            </p:AreaChart>
+          </p:Brush>
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="BrushOptionsBarChart" />
+        <p:BarChart Data="{Binding Days}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Brush DataKey="Name" Height="30" TravellerWidth="12" Gap="5" Fill="{DynamicResource SampleWash}" Stroke="#82ca9d" X="120" Y="262" Width="300" StartIndex="{Binding OptionStart}" EndIndex="{Binding OptionEnd}" AlwaysShowText="True" Padding="10,5">
+            <p:LineChart>
+              <p:Line DataKey="Uv" Stroke="#413ea0" Dot="False" />
+            </p:LineChart>
+          </p:Brush>
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="800" Spacing="8">
+        <TextBlock Classes="h2" Text="SankeyOptionsChart" />
+        <p:Sankey Data="{Binding Visits}" MaxWidth="800" Aspect="2" Padding="10" NodePadding="30" NodeWidth="20" LinkCurvature="0.3" Iterations="4" Sort="False"
+                  NodeFill="#8884d8" NodeFillOpacity="1" NodeStroke="{DynamicResource SampleInkSoft}" NodeStrokeWidth="2" NodeStrokeOpacity="0.5" NodeStrokeDashArray="4 2"
+                  LinkStroke="#82ca9d" LinkStrokeOpacity="0.5" LinkStrokeDashArray="8 4" LinkFill="{DynamicResource SampleWash}">
+          <p:Tooltip />
+        </p:Sankey>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

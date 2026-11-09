@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Aioros contributors",
+  "classifications": [
+    "Web",
+    "Desktop",
+    "XAML",
+    "Charts",
+    "Dashboard"
+  ],
+  "identity": "Aioros.Pictor.App",
+  "name": "Aioros.Pictor app",
+  "description": "An Aioros app with Aioros.Pictor's charts: a live analytics dashboard (KPIs, traffic, conversion, devices and an event feed) pushed by the server, on the web and the desktop, with hot reload.",
+  "shortName": "pictor",
+  "sourceName": "PictorStarter",
+  "preferNameDirectory": true,
+  "primaryOutputs": [
+    {
+      "path": "PictorStarter.slnx"
+    },
+    {
+      "path": "PictorStarter/PictorStarter.csproj"
+    }
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "AiorosVersion": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "0.1.0-preview.1",
+      "replaces": "AIOROS_VERSION",
+      "description": "The Aioros package version."
+    },
+    "PictorVersion": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "0.1.0-preview.1",
+      "replaces": "PICTOR_VERSION",
+      "description": "The Aioros.Pictor package version."
+    }
+  },
+  "postActions": [
+    {
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "description": "Restore packages",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "continueOnError": true
+    }
+  ]
+}

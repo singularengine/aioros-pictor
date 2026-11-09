@@ -1,0 +1,65 @@
+{
+ "name": "GapsTooltipTypeFunnelChart",
+ "kind": "FunnelChart",
+ "width": 600,
+ "height": 400,
+ "margin": {
+  "right": 30
+ },
+ "source": "Pictor's gaps catalog: tooltipType none on a funnel: its tooltip lists nothing",
+ "data": null,
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Funnel",
+   "props": {
+    "dataKey": "value",
+    "nameKey": "stage",
+    "data": [
+     {
+      "stage": "Visits",
+      "value": 100,
+      "fill": "#8884d8"
+     },
+     {
+      "stage": "Clicks",
+      "value": 80,
+      "fill": "#83a6ed"
+     },
+     {
+      "stage": "Carts",
+      "value": 50,
+      "fill": "#8dd1e1"
+     },
+     {
+      "stage": "Orders",
+      "value": 40,
+      "fill": "#82ca9d"
+     },
+     {
+      "stage": "Repeats",
+      "value": 26,
+      "fill": "#a4de6c"
+     }
+    ],
+    "tooltipType": "none",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     280,
+     120
+    ]
+   }
+  ]
+ ]
+}

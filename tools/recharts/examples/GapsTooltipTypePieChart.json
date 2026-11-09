@@ -1,0 +1,94 @@
+{
+ "name": "GapsTooltipTypePieChart",
+ "kind": "PieChart",
+ "width": 400,
+ "height": 400,
+ "margin": null,
+ "source": "Pictor's gaps catalog: tooltipType none on a pie: its sectors' tooltips list nothing",
+ "data": [],
+ "children": [
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "label": "Desktop",
+      "amount": 400
+     },
+     {
+      "label": "Mobile",
+      "amount": 300
+     },
+     {
+      "label": "Tablet",
+      "amount": 300
+     },
+     {
+      "label": "Other",
+      "amount": 200
+     }
+    ],
+    "dataKey": "amount",
+    "nameKey": "label",
+    "outerRadius": 80,
+    "fill": "#8884d8",
+    "tooltipType": "none",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "label": "Desktop",
+      "amount": 400
+     },
+     {
+      "label": "Mobile",
+      "amount": 300
+     },
+     {
+      "label": "Tablet",
+      "amount": 300
+     },
+     {
+      "label": "Other",
+      "amount": 200
+     }
+    ],
+    "dataKey": "amount",
+    "nameKey": "label",
+    "innerRadius": 100,
+    "outerRadius": 130,
+    "fill": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     230,
+     160
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     310,
+     140
+    ]
+   }
+  ]
+ ]
+}

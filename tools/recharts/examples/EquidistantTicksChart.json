@@ -1,0 +1,233 @@
+{
+ "name": "EquidistantTicksChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "forty categories on an XAxis with interval equidistantPreserveStart, against preserveStartEnd on a second axis",
+ "data": [
+  {
+   "day": "Day 1",
+   "value": 300
+  },
+  {
+   "day": "Day 2",
+   "value": 437
+  },
+  {
+   "day": "Day 3",
+   "value": 574
+  },
+  {
+   "day": "Day 4",
+   "value": 711
+  },
+  {
+   "day": "Day 5",
+   "value": 348
+  },
+  {
+   "day": "Day 6",
+   "value": 485
+  },
+  {
+   "day": "Day 7",
+   "value": 622
+  },
+  {
+   "day": "Day 8",
+   "value": 759
+  },
+  {
+   "day": "Day 9",
+   "value": 396
+  },
+  {
+   "day": "Day 10",
+   "value": 533
+  },
+  {
+   "day": "Day 11",
+   "value": 670
+  },
+  {
+   "day": "Day 12",
+   "value": 307
+  },
+  {
+   "day": "Day 13",
+   "value": 444
+  },
+  {
+   "day": "Day 14",
+   "value": 581
+  },
+  {
+   "day": "Day 15",
+   "value": 718
+  },
+  {
+   "day": "Day 16",
+   "value": 355
+  },
+  {
+   "day": "Day 17",
+   "value": 492
+  },
+  {
+   "day": "Day 18",
+   "value": 629
+  },
+  {
+   "day": "Day 19",
+   "value": 766
+  },
+  {
+   "day": "Day 20",
+   "value": 403
+  },
+  {
+   "day": "Day 21",
+   "value": 540
+  },
+  {
+   "day": "Day 22",
+   "value": 677
+  },
+  {
+   "day": "Day 23",
+   "value": 314
+  },
+  {
+   "day": "Day 24",
+   "value": 451
+  },
+  {
+   "day": "Day 25",
+   "value": 588
+  },
+  {
+   "day": "Day 26",
+   "value": 725
+  },
+  {
+   "day": "Day 27",
+   "value": 362
+  },
+  {
+   "day": "Day 28",
+   "value": 499
+  },
+  {
+   "day": "Day 29",
+   "value": 636
+  },
+  {
+   "day": "Day 30",
+   "value": 773
+  },
+  {
+   "day": "Day 31",
+   "value": 410
+  },
+  {
+   "day": "Day 32",
+   "value": 547
+  },
+  {
+   "day": "Day 33",
+   "value": 684
+  },
+  {
+   "day": "Day 34",
+   "value": 321
+  },
+  {
+   "day": "Day 35",
+   "value": 458
+  },
+  {
+   "day": "Day 36",
+   "value": 595
+  },
+  {
+   "day": "Day 37",
+   "value": 732
+  },
+  {
+   "day": "Day 38",
+   "value": 369
+  },
+  {
+   "day": "Day 39",
+   "value": 506
+  },
+  {
+   "day": "Day 40",
+   "value": 643
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "day",
+    "interval": "equidistantPreserveStart"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "day",
+    "xAxisId": "top",
+    "orientation": "top",
+    "interval": "preserveStartEnd"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "value",
+    "stroke": "#8884d8",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "value",
+    "xAxisId": "top",
+    "stroke": "#82ca9d",
+    "dot": false,
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

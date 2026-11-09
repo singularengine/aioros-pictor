@@ -1,0 +1,132 @@
+{
+ "name": "ScatterChartWithErrorBars",
+ "kind": "ScatterChart",
+ "width": 500,
+ "height": 400,
+ "margin": {
+  "top": 20,
+  "right": 20,
+  "bottom": 20,
+  "left": 20
+ },
+ "source": "Recharts' ErrorBar API example (recharts.org/en-US/api/ErrorBar) on SimpleScatterChart's data with errorX and errorY added, and its ReferenceArea API example (x1 150 to 180, y1 200 to 300)",
+ "data": null,
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "x",
+    "name": "stature",
+    "unit": "cm"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "y",
+    "name": "weight",
+    "unit": "kg"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {
+    "cursor": {
+     "strokeDasharray": "3 3"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceArea",
+   "props": {
+    "x1": 150,
+    "x2": 180,
+    "y1": 200,
+    "y2": 300,
+    "stroke": "red",
+    "strokeOpacity": 0.3
+   },
+   "children": []
+  },
+  {
+   "type": "Scatter",
+   "props": {
+    "name": "A school",
+    "data": [
+     {
+      "x": 100,
+      "y": 200,
+      "errorX": 10,
+      "errorY": 30
+     },
+     {
+      "x": 120,
+      "y": 100,
+      "errorX": 5,
+      "errorY": 20
+     },
+     {
+      "x": 170,
+      "y": 300,
+      "errorX": 15,
+      "errorY": 50
+     },
+     {
+      "x": 140,
+      "y": 250,
+      "errorX": 8,
+      "errorY": 40
+     },
+     {
+      "x": 150,
+      "y": 400,
+      "errorX": 12,
+      "errorY": 60
+     },
+     {
+      "x": 110,
+      "y": 280,
+      "errorX": 6,
+      "errorY": 25
+     }
+    ],
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "ErrorBar",
+     "props": {
+      "dataKey": "errorY",
+      "width": 4,
+      "strokeWidth": 2,
+      "stroke": "green",
+      "direction": "y"
+     },
+     "children": []
+    },
+    {
+     "type": "ErrorBar",
+     "props": {
+      "dataKey": "errorX",
+      "width": 0,
+      "strokeWidth": 1,
+      "stroke": "blue",
+      "direction": "x"
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

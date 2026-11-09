@@ -1,0 +1,122 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:Datasets" a:Page.Title="Themes">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <Color x:Key="PictorGridStroke">#dbeafe</Color>
+          <Color x:Key="PictorTooltipBackground">#eff6ff</Color>
+          <Color x:Key="PictorTooltipBorder">#93c5fd</Color>
+          <Color x:Key="PictorCursorStroke">#93c5fd</Color>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <Color x:Key="PictorGridStroke">#1e3a8a</Color>
+          <Color x:Key="PictorTooltipBackground">#0b1733</Color>
+          <Color x:Key="PictorTooltipBorder">#1d4ed8</Color>
+          <Color x:Key="PictorCursorStroke">#1d4ed8</Color>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+      <ControlTheme x:Key="RoundedBar" TargetType="p:Bar">
+        <Setter Property="Radius" Value="6 6 0 0" />
+        <Setter Property="Fill" Value="{DynamicResource PictorPalette1}" />
+      </ControlTheme>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <UserControl.Styles>
+    <Style Selector="p|Line.accent">
+      <Setter Property="StrokeWidth" Value="3" />
+      <Setter Property="Stroke" Value="{DynamicResource PictorPalette2}" />
+    </Style>
+    <Style Selector="p|Line.muted">
+      <Setter Property="StrokeDashArray" Value="4 4" />
+    </Style>
+  </UserControl.Styles>
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Themes" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left"
+               Text="Charts take their default colors from PictorTheme, included once in App.axaml beside FluentTheme: Recharts' own colors in the light theme, Pictor's in the dark one. Switch the theme in the header: the chrome and every chart change at once, on the web and on the desktop. Each chart below shows one level where the theme's keys or Avalonia's styles customize it." />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel Spacing="8" MaxWidth="500">
+        <TextBlock Classes="h2" Text="The theme, as it is" />
+        <TextBlock TextWrapping="Wrap" Opacity="0.75" Text="No color set: the grid, the axes, the tooltip, the cursor and the series' default blue come from the theme." />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.9230769230769231" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel Spacing="8" MaxWidth="500">
+        <TextBlock Classes="h2" Text="An application key" />
+        <TextBlock TextWrapping="Wrap" Opacity="0.75" Text="App.axaml redefines PictorPalette1 and PictorPalette2 for each theme; the series bind to them with DynamicResource." />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.9230769230769231" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="{DynamicResource PictorPalette1}" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="{DynamicResource PictorPalette2}" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel Spacing="8" MaxWidth="500">
+        <TextBlock Classes="h2" Text="A page's keys" />
+        <TextBlock TextWrapping="Wrap" Opacity="0.75" Text="This page redefines the grid, the tooltip's box and the cursor in its resources, per theme: every chart on the page takes them, charts on other pages keep the theme's." />
+        <p:AreaChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.9230769230769231" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" Stroke="#8884d8" Fill="#8884d8" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel Spacing="8" MaxWidth="500">
+        <TextBlock Classes="h2" Text="A chart's keys" />
+        <TextBlock TextWrapping="Wrap" Opacity="0.75" Text="This chart redefines the axes' line, ticks and labels in its own resources; a color set on an element (the reference line) still wins over every key." />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.9230769230769231" Padding="20,5,30,5">
+          <p:LineChart.Resources>
+            <x:String x:Key="PictorAxisLine">#0d9488</x:String>
+            <x:String x:Key="PictorTickLine">#0d9488</x:String>
+            <x:String x:Key="PictorTickText">#0f766e</x:String>
+            <x:String x:Key="PictorReferenceLineStroke">#0d9488</x:String>
+          </p:LineChart.Resources>
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:ReferenceLine Y="4000" Stroke="red" Label="Target" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel Spacing="8" MaxWidth="500">
+        <TextBlock Classes="h2" Text="Styles with classes" />
+        <TextBlock TextWrapping="Wrap" Opacity="0.75" Text="Style Selector=&quot;p|Line.accent&quot; thickens and recolors the lines with the class; p|Line.muted dashes them." />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.9230769230769231" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Classes="accent" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Classes="muted" Stroke="#8884d8" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel Spacing="8" MaxWidth="500">
+        <TextBlock Classes="h2" Text="A control theme" />
+        <TextBlock TextWrapping="Wrap" Opacity="0.75" Text="ControlTheme x:Key=&quot;RoundedBar&quot; rounds a bar's top corners and fills it from the palette; the second bar keeps its own fill." />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.9230769230769231" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Theme="{StaticResource RoundedBar}" />
+          <p:Bar DataKey="Uv" Name="uv" Theme="{StaticResource RoundedBar}" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

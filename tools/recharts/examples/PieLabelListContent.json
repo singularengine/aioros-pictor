@@ -1,0 +1,52 @@
+{
+ "name": "PieLabelListContent",
+ "kind": "PieChart",
+ "width": 400,
+ "height": 400,
+ "margin": null,
+ "source": "a donut's LabelList with a content element (each value at its sector's middle, from the label's polar viewBox)",
+ "data": [],
+ "children": [
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "name": "Group A",
+      "value": 400
+     },
+     {
+      "name": "Group B",
+      "value": 300
+     },
+     {
+      "name": "Group C",
+      "value": 300
+     },
+     {
+      "name": "Group D",
+      "value": 200
+     }
+    ],
+    "dataKey": "value",
+    "cx": "50%",
+    "cy": "50%",
+    "innerRadius": 60,
+    "outerRadius": 100,
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "LabelList",
+     "props": {
+      "content": {
+       "$content": "SectorValueLabel"
+      }
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

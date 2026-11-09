@@ -1,0 +1,105 @@
+{
+ "name": "BudgetSankey",
+ "kind": "Sankey",
+ "width": 700,
+ "height": 400,
+ "margin": null,
+ "source": "A three-level flow written for Pictor (no Recharts example has one): wider nodes, curvature 0.6, no sorting",
+ "data": {
+  "nodes": [
+   {
+    "name": "Salary"
+   },
+   {
+    "name": "Bonus"
+   },
+   {
+    "name": "Income"
+   },
+   {
+    "name": "Rent"
+   },
+   {
+    "name": "Food"
+   },
+   {
+    "name": "Savings"
+   },
+   {
+    "name": "Groceries"
+   },
+   {
+    "name": "Restaurants"
+   },
+   {
+    "name": "Stocks"
+   },
+   {
+    "name": "Bonds"
+   }
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 2,
+    "value": 4200
+   },
+   {
+    "source": 1,
+    "target": 2,
+    "value": 800
+   },
+   {
+    "source": 2,
+    "target": 3,
+    "value": 1500
+   },
+   {
+    "source": 2,
+    "target": 4,
+    "value": 900
+   },
+   {
+    "source": 2,
+    "target": 5,
+    "value": 2600
+   },
+   {
+    "source": 4,
+    "target": 6,
+    "value": 550
+   },
+   {
+    "source": 4,
+    "target": 7,
+    "value": 350
+   },
+   {
+    "source": 5,
+    "target": 8,
+    "value": 1700
+   },
+   {
+    "source": 5,
+    "target": 9,
+    "value": 900
+   }
+  ]
+ },
+ "props": {
+  "nodeWidth": 15,
+  "nodePadding": 20,
+  "linkCurvature": 0.6,
+  "sort": false,
+  "node": {
+   "fill": "#8884d8"
+  }
+ },
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ]
+}

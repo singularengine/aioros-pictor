@@ -1,0 +1,138 @@
+{
+ "name": "MatrixClickScatterChart",
+ "kind": "ScatterChart",
+ "width": 500,
+ "height": 400,
+ "margin": {
+  "top": 20,
+  "right": 20,
+  "bottom": 20,
+  "left": 20
+ },
+ "source": "Pictor's fidelity matrix: SimpleScatterChart with the scatter's onClick, clicked on two symbols and beside them",
+ "data": null,
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "x",
+    "name": "stature",
+    "unit": "cm"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "y",
+    "name": "weight",
+    "unit": "kg"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {
+    "cursor": {
+     "strokeDasharray": "3 3"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Scatter",
+   "props": {
+    "name": "A school",
+    "data": [
+     {
+      "x": 100,
+      "y": 200,
+      "z": 200
+     },
+     {
+      "x": 120,
+      "y": 100,
+      "z": 260
+     },
+     {
+      "x": 170,
+      "y": 300,
+      "z": 400
+     },
+     {
+      "x": 140,
+      "y": 250,
+      "z": 280
+     },
+     {
+      "x": 150,
+      "y": 400,
+      "z": 500
+     },
+     {
+      "x": 110,
+      "y": 280,
+      "z": 200
+     }
+    ],
+    "fill": "#8884d8",
+    "isAnimationActive": false,
+    "onClick": {
+     "$click": "scatter"
+    }
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     302.222,
+     185
+    ]
+   },
+   {
+    "click": [
+     302.222,
+     185
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     457.778,
+     102.5
+    ]
+   },
+   {
+    "click": [
+     457.778,
+     102.5
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     450,
+     330
+    ]
+   },
+   {
+    "click": [
+     450,
+     330
+    ]
+   }
+  ]
+ ]
+}

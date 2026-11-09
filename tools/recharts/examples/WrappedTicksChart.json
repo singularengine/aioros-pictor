@@ -1,0 +1,74 @@
+{
+ "name": "WrappedTicksChart",
+ "kind": "BarChart",
+ "layout": "vertical",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "a vertical bar chart whose category names are wider than the YAxis (60 px): Recharts' Text wraps them at the axis' width",
+ "data": [
+  {
+   "region": "North America",
+   "sales": 4200
+  },
+  {
+   "region": "South America",
+   "sales": 1800
+  },
+  {
+   "region": "Western Europe",
+   "sales": 3900
+  },
+  {
+   "region": "Asia Pacific",
+   "sales": 5100
+  },
+  {
+   "region": "Africa",
+   "sales": 900
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "type": "number"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "dataKey": "region",
+    "type": "category"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "dataKey": "sales",
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

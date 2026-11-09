@@ -1,0 +1,196 @@
+{
+ "name": "ReferenceOverflowLineChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 20,
+  "right": 50,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "Recharts' ifOverflow API examples (recharts.org/en-US/api/ReferenceLine, ReferenceArea, ReferenceDot) on SimpleLineChart's data: lines, areas and dots beyond the y domain, visible (drawn where they fall, one area with rounded corners), hidden (clipped to the plot) and discarded (dropped)",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "ReferenceLine",
+   "props": {
+    "y": 11000,
+    "stroke": "red",
+    "ifOverflow": "visible",
+    "label": "visible"
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceLine",
+   "props": {
+    "y": 10500,
+    "stroke": "green",
+    "ifOverflow": "hidden",
+    "label": "hidden"
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceLine",
+   "props": {
+    "y": 12000,
+    "stroke": "black",
+    "label": "discarded"
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceArea",
+   "props": {
+    "y1": 8000,
+    "y2": 13000,
+    "fill": "red",
+    "fillOpacity": 0.2,
+    "ifOverflow": "hidden",
+    "label": "clipped"
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceArea",
+   "props": {
+    "x1": "Page E",
+    "x2": "Page G",
+    "y1": 9000,
+    "y2": 12000,
+    "fill": "blue",
+    "fillOpacity": 0.2,
+    "ifOverflow": "visible",
+    "radius": 10
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceArea",
+   "props": {
+    "y1": 9000,
+    "y2": 11000,
+    "fill": "black"
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceDot",
+   "props": {
+    "x": "Page B",
+    "y": 10100,
+    "r": 8,
+    "fill": "purple",
+    "stroke": "none",
+    "ifOverflow": "hidden"
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceDot",
+   "props": {
+    "x": "Page D",
+    "y": 10600,
+    "r": 8,
+    "fill": "orange",
+    "stroke": "none",
+    "ifOverflow": "visible"
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotone",
+    "dataKey": "pv",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotone",
+    "dataKey": "uv",
+    "stroke": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

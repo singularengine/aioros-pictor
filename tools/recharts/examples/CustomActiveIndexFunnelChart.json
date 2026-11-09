@@ -1,0 +1,81 @@
+{
+ "name": "CustomActiveIndexFunnelChart",
+ "kind": "FunnelChart",
+ "width": 700,
+ "height": 432,
+ "margin": {
+  "right": 30
+ },
+ "source": "CustomActiveFunnelChart with a static activeIndex: the outlined rectangle drawn in place of the fourth item, under its label",
+ "data": null,
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Funnel",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "value": 100,
+      "name": "Impression",
+      "fill": "#8884d8"
+     },
+     {
+      "value": 80,
+      "name": "Click",
+      "fill": "#83a6ed"
+     },
+     {
+      "value": 50,
+      "name": "Visit",
+      "fill": "#8dd1e1"
+     },
+     {
+      "value": 40,
+      "name": "Consult",
+      "fill": "#82ca9d"
+     },
+     {
+      "value": 26,
+      "name": "Order",
+      "fill": "#a4de6c"
+     }
+    ],
+    "shape": {
+     "$content": "RoundedTrapezoid"
+    },
+    "activeShape": {
+     "$content": "OutlinedTrapezoid"
+    },
+    "activeIndex": 3,
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "center",
+      "fill": "#fff",
+      "stroke": "none",
+      "dataKey": "name"
+     },
+     "children": []
+    }
+   ]
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     330,
+     130
+    ]
+   }
+  ]
+ ]
+}

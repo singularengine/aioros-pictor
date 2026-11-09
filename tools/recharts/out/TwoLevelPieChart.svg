@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" cx="50%" cy="50%" class="recharts-surface" width="400" height="400" style="width:100%;height:100%" viewBox="0 0 400 400"><title></title><desc></desc><defs><clipPath id="recharts1-clip"><rect x="5" y="5" height="390" width="390"></rect></clipPath></defs><g class="recharts-layer recharts-pie" tabindex="0"><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group A" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 260,200
+    A 60,60,0,
+    0,0,
+    170,148.03847577293368
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group B" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 170,148.03847577293368
+    A 60,60,0,
+    0,0,
+    148.03847577293368,230
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group C" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 148.03847577293368,230
+    A 60,60,0,
+    0,0,
+    230,251.96152422706632
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group D" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 230,251.96152422706632
+    A 60,60,0,
+    0,0,
+    260,200.00000000000003
+  L 200,200 Z" role="img"></path></g></g><g class="recharts-layer recharts-pie" tabindex="0"><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="A1" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 290,200
+    A 90,90,0,
+    0,0,
+    277.9422863405995,155
+  L 260.6217782649107,165
+            A 70,70,0,
+            0,1,
+            270,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="A2" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 277.9422863405995,155
+    A 90,90,0,
+    0,0,
+    155.00000000000003,122.05771365940052
+  L 165,139.37822173508928
+            A 70,70,0,
+            0,1,
+            260.6217782649107,165 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="B1" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 155.00000000000003,122.05771365940052
+    A 90,90,0,
+    0,0,
+    122.05771365940052,155
+  L 139.37822173508928,165
+            A 70,70,0,
+            0,1,
+            165,139.37822173508928 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="B2" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 122.05771365940052,155
+    A 90,90,0,
+    0,0,
+    110.4930294168554,190.59243830591117
+  L 130.38346732422087,192.68300757126423
+            A 70,70,0,
+            0,1,
+            139.37822173508928,165 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="B3" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 110.4930294168554,190.59243830591117
+    A 90,90,0,
+    0,0,
+    110.4930294168554,209.40756169408883
+  L 130.38346732422087,207.31699242873574
+            A 70,70,0,
+            0,1,
+            130.38346732422087,192.68300757126423 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="B4" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 110.4930294168554,209.40756169408883
+    A 90,90,0,
+    0,0,
+    113.06667563398385,223.2937140592269
+  L 132.3851921597652,218.11733315717646
+            A 70,70,0,
+            0,1,
+            130.38346732422087,207.31699242873574 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="B5" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 113.06667563398385,223.2937140592269
+    A 90,90,0,
+    0,0,
+    122.05771365940052,245
+  L 139.3782217350893,235
+            A 70,70,0,
+            0,1,
+            132.3851921597652,218.11733315717646 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="C1" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 122.05771365940052,245
+    A 90,90,0,
+    0,0,
+    154.99999999999994,277.9422863405995
+  L 164.99999999999997,260.6217782649107
+            A 70,70,0,
+            0,1,
+            139.3782217350893,235 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="C2" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 154.99999999999994,277.9422863405995
+    A 90,90,0,
+    0,0,
+    245,277.9422863405995
+  L 235,260.6217782649107
+            A 70,70,0,
+            0,1,
+            164.99999999999997,260.6217782649107 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="D1" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 245,277.9422863405995
+    A 90,90,0,
+    0,0,
+    286.93332436601617,223.29371405922686
+  L 267.6148078402348,218.11733315717646
+            A 70,70,0,
+            0,1,
+            235,260.6217782649107 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="D2" stroke="#fff" fill="#82ca9d" tabindex="-1" class="recharts-sector" d="M 286.93332436601617,223.29371405922686
+    A 90,90,0,
+    0,0,
+    290,200.00000000000003
+  L 270,200.00000000000003
+            A 70,70,0,
+            0,1,
+            267.6148078402348,218.11733315717646 Z" role="img"></path></g><g class="recharts-layer recharts-pie-labels"><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="A1" class="recharts-curve recharts-pie-label-line" d="M286.933,176.706L306.252,171.53"></path><text cx="200" cy="200" stroke="none" name="A1" alignment-baseline="middle" x="306.25184089179754" y="171.52990503872272" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#82ca9d"><tspan x="306.25184089179754" dy="0em">100</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="A2" class="recharts-curve recharts-pie-label-line" d="M223.294,113.067L228.47,93.748"></path><text cx="200" cy="200" stroke="none" name="A2" alignment-baseline="middle" x="228.47009496127728" y="93.74815910820249" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#82ca9d"><tspan x="228.47009496127728" dy="0em">300</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="B1" class="recharts-curve recharts-pie-label-line" d="M136.36,136.36L122.218,122.218"></path><text cx="200" cy="200" stroke="none" name="B1" alignment-baseline="middle" x="122.21825406947978" y="122.21825406947977" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#82ca9d"><tspan x="122.21825406947978" dy="0em">100</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="B2" class="recharts-curve recharts-pie-label-line" d="M114.405,172.188L95.384,166.008"></path><text cx="200" cy="200" stroke="none" name="B2" alignment-baseline="middle" x="95.38378320753311" y="166.00813061875579" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#82ca9d"><tspan x="95.38378320753311" dy="0em">80</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="B3" class="recharts-curve recharts-pie-label-line" d="M110,200L90,200"></path><text cx="200" cy="200" stroke="none" name="B3" alignment-baseline="middle" x="90" y="200" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#82ca9d"><tspan x="90" dy="0em">40</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="B4" class="recharts-curve recharts-pie-label-line" d="M111.507,216.401L91.842,220.046"></path><text cx="200" cy="200" stroke="none" name="B4" alignment-baseline="middle" x="91.841960167965" y="220.04590780413622" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#82ca9d"><tspan x="91.841960167965" dy="0em">30</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="B5" class="recharts-curve recharts-pie-label-line" d="M116.851,234.442L98.373,242.095"></path><text cx="200" cy="200" stroke="none" name="B5" alignment-baseline="middle" x="98.37325142375845" y="242.09517756015987" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#82ca9d"><tspan x="98.37325142375845" dy="0em">50</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="C1" class="recharts-curve recharts-pie-label-line" d="M136.36,263.64L122.218,277.782"></path><text cx="200" cy="200" stroke="none" name="C1" alignment-baseline="middle" x="122.21825406947976" y="277.78174593052023" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#82ca9d"><tspan x="122.21825406947976" dy="0em">100</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="C2" class="recharts-curve recharts-pie-label-line" d="M200,290L200,310"></path><text cx="200" cy="200" stroke="none" name="C2" alignment-baseline="middle" x="199.99999999999997" y="310" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#82ca9d"><tspan x="199.99999999999997" dy="0em">200</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="D1" class="recharts-curve recharts-pie-label-line" d="M271.402,254.789L287.269,266.964"></path><text cx="200" cy="200" stroke="none" name="D1" alignment-baseline="middle" x="287.26886743203585" y="266.9637571909593" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#82ca9d"><tspan x="287.26886743203585" dy="0em">150</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#82ca9d" name="D2" class="recharts-curve recharts-pie-label-line" d="M289.23,211.747L309.059,214.358"></path><text cx="200" cy="200" stroke="none" name="D2" alignment-baseline="middle" x="309.0589347511191" y="214.3578811442057" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#82ca9d"><tspan x="309.0589347511191" dy="0em">50</tspan></text></g></g></g></svg>

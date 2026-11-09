@@ -1,0 +1,18 @@
+{
+ "chromium": "153.0.8010.52",
+ "font": {
+  "family": "Inter",
+  "weight": 400,
+  "size": "14px",
+  "file": "fonts/Inter-Regular-latin.woff2",
+  "computed": {
+   "family": "Inter",
+   "size": "14px",
+   "lineHeight": "normal"
+  }
+ },
+ "legend": {
+  "width": 490,
+  "height": 34.375
+ }
+}

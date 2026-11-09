@@ -1,0 +1,9 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:t="using:Aioros.Pictor.Tests.Desktop"
+             x:Class="Aioros.Pictor.Tests.Desktop.BoundChartView" x:DataType="t:BoundChartModel">
+  <p:LineChart x:Name="Chart" Data="{Binding Items}" Width="500" Height="300">
+    <p:XAxis DataKey="Name" />
+    <p:YAxis />
+    <p:Line DataKey="Value" Stroke="{Binding Color}" />
+  </p:LineChart>
+</UserControl>

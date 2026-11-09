@@ -1,0 +1,54 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:an="using:Gallery.Analytics" xmlns:a="https://aioros.dev"
+             x:Class="Gallery.Views.KpiPeriod" x:DataType="an:KpiModel">
+  <Grid ColumnDefinitions="*,*,*" ColumnSpacing="16" RowSpacing="16" a:Web.StackBelow="760">
+    <Border Grid.Column="0" Classes="card tile">
+      <StackPanel Spacing="8">
+        <TextBlock Classes="label" Text="{Binding Data.Volume.Label}" />
+        <WrapPanel ItemSpacing="10" LineSpacing="4">
+          <TextBlock Classes="kpi" Text="{Binding Data.Volume.Value}" />
+          <Border Classes="pill" Classes.good="{Binding Data.Volume.Good}" Classes.bad="{Binding Data.Volume.Bad}" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Data.Volume.Delta}" />
+          </Border>
+        </WrapPanel>
+        <p:AreaChart Data="{Binding Data.Volume.Trend}" Height="44" Padding="0,4,0,2" ResponsiveWidths="200 270">
+          <p:YAxis Hide="True" Domain="dataMin, dataMax" />
+          <p:Area Type="Linear" DataKey="Value" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource SparkFade}" FillOpacity="1" StrokeWidth="2" Dot="False" ActiveDot="0" IsAnimationActive="False" />
+        </p:AreaChart>
+        <TextBlock Classes="muted small" Text="{Binding Data.Volume.Caption}" />
+      </StackPanel>
+    </Border>
+    <Border Grid.Column="1" Classes="card tile">
+      <StackPanel Spacing="8">
+        <TextBlock Classes="label" Text="{Binding Data.Rate.Label}" />
+        <WrapPanel ItemSpacing="10" LineSpacing="4">
+          <TextBlock Classes="kpi" Text="{Binding Data.Rate.Value}" />
+          <Border Classes="pill" Classes.good="{Binding Data.Rate.Good}" Classes.bad="{Binding Data.Rate.Bad}" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Data.Rate.Delta}" />
+          </Border>
+        </WrapPanel>
+        <p:AreaChart Data="{Binding Data.Rate.Trend}" Height="44" Padding="0,4,0,2" ResponsiveWidths="200 270">
+          <p:YAxis Hide="True" Domain="dataMin, dataMax" />
+          <p:Area Type="Linear" DataKey="Value" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource SparkFade}" FillOpacity="1" StrokeWidth="2" Dot="False" ActiveDot="0" IsAnimationActive="False" />
+        </p:AreaChart>
+        <TextBlock Classes="muted small" Text="{Binding Data.Rate.Caption}" />
+      </StackPanel>
+    </Border>
+    <Border Grid.Column="2" Classes="card tile">
+      <StackPanel Spacing="8">
+        <TextBlock Classes="label" Text="{Binding Data.Value.Label}" />
+        <WrapPanel ItemSpacing="10" LineSpacing="4">
+          <TextBlock Classes="kpi" Text="{Binding Data.Value.Value}" />
+          <Border Classes="pill" Classes.good="{Binding Data.Value.Good}" Classes.bad="{Binding Data.Value.Bad}" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Data.Value.Delta}" />
+          </Border>
+        </WrapPanel>
+        <p:AreaChart Data="{Binding Data.Value.Trend}" Height="44" Padding="0,4,0,2" ResponsiveWidths="200 270">
+          <p:YAxis Hide="True" Domain="dataMin, dataMax" />
+          <p:Area Type="Linear" DataKey="Value" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource SparkFade}" FillOpacity="1" StrokeWidth="2" Dot="False" ActiveDot="0" IsAnimationActive="False" />
+        </p:AreaChart>
+        <TextBlock Classes="muted small" Text="{Binding Data.Value.Caption}" />
+      </StackPanel>
+    </Border>
+  </Grid>
+</UserControl>

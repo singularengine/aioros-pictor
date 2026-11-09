@@ -1,0 +1,141 @@
+{
+ "name": "GapsFunnelOptionsChart",
+ "kind": "FunnelChart",
+ "width": 600,
+ "height": 400,
+ "margin": {
+  "right": 30
+ },
+ "source": "Pictor's gaps catalog: a funnel's nameKey, fill, stroke, legend type and last shape, its cells, and a hidden funnel",
+ "data": null,
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Funnel",
+   "props": {
+    "dataKey": "value",
+    "nameKey": "stage",
+    "data": [
+     {
+      "stage": "Visits",
+      "value": 100,
+      "fill": "#8884d8"
+     },
+     {
+      "stage": "Clicks",
+      "value": 80,
+      "fill": "#83a6ed"
+     },
+     {
+      "stage": "Carts",
+      "value": 50,
+      "fill": "#8dd1e1"
+     },
+     {
+      "stage": "Orders",
+      "value": 40,
+      "fill": "#82ca9d"
+     },
+     {
+      "stage": "Repeats",
+      "value": 26,
+      "fill": "#a4de6c"
+     }
+    ],
+    "fill": "#8884d8",
+    "stroke": "#333",
+    "legendType": "circle",
+    "lastShapeType": "rectangle",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#ff7300"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#413ea0"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "stroke": "#e33"
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "right",
+      "fill": "#000",
+      "stroke": "none",
+      "dataKey": "stage"
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "Funnel",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "stage": "Visits",
+      "value": 100,
+      "fill": "#8884d8"
+     },
+     {
+      "stage": "Clicks",
+      "value": 80,
+      "fill": "#83a6ed"
+     },
+     {
+      "stage": "Carts",
+      "value": 50,
+      "fill": "#8dd1e1"
+     },
+     {
+      "stage": "Orders",
+      "value": 40,
+      "fill": "#82ca9d"
+     },
+     {
+      "stage": "Repeats",
+      "value": 26,
+      "fill": "#a4de6c"
+     }
+    ],
+    "hide": true,
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     280,
+     120
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models"
+             x:Class="Gallery.Views.LiveChart" x:DataType="m:LiveModel">
+  <StackPanel Spacing="8">
+    <TextBlock Classes="h2" Text="A live chart" />
+    <TextBlock Text="{Binding Last}" />
+    <p:LineChart Data="{Binding Readings}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+      <p:CartesianGrid StrokeDashArray="3 3" />
+      <p:XAxis DataKey="Time" />
+      <p:YAxis Domain="0,100" />
+      <p:Tooltip />
+      <p:Line Type="Monotone" DataKey="Value" Name="value" Stroke="#8884d8" Dot="False" IsAnimationActive="False" />
+    </p:LineChart>
+  </StackPanel>
+</UserControl>

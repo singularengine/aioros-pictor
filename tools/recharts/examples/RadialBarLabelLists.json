@@ -1,0 +1,76 @@
+{
+ "name": "RadialBarLabelLists",
+ "kind": "RadialBarChart",
+ "width": 500,
+ "height": 300,
+ "margin": null,
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "innerRadius": "20%",
+  "outerRadius": "90%",
+  "barSize": 14
+ },
+ "source": "Recharts' LabelList API (recharts.org/en-US/api/LabelList): LabelLists on radial bars: values inside the end, names inside the start clockwise, and outside",
+ "data": [
+  {
+   "name": "18-24",
+   "uv": 31.47,
+   "fill": "#8884d8"
+  },
+  {
+   "name": "25-29",
+   "uv": 26.69,
+   "fill": "#83a6ed"
+  },
+  {
+   "name": "30-34",
+   "uv": 15.69,
+   "fill": "#8dd1e1"
+  },
+  {
+   "name": "35-39",
+   "uv": 8.22,
+   "fill": "#82ca9d"
+  }
+ ],
+ "children": [
+  {
+   "type": "RadialBar",
+   "props": {
+    "dataKey": "uv",
+    "background": true,
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "insideEnd",
+      "fill": "#fff",
+      "fontSize": 10
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "dataKey": "name",
+      "position": "insideStart",
+      "clockWise": true,
+      "fill": "#333"
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "outside",
+      "fill": "#666"
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

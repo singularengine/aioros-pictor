@@ -1,0 +1,176 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:AxesData" a:Page.Title="Axes, scales, curves and stacking">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Axes, scales, curves and stacking" />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Axis and reference labels" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,20">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" Label="Pages of my website" LabelPosition="InsideBottom" LabelOffset="0" />
+          <p:YAxis Label="pv of page" LabelAngle="-90" LabelPosition="InsideLeft" />
+          <p:Tooltip />
+          <p:ReferenceLine Y="4000" Stroke="red" Label="Target" LabelPosition="InsideTopRight" LabelFill="red" LabelFontSize="12" LabelOffset="8" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Rotated tick labels" />
+        <p:BarChart Data="{Binding Months}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" Angle="-45" TextAnchor="End" Height="70" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Other" Name="pv" Fill="#8884d8" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Styled ticks and lines" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" TickFill="#8884d8" TickFontSize="12" AxisLineStroke="#8884d8" AxisLineStrokeWidth="2" TickLineStroke="red" TickSize="10" TickMargin="6" />
+          <p:YAxis TickFontSize="10" TickFill="#82ca9d" AxisLine="False" TickLineStroke="#82ca9d" TickLineStrokeWidth="3" TickSize="4" />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Mirrored, reversed axes and explicit ticks" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,20,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" Orientation="Top" Padding="30,0,30,0" Interval="equidistantPreserveStart" />
+          <p:YAxis Orientation="Right" Mirror="True" Reversed="True" Unit="kg" Ticks="0, 2500, 5000, 7500, 10000" />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Wrapped tick labels" />
+        <p:BarChart Layout="Vertical" Data="{Binding Regions}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis Type="Number" />
+          <p:YAxis DataKey="Name" Type="Category" />
+          <p:Tooltip />
+          <p:Bar DataKey="Value" Name="sales" Fill="#8884d8" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Categories without duplicates" />
+        <p:LineChart MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Category" Type="Category" AllowDuplicatedCategory="False" />
+          <p:YAxis DataKey="Value" />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line DataKey="Value" Name="Series 1" Data="{x:Static m:MultiSeries.One}" />
+          <p:Line DataKey="Value" Name="Series 2" Data="{x:Static m:MultiSeries.Two}" />
+          <p:Line DataKey="Value" Name="Series 3" Data="{x:Static m:MultiSeries.Three}" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Log and linear scales" />
+        <p:LineChart Data="{Binding Growth}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis Scale="log" Domain="auto, auto" />
+          <p:YAxis YAxisId="linear" Orientation="Right" Scale="linear" />
+          <p:Tooltip />
+          <p:Line DataKey="Value" Name="users" Stroke="#8884d8" />
+          <p:Line DataKey="Value" Name="users" YAxisId="linear" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A utc time scale" />
+        <p:LineChart Data="{Binding Timeline}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Time" Type="Number" Scale="utc" Domain="auto, auto" TickFormat="{}{0:MMM d}" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line DataKey="Value" Name="value" Stroke="#8884d8" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Bump curves" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="BumpX" DataKey="Pv" Name="bumpX" Stroke="#8884d8" />
+          <p:Line Type="BumpY" DataKey="Uv" Name="bumpY" Stroke="#82ca9d" />
+          <p:Line Type="StepAfter" DataKey="Amt" Name="stepAfter" Stroke="#ff7300" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="stackOffset expand" />
+        <p:AreaChart Data="{Binding Pages}" StackOffset="Expand" MaxWidth="500" Aspect="1.6666666666666667" Padding="0,10,30,0">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis TickFormat="{}{0:P0}" />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" StackId="1" Stroke="#8884d8" Fill="#8884d8" />
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" StackId="1" Stroke="#82ca9d" Fill="#82ca9d" />
+          <p:Area Type="Monotone" DataKey="Amt" Name="amt" StackId="1" Stroke="#ffc658" Fill="#ffc658" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="stackOffset silhouette" />
+        <p:AreaChart Data="{Binding Pages}" StackOffset="Silhouette" MaxWidth="500" Aspect="1.6666666666666667" Padding="0,10,30,0">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" StackId="1" Stroke="#8884d8" Fill="#8884d8" />
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" StackId="1" Stroke="#82ca9d" Fill="#82ca9d" />
+          <p:Area Type="Monotone" DataKey="Amt" Name="amt" StackId="1" Stroke="#ffc658" Fill="#ffc658" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="stackOffset sign" />
+        <p:BarChart Data="{Binding PositiveAndNegative}" StackOffset="Sign" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:ReferenceLine Y="0" Stroke="{DynamicResource SampleInk}" />
+          <p:Bar DataKey="Pv" Name="pv" StackId="stack" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" StackId="stack" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="reverseStackOrder and a percent bar size" />
+        <p:BarChart Data="{Binding Pages}" ReverseStackOrder="True" BarSize="8%" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" StackId="a" Fill="#8884d8" />
+          <p:Bar DataKey="Amt" Name="amt" StackId="a" Fill="#82ca9d" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#ffc658" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Polar axes" />
+        <p:RadarChart Data="{Binding Subjects}" MaxWidth="500" Aspect="1.25" OuterRadius="70%">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Name" TickFill="#8884d8" TickFontSize="12" TickSize="12" Orientation="inner" />
+          <p:PolarRadiusAxis Angle="60" Orientation="left" Reversed="True" Domain="0,150" Ticks="0, 50, 100, 150" Label="score" LabelPosition="Outside" LabelOffset="10" LabelFill="{DynamicResource SampleInkSoft}" />
+          <p:Radar Name="Mike" DataKey="A" Stroke="#8884d8" Fill="#8884d8" FillOpacity="0.6" />
+        </p:RadarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A numeric angle axis" />
+        <p:RadialBarChart Data="{Binding Ages}" MaxWidth="500" Aspect="1.6666666666666667" InnerRadius="10%" OuterRadius="80%" BarSize="10">
+          <p:PolarAngleAxis Type="Number" Domain="0, 40" TickCount="5" AllowDecimals="False" TickLineStroke="#c00" />
+          <p:PolarRadiusAxis Type="Category" DataKey="Name" Reversed="True" />
+          <p:RadialBar DataKey="Uv" Name="uv" NameKey="Name" FillKey="Fill" Background="{DynamicResource SampleWash}" />
+        </p:RadialBarChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

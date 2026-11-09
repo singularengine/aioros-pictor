@@ -1,0 +1,147 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:FamilyInteractions" a:Page.Title="Every interaction">
+  <StackPanel Spacing="24">
+    <TextBlock Classes="h1" Text="Every interaction, every family" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left"
+               Text="The fidelity matrix on one page. Hover or touch any chart for its tooltip (a finger dragged across moves it); Tab into a cartesian chart and the arrow keys move its tooltip (Recharts' accessibility layer, which moves nothing in the other families); click an item and its command runs with Recharts' index, shown below; click a legend entry to hide its series; drag a brush's travellers. The theme switch is in the sidebar, live updates are on the live charts page, and each family's reference examples are compared with Recharts on the comparison pages." />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live charts" /></Border>
+      <Border Classes="textlink" a:Web.Href="/compare"><TextBlock Text="Compared with Recharts" /></Border>
+      <Border Classes="textlink" a:Web.Href="/interactive"><TextBlock Text="More interactive charts" /></Border>
+    </WrapPanel>
+    <Border Classes="pill" HorizontalAlignment="Left"><TextBlock Text="{Binding Picked}" /></Border>
+    <WrapPanel ItemSpacing="24" LineSpacing="24">
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Line chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, keyboard, clicks on the categories and the dots, legend, brush" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="420" Aspect="1.4" Padding="20,5,30,5" AccessibilityLayer="True" ClickCommand="{Binding PickLine}">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+          <p:Brush DataKey="Name" Height="24" Stroke="#8884d8" StartIndex="{Binding LineStart}" EndIndex="{Binding LineEnd}" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ClickCommand="{Binding PickLine}" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" ClickCommand="{Binding PickLine}" />
+        </p:LineChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Area chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, keyboard, clicks on the categories and the dots, legend, brush" />
+        <p:AreaChart Data="{Binding Pages}" MaxWidth="420" Aspect="1.4" Padding="20,5,30,5" AccessibilityLayer="True" ClickCommand="{Binding PickArea}">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+          <p:Brush DataKey="Name" Height="24" Stroke="#8884d8" StartIndex="{Binding AreaStart}" EndIndex="{Binding AreaEnd}" />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" StackId="1" Stroke="#8884d8" Fill="#8884d8" ClickCommand="{Binding PickArea}" />
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" StackId="1" Stroke="#82ca9d" Fill="#82ca9d" ClickCommand="{Binding PickArea}" />
+        </p:AreaChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Bar chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, keyboard, clicks on the bars, legend, brush" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="420" Aspect="1.4" Padding="20,5,30,5" AccessibilityLayer="True">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+          <p:Brush DataKey="Name" Height="24" Stroke="#8884d8" StartIndex="{Binding BarStart}" EndIndex="{Binding BarEnd}" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" ClickCommand="{Binding PickBar}" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" ClickCommand="{Binding PickBar}" />
+        </p:BarChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Composed chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, keyboard, clicks on the categories, bars and dots, legend, brush" />
+        <p:ComposedChart Data="{Binding Composed}" MaxWidth="420" Aspect="1.4" Padding="20,20,20,5" AccessibilityLayer="True" ClickCommand="{Binding PickComposed}">
+          <p:CartesianGrid Stroke="{DynamicResource SampleGridSoft}" />
+          <p:XAxis DataKey="Name" Scale="band" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+          <p:Brush DataKey="Name" Height="24" Stroke="#8884d8" StartIndex="{Binding ComposedStart}" EndIndex="{Binding ComposedEnd}" />
+          <p:Area Type="Monotone" DataKey="Amt" Name="amt" Fill="#8884d8" Stroke="#8884d8" ClickCommand="{Binding PickComposed}" />
+          <p:Bar DataKey="Pv" Name="pv" BarSize="20" Fill="#413ea0" ClickCommand="{Binding PickComposed}" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#ff7300" ClickCommand="{Binding PickComposed}" />
+        </p:ComposedChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Scatter chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, keyboard (the arrow keys move Recharts' cross from point to point, without a box, as Recharts does), clicks on the symbols, legend" />
+        <p:ScatterChart Data="{Binding Points}" MaxWidth="420" Aspect="1.4" Padding="20" AccessibilityLayer="True">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Legend Toggles="True" />
+          <p:Scatter Fill="#8884d8" ClickCommand="{Binding PickScatter}" />
+        </p:ScatterChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Pie chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, clicks on the sectors, legend" />
+        <p:PieChart Data="{Binding Groups}" MaxWidth="420" Aspect="1.4">
+          <p:Pie DataKey="Value" NameKey="Name" OuterRadius="100" Fill="#8884d8" ClickCommand="{Binding PickPie}" />
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+        </p:PieChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Radar chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, clicks on the angles and the dots, legend" />
+        <p:RadarChart Data="{Binding Subjects}" MaxWidth="420" Aspect="1.4" OuterRadius="80%" ClickCommand="{Binding PickRadar}">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Name" />
+          <p:PolarRadiusAxis />
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+          <p:Radar Name="Mike" DataKey="A" Stroke="#8884d8" Fill="#8884d8" FillOpacity="0.6" ClickCommand="{Binding PickRadar}" />
+          <p:Radar Name="Lily" DataKey="B" Stroke="#82ca9d" Fill="#82ca9d" FillOpacity="0.6" ClickCommand="{Binding PickRadar}" />
+        </p:RadarChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Radial bar chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, clicks on the bars and their backgrounds, legend" />
+        <p:RadialBarChart Data="{Binding Ages}" MaxWidth="420" Aspect="1.4" InnerRadius="10%" OuterRadius="80%" BarSize="10">
+          <p:RadialBar DataKey="Uv" Name="uv" NameKey="Name" FillKey="Fill" Background="{DynamicResource SampleWash}" ClickCommand="{Binding PickRadialBar}" />
+          <p:Legend IconSize="10" Layout="vertical" VerticalAlign="middle" Align="right" Toggles="True" />
+          <p:Tooltip />
+        </p:RadialBarChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Funnel chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, clicks on the trapezoids, legend" />
+        <p:FunnelChart Data="{Binding Stages}" MaxWidth="420" Aspect="1.4">
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+          <p:Funnel DataKey="Value" NameKey="Name" FillKey="Fill" ClickCommand="{Binding PickFunnel}" />
+        </p:FunnelChart>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Treemap" />
+        <TextBlock Classes="muted small" Text="Hover, touch, clicks on the leaves (Recharts' Treemap has no legend and handles no key)" />
+        <p:Treemap Data="{Binding Packages}" MaxWidth="420" Aspect="1.4" DataKey="Size" AspectRatio="1.3333333333333333" Stroke="{DynamicResource SampleRing}" Fill="#8884d8" ClickCommand="{Binding PickTreemap}">
+          <p:Tooltip />
+        </p:Treemap>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Sankey" />
+        <TextBlock Classes="muted small" Text="Hover, touch, clicks on the links and nodes (no legend, no key in Recharts' Sankey)" />
+        <p:Sankey Data="{Binding Visits}" MaxWidth="420" Aspect="1.4" Padding="0,0,0,30" NodePadding="30" LinkStroke="#77c878" ItemClickCommand="{Binding PickSankey}">
+          <p:Tooltip />
+        </p:Sankey>
+      </StackPanel></Border>
+      <Border MaxWidth="462" Classes="card"><StackPanel Spacing="8">
+        <TextBlock Classes="title" Text="Sunburst chart" />
+        <TextBlock Classes="muted small" Text="Hover, touch, clicks on the sectors (no legend, no key in Recharts' SunburstChart)" />
+        <p:SunburstChart Data="{Binding Tree}" MaxWidth="420" Aspect="1.4" FillKey="Fill" ItemClickCommand="{Binding PickSunburst}">
+          <p:Tooltip />
+        </p:SunburstChart>
+      </StackPanel></Border>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

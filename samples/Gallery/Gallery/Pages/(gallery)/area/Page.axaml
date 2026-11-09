@@ -1,0 +1,79 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:Datasets" a:Page.Title="Area charts">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Area charts" />
+    <WrapPanel ItemSpacing="16" LineSpacing="6">
+      <Border Classes="textlink" a:Web.Href="/compare/area"><TextBlock Text="Every reference example beside Recharts' render" /></Border>
+      <Border Classes="textlink" a:Web.Href="/families"><TextBlock Text="Every interaction" /></Border>
+      <Border Classes="textlink" a:Web.Href="/live-charts"><TextBlock Text="Live update" /></Border>
+    </WrapPanel>
+    <StackPanel Spacing="8">
+      <TextBlock Classes="h2" Text="Animations" />
+      <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Replay plays the enter animation of every chart on this page again (Recharts' animation when a chart mounts). Change data moves the data on to its next version, and this chart animates from its previous geometry to the new, as Recharts' update animation does (on the web Aioros morphs the page and moves each shape frame by frame from the numbers the chart declares)." />
+      <StackPanel Orientation="Horizontal" Spacing="8">
+        <p:ReplayButton Content="Replay" />
+        <Button Content="Change data" Command="{Binding Motion.Change}" />
+        <TextBlock Text="Data version" VerticalAlignment="Center" />
+        <NumericUpDown Value="{Binding Motion.Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+      </StackPanel>
+        <p:AreaChart Data="{Binding Motion.Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="0,10,30,0">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" StackId="1" Stroke="#8884d8" Fill="#8884d8" />
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" StackId="1" Stroke="#82ca9d" Fill="#82ca9d" />
+        </p:AreaChart>
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="SimpleAreaChart" />
+        <p:AreaChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.25" Padding="0,10,30,0">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" Stroke="#8884d8" Fill="#8884d8" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="StackedAreaChart" />
+        <p:AreaChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.25" Padding="0,10,30,0">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" StackId="1" Stroke="#8884d8" Fill="#8884d8" />
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" StackId="1" Stroke="#82ca9d" Fill="#82ca9d" />
+          <p:Area Type="Monotone" DataKey="Amt" Name="amt" StackId="1" Stroke="#ffc658" Fill="#ffc658" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="730" Spacing="8">
+        <TextBlock Classes="h2" Text="AreaChart with gradient fills" />
+        <p:AreaChart Data="{Binding Pages}" MaxWidth="730" Aspect="2.92" Padding="0,10,30,0">
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" Stroke="#8884d8" FillOpacity="1">
+            <p:Area.Fill>
+              <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0.05" Color="#cc8884d8" />
+                <GradientStop Offset="0.95" Color="#008884d8" />
+              </LinearGradientBrush>
+            </p:Area.Fill>
+          </p:Area>
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" Stroke="#82ca9d" FillOpacity="1">
+            <p:Area.Fill>
+              <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0.05" Color="#cc82ca9d" />
+                <GradientStop Offset="0.95" Color="#0082ca9d" />
+              </LinearGradientBrush>
+            </p:Area.Fill>
+          </p:Area>
+        </p:AreaChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

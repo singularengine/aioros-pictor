@@ -1,0 +1,96 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:v="using:Gallery.Views" xmlns:a="https://aioros.dev"
+             x:DataType="m:InteractiveData" a:Page.Title="Interactive charts" a:Web.Live="True">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Interactive charts" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Every interaction runs the same on the web and in the native app. On the web a click is a button posted to the server, the brush's travellers are range inputs, the treemap's nodes zoom through a command, the synced charts follow each other through CSS, and the live chart is pushed by the server: no script of the page's own, and the page is never reloaded." />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Click a bar" />
+        <TextBlock Text="{Binding Picked}" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" ClickCommand="{Binding Pick}" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" ClickCommand="{Binding Pick}" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Arrow keys and a finger" />
+        <TextBlock TextWrapping="Wrap" Text="Tab into the chart, then the arrow keys move the tooltip; a finger dragged across moves it too." />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5" AccessibilityLayer="True">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Move the brush" />
+        <p:BarChart Data="{Binding Samples}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:ReferenceLine Y="0" Stroke="{DynamicResource SampleInk}" />
+          <p:Brush DataKey="Name" Height="30" Stroke="#8884d8" StartIndex="{Binding BrushStart}" EndIndex="{Binding BrushEnd}" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Zoom into the treemap" />
+        <p:Treemap Data="{Binding Flare}" MaxWidth="500" Aspect="1.3333333333333333" DataKey="Size" NameKey="Name" AspectRatio="1.3333333333333333" Type="nest"
+                   Zoom="{Binding Zoom}">
+          <p:Tooltip />
+        </p:Treemap>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Three synced charts" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="2.5" Padding="20,5,30,5" SyncId="pages">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#8884d8" />
+        </p:LineChart>
+        <p:AreaChart Data="{Binding Pages}" MaxWidth="500" Aspect="2.5" Padding="20,5,30,5" SyncId="pages">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" Stroke="#82ca9d" Fill="#82ca9d" />
+        </p:AreaChart>
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="2.5" Padding="20,5,30,5" SyncId="pages">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Bar DataKey="Amt" Name="amt" Fill="#ffc658" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Synced by category value" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="2.5" Padding="20,5,30,5" SyncId="values" SyncMethod="value">
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#8884d8" />
+        </p:LineChart>
+        <p:LineChart Data="{Binding Reversed}" MaxWidth="500" Aspect="2.5" Padding="20,5,30,5" SyncId="values" SyncMethod="value">
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv (reversed)" Stroke="#ff7300" />
+        </p:LineChart>
+      </StackPanel>
+      <v:LiveChart />
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

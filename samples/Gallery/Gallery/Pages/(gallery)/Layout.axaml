@@ -1,0 +1,199 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:a="https://aioros.dev" a:Page.Title="Pictor" a:Page.TitleTemplate="%s · Pictor">
+  <UserControl.Styles>
+    <Style Selector="Border.nav Path">
+      <Setter Property="Width" Value="16" />
+      <Setter Property="Height" Value="16" />
+      <Setter Property="StrokeThickness" Value="1.5" />
+      <Setter Property="StrokeLineCap" Value="Round" />
+      <Setter Property="StrokeJoin" Value="Round" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Border.nav a|Icon">
+      <Setter Property="Size" Value="16" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Border.theme a|Icon">
+      <Setter Property="Foreground" Value="{DynamicResource Muted}" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Border.theme">
+      <Setter Property="Padding" Value="6,4" />
+    </Style>
+    <Style Selector="Border.theme TextBlock">
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style Selector="TextBlock.group">
+      <Setter Property="Margin" Value="10,18,0,6" />
+    </Style>
+  </UserControl.Styles>
+  <SplitView DisplayMode="Inline" IsPaneOpen="True" OpenPaneLength="244" PaneBackground="{DynamicResource AppBg}"
+             a:Web.Id="nav" a:Web.CollapseBelow="1024">
+    <SplitView.Pane>
+      <Border Padding="12,14" BorderBrush="{DynamicResource Line}" BorderThickness="0,0,1,0">
+        <ScrollViewer>
+          <StackPanel Spacing="1" a:Web.Tag="nav">
+            <Grid ColumnDefinitions="*,Auto" Margin="0,0,0,4">
+              <Border Classes="brand" a:Web.Href="/" AutomationProperties.Name="Pictor home">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                  <Viewbox Width="28" Height="28">
+                    <Canvas Width="64" Height="64">
+                      <Rectangle Width="64" Height="64" RadiusX="14" RadiusY="14">
+                        <Rectangle.Fill>
+                          <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                            <GradientStop Offset="0" Color="#2563EB" />
+                            <GradientStop Offset="1" Color="#7C3AED" />
+                          </LinearGradientBrush>
+                        </Rectangle.Fill>
+                      </Rectangle>
+                      <Path Width="64" Height="64" Data="M25,39 L19,55 M39,39 L45,55 M32,39 L32,52" Stroke="#C7D2FE" StrokeThickness="3.2" StrokeLineCap="Round" />
+                      <Rectangle Canvas.Left="11" Canvas.Top="37" Width="42" Height="3.6" RadiusX="1.8" RadiusY="1.8" Fill="#E0E7FF" />
+                      <Rectangle Canvas.Left="13" Canvas.Top="9" Width="38" Height="28" RadiusX="4.5" RadiusY="4.5" Fill="#FFFFFF" />
+                      <Path Width="64" Height="64" Data="M19,31 L27,23.5 L35,26.5 L45,15.5" Stroke="#2563EB" StrokeThickness="2.6" StrokeLineCap="Round" StrokeJoin="Round" />
+                      <Path Width="64" Height="64" Fill="#7C3AED" Data="M19,27.6 L19.9,30.1 L22.4,31 L19.9,31.9 L19,34.4 L18.1,31.9 L15.6,31 L18.1,30.1 Z M27,20.1 L27.9,22.6 L30.4,23.5 L27.9,24.4 L27,26.9 L26.1,24.4 L23.6,23.5 L26.1,22.6 Z M35,23.1 L35.9,25.6 L38.4,26.5 L35.9,27.4 L35,29.9 L34.1,27.4 L31.6,26.5 L34.1,25.6 Z M45,11.6 L46.1,14.4 L48.9,15.5 L46.1,16.6 L45,19.4 L43.9,16.6 L41.1,15.5 L43.9,14.4 Z" />
+                    </Canvas>
+                  </Viewbox>
+                  <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Pictor" FontSize="15" FontWeight="SemiBold" Foreground="{DynamicResource Text}" />
+                    <TextBlock Text="Charts in pure XAML" FontSize="11" Foreground="{DynamicResource Faint}" />
+                  </StackPanel>
+                </StackPanel>
+              </Border>
+            </Grid>
+            <Border Classes="segment" Margin="0,2,0,6" HorizontalAlignment="Left" AutomationProperties.Name="Theme">
+              <StackPanel Orientation="Horizontal" Spacing="2">
+                <Border Classes="seg theme" a:Web.Href="/theme/light" AutomationProperties.Name="Light theme">
+                  <StackPanel Orientation="Horizontal" Spacing="4"><a:Icon Kind="sun" Size="13" /><TextBlock Text="Light" /></StackPanel>
+                </Border>
+                <Border Classes="seg theme" a:Web.Href="/theme/dark" AutomationProperties.Name="Dark theme">
+                  <StackPanel Orientation="Horizontal" Spacing="4"><a:Icon Kind="moon" Size="13" /><TextBlock Text="Dark" /></StackPanel>
+                </Border>
+                <Border Classes="seg theme" a:Web.Href="/theme/system" AutomationProperties.Name="System theme, following the device">
+                  <StackPanel Orientation="Horizontal" Spacing="4"><a:Icon Kind="monitor" Size="13" /><TextBlock Text="System" /></StackPanel>
+                </Border>
+              </StackPanel>
+            </Border>
+
+            <TextBlock Classes="caption group" Text="OVERVIEW" />
+            <Border Classes="nav" a:Web.Href="/dashboard" a:Web.Exact="True">
+              <StackPanel Orientation="Horizontal" Spacing="10"><a:Icon Kind="dashboard" /><TextBlock Text="Live dashboard" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/about">
+              <StackPanel Orientation="Horizontal" Spacing="10"><a:Icon Kind="rocket" /><TextBlock Text="Getting started" /></StackPanel>
+            </Border>
+
+            <TextBlock Classes="caption group" Text="CHART FAMILIES" />
+            <Border Classes="nav" a:Web.Href="/line">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M1.5,12 L5.5,7 L9,9.5 L14.5,3.5" /><TextBlock Text="Line" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/area">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M1.5,13.5 L1.5,9 L5.5,5.5 L9,8 L14.5,3.5 L14.5,13.5 Z" /><TextBlock Text="Area" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/bar">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M3,13.5 L3,8 M8,13.5 L8,3.5 M13,13.5 L13,6" /><TextBlock Text="Bar" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/composed">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M3,14 L3,10 M8,14 L8,8 M13,14 L13,9 M1.5,6.5 L8,2.5 L14.5,4.5" /><TextBlock Text="Composed" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/scatter">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M3,11 L3.01,11 M7,6 L7.01,6 M11,9.5 L11.01,9.5 M12.5,3.5 L12.51,3.5 M5.5,13 L5.51,13" StrokeThickness="3" /><TextBlock Text="Scatter" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/pie">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M8,8 L8,1.5 A6.5,6.5 0 1 1 1.5,8 Z" /><TextBlock Text="Pie" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/radar">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M8,1.5 L13.6,4.75 L13.6,11.25 L8,14.5 L2.4,11.25 L2.4,4.75 Z M8,5 L10.8,6.8 L10,10.6 L6,10.8 L5.3,6.4 Z" /><TextBlock Text="Radar" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/radial-bar">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M8,1.5 A6.5,6.5 0 1 1 1.5,8 M8,5 A3,3 0 1 1 5,8" /><TextBlock Text="Radial bar" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/funnel">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M1.5,3 L14.5,3 M3.5,6.5 L12.5,6.5 M5.5,10 L10.5,10 M7,13.5 L9,13.5" /><TextBlock Text="Funnel" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/treemap">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M1.5,1.5 L14.5,1.5 L14.5,14.5 L1.5,14.5 Z M9,1.5 L9,14.5 M9,8 L14.5,8 M1.5,10 L9,10" /><TextBlock Text="Treemap" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/sankey">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M1.5,3 C8,3 8,11 14.5,11 M1.5,8 C8,8 8,4 14.5,4 M1.5,13 L14.5,13" /><TextBlock Text="Sankey" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/sunburst">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M8,5 A3,3 0 1 1 7.99,5 M8,1.5 A6.5,6.5 0 1 1 7.99,1.5 M8,1.5 L8,5" /><TextBlock Text="Sunburst" /></StackPanel>
+            </Border>
+
+            <Border Classes="nav" a:Web.Href="/compare">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M2,3 L7,3 L7,13 L2,13 Z M9,3 L14,3 L14,13 L9,13 Z" /><TextBlock Text="Compared with Recharts" /></StackPanel>
+            </Border>
+
+            <TextBlock Classes="caption group" Text="FEATURES" />
+            <Border Classes="nav" a:Web.Href="/axes">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M2.5,1.5 L2.5,13.5 L14.5,13.5 M2.5,9.5 L4,9.5 M2.5,5.5 L4,5.5 M6.5,13.5 L6.5,12 M10.5,13.5 L10.5,12" /><TextBlock Text="Axes" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/tips">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M2,2.5 L14,2.5 L14,10 L9.5,10 L8,12.5 L6.5,10 L2,10 Z M5,5.5 L11,5.5 M5,7.5 L9,7.5" /><TextBlock Text="Tooltips and legends" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/ranges">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M1.5,8 L14.5,8 M4,5 L4,11 M12,5 L12,11" /><TextBlock Text="Ranges" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/custom">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M2.5,13.5 L6,2.5 L9.5,13.5 Z M10.5,5 L14,5 L14,13.5 L10.5,13.5 Z" /><TextBlock Text="Custom content" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/interactions">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M3,2 L3,12 L5.8,9.6 L8,14 L10,13 L7.8,8.8 L11.5,8.6 Z" /><TextBlock Text="Interactions" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/interactive">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M9,1.5 L3,9 L8,9 L7,14.5 L13,7 L8,7 Z" /><TextBlock Text="Interactive" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/families">
+              <StackPanel Orientation="Horizontal" Spacing="10"><a:Icon Kind="target" /><TextBlock Text="Every interaction" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/live-charts">
+              <StackPanel Orientation="Horizontal" Spacing="10"><a:Icon Kind="activity" /><TextBlock Text="Live charts" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/updates">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M2,12 L6,7 L9,10 L14,3 M10.5,3 L14,3 L14,6.5" /><TextBlock Text="Update animations" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/binding">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M6,4.5 L2.5,8 L6,11.5 M10,4.5 L13.5,8 L10,11.5" /><TextBlock Text="Binding" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/themes">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M8,1.5 A6.5,6.5 0 1 1 7.99,1.5 M8,1.5 L8,14.5" /><TextBlock Text="Themes" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/features">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M8,1.5 L9.9,5.6 L14.4,6.1 L11,9.1 L12,13.5 L8,11.2 L4,13.5 L5,9.1 L1.6,6.1 L6.1,5.6 Z" /><TextBlock Text="Features" /></StackPanel>
+            </Border>
+            <Border Classes="nav" a:Web.Href="/more">
+              <StackPanel Orientation="Horizontal" Spacing="10"><Path Data="M3.5,8 L3.51,8 M8,8 L8.01,8 M12.5,8 L12.51,8" StrokeThickness="2.5" /><TextBlock Text="More" /></StackPanel>
+            </Border>
+          </StackPanel>
+        </ScrollViewer>
+      </Border>
+    </SplitView.Pane>
+
+    <DockPanel>
+      <Border DockPanel.Dock="Top" a:Web.Tag="header" a:Web.HideAbove="1024" IsVisible="{a:OnPlatform Default=False, Web=True}" Padding="16,8" BorderBrush="{DynamicResource Line}" BorderThickness="0,0,0,1">
+        <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
+          <Button Classes="ghost" AutomationProperties.Name="Menu" a:Web.Toggles="nav" VerticalAlignment="Center">
+            <a:Icon Kind="menu" Size="18" />
+          </Button>
+          <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+            <TextBlock Text="Pictor" FontWeight="SemiBold" VerticalAlignment="Center" />
+          </StackPanel>
+          <Border Grid.Column="2" Classes="iconbtn" a:Web.Href="/theme/toggle" AutomationProperties.Name="Switch theme" VerticalAlignment="Center">
+            <a:Icon Kind="{DynamicResource ThemeIcon}" Size="18" />
+          </Border>
+        </Grid>
+      </Border>
+      <ScrollViewer>
+        <StackPanel>
+          <Border Padding="24,24,24,8">
+            <a:Outlet />
+          </Border>
+          <Border Padding="24,16,24,24">
+            <TextBlock Classes="muted small" TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left"
+                       Text="Pictor is an independent port of Recharts and is not affiliated with or endorsed by the Recharts project. Recharts is MIT-licensed; see THIRD-PARTY-NOTICES." />
+          </Border>
+        </StackPanel>
+      </ScrollViewer>
+    </DockPanel>
+  </SplitView>
+</UserControl>

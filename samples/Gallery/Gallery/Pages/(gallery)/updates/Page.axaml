@@ -1,0 +1,153 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:UpdateCases" a:Page.Title="Update animations">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Update animations" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Change data moves every chart to other data, with more items, fewer or none before, and each animates from its previous geometry to the new one as Recharts' update animation does: on the web the framework morphs the page and moves each shape frame by frame from the numbers the chart declares, with no script of the page's own." />
+    <StackPanel Orientation="Horizontal" Spacing="8">
+      <Button Content="Change data" Command="{Binding Change}" />
+      <TextBlock Text="Data version" VerticalAlignment="Center" />
+      <NumericUpDown Value="{Binding Version}" Minimum="0" Increment="1" FormatString="0" Width="130" />
+    </StackPanel>
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="New values" />
+        <p:LineChart Data="{Binding LineValues}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Two more items" />
+        <p:LineChart Data="{Binding LineMore}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Two fewer items" />
+        <p:LineChart Data="{Binding LineFewer}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="From no items" />
+        <p:LineChart Data="{Binding LineFromEmpty}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="An area's new values" />
+        <p:AreaChart Data="{Binding AreaValues}" MaxWidth="500" Aspect="1.25" Padding="0,10,30,0">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" Stroke="#8884d8" Fill="#8884d8" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Stacked areas with two more items" />
+        <p:AreaChart Data="{Binding StackedAreaMore}" MaxWidth="500" Aspect="1.25" Padding="0,10,30,0">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Area Type="Monotone" DataKey="Uv" Name="uv" StackId="1" Stroke="#8884d8" Fill="#8884d8" />
+          <p:Area Type="Monotone" DataKey="Pv" Name="pv" StackId="1" Stroke="#82ca9d" Fill="#82ca9d" />
+          <p:Area Type="Monotone" DataKey="Amt" Name="amt" StackId="1" Stroke="#ffc658" Fill="#ffc658" />
+        </p:AreaChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Bars with one more item" />
+        <p:BarChart Data="{Binding BarMore}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" ActiveFill="pink" ActiveStroke="blue" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" ActiveFill="gold" ActiveStroke="purple" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Vertical bars with one more item" />
+        <p:BarChart Layout="Vertical" Data="{Binding BarMore}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis Type="Number" />
+          <p:YAxis DataKey="Name" Type="Category" />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" ActiveFill="pink" ActiveStroke="blue" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" ActiveFill="gold" ActiveStroke="purple" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A scatter with two more points" />
+        <p:ScatterChart Data="{Binding Points}" MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid />
+          <p:XAxis Type="Number" DataKey="X" Name="stature" Unit="cm" />
+          <p:YAxis Type="Number" DataKey="Y" Name="weight" Unit="kg" />
+          <p:Tooltip CursorStrokeDashArray="3 3" />
+          <p:Scatter Name="A school" Fill="#8884d8" />
+        </p:ScatterChart>
+      </StackPanel>
+      <StackPanel MaxWidth="800" Spacing="8">
+        <TextBlock Classes="h2" Text="Pies re-packed" />
+        <p:PieChart Data="{Binding FirstPie}" MaxWidth="800" Aspect="2">
+          <p:Pie DataKey="Value" NameKey="Name" Cx="200" OuterRadius="80" Fill="#8884d8" Label="True" />
+          <p:Pie Data="{Binding SecondPie}" DataKey="Value" NameKey="Name" Cx="500" Cy="200" InnerRadius="40" OuterRadius="80" Fill="#82ca9d" />
+          <p:Tooltip />
+        </p:PieChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A radar's new values" />
+        <p:RadarChart Data="{Binding Subjects}" MaxWidth="500" Aspect="1.25" OuterRadius="80%">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Name" />
+          <p:PolarRadiusAxis />
+          <p:Radar Name="Mike" DataKey="A" Stroke="#8884d8" Fill="#8884d8" FillOpacity="0.6" />
+        </p:RadarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Radial bars' new values" />
+        <p:RadialBarChart Data="{Binding Ages}" MaxWidth="500" Aspect="1.6666666666666667" InnerRadius="10%" OuterRadius="80%" BarSize="10">
+          <p:RadialBar DataKey="Uv" Name="uv" NameKey="Name" FillKey="Fill" Background="{DynamicResource SampleWash}" Label="InsideStart" LabelFill="#fff" />
+          <p:Legend IconSize="10" Layout="vertical" VerticalAlign="middle" Align="right" />
+          <p:Tooltip />
+        </p:RadialBarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="700" Spacing="8">
+        <TextBlock Classes="h2" Text="A funnel with one more stage" />
+        <p:FunnelChart Data="{Binding Stages}" MaxWidth="700" Aspect="1.6203703703703705" Padding="0,0,30,0">
+          <p:Tooltip />
+          <p:Funnel DataKey="Value" NameKey="Name" FillKey="Fill">
+            <p:LabelList DataKey="Name" Position="Right" Fill="{DynamicResource SampleInk}" />
+          </p:Funnel>
+        </p:FunnelChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

@@ -1,0 +1,95 @@
+{
+ "name": "DataOverflowScatterChart",
+ "kind": "ScatterChart",
+ "width": 400,
+ "height": 400,
+ "margin": {
+  "top": 20,
+  "right": 20,
+  "bottom": 20,
+  "left": 20
+ },
+ "source": "Recharts' XAxis allowDataOverflow API example (recharts.org/en-US/api/XAxis) on a scatter chart: the x domain cut to [110, 170], the joint line and the symbols clipped to the plot's width",
+ "data": null,
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "x",
+    "name": "stature",
+    "unit": "cm",
+    "domain": [
+     110,
+     170
+    ],
+    "allowDataOverflow": true
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "y",
+    "name": "weight",
+    "unit": "kg"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {
+    "cursor": {
+     "strokeDasharray": "3 3"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Scatter",
+   "props": {
+    "name": "A school",
+    "data": [
+     {
+      "x": 100,
+      "y": 200
+     },
+     {
+      "x": 120,
+      "y": 100
+     },
+     {
+      "x": 170,
+      "y": 300
+     },
+     {
+      "x": 140,
+      "y": 250
+     },
+     {
+      "x": 150,
+      "y": 400
+     },
+     {
+      "x": 110,
+      "y": 280
+     },
+     {
+      "x": 180,
+      "y": 320
+     }
+    ],
+    "fill": "#8884d8",
+    "line": true,
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

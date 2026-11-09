@@ -1,0 +1,214 @@
+{
+ "name": "GapsBarOptionsChart",
+ "kind": "BarChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "Pictor's gaps catalog: bars on named axes with a name, a unit, a stroke width, a fill opacity, a radius, a largest size and a smallest size, a hidden bar, a label list formatter, references on the named axes",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400,
+   "small": 0
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210,
+   "small": 40
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290,
+   "small": 2500
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000,
+   "small": 15
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181,
+   "small": 1800
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500,
+   "small": 900
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100,
+   "small": 3000
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name",
+    "xAxisId": "pages"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "yAxisId": "views"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "yAxisId": "small",
+    "orientation": "right"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "ReferenceArea",
+   "props": {
+    "xAxisId": "pages",
+    "yAxisId": "small",
+    "x1": "Page B",
+    "x2": "Page C",
+    "y1": 0,
+    "y2": 1000,
+    "fill": "#ff7300",
+    "fillOpacity": 0.2
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceLine",
+   "props": {
+    "xAxisId": "pages",
+    "yAxisId": "small",
+    "y": 2000,
+    "stroke": "red",
+    "strokeDasharray": "4 4"
+   },
+   "children": []
+  },
+  {
+   "type": "ReferenceDot",
+   "props": {
+    "xAxisId": "pages",
+    "yAxisId": "views",
+    "x": "Page E",
+    "y": 8000,
+    "r": 6,
+    "fill": "#8884d8",
+    "stroke": "none"
+   },
+   "children": []
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "xAxisId": "pages",
+    "yAxisId": "views",
+    "dataKey": "pv",
+    "name": "Page views",
+    "unit": " views",
+    "fill": "#8884d8",
+    "stroke": "#333",
+    "strokeWidth": 2,
+    "fillOpacity": 0.6,
+    "radius": [
+     8,
+     8,
+     0,
+     0
+    ],
+    "maxBarSize": 18,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "xAxisId": "pages",
+    "yAxisId": "small",
+    "dataKey": "small",
+    "name": "Small",
+    "fill": "#82ca9d",
+    "minPointSize": 12,
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "LabelList",
+     "props": {
+      "dataKey": "small",
+      "position": "top",
+      "formatter": {
+       "$format": "{0} u"
+      }
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "xAxisId": "pages",
+    "yAxisId": "views",
+    "dataKey": "uv",
+    "fill": "#ffc658",
+    "hide": true,
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     212,
+     5
+    ]
+   }
+  ]
+ ]
+}

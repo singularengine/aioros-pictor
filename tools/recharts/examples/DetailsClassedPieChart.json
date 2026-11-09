@@ -1,0 +1,53 @@
+{
+ "name": "DetailsClassedPieChart",
+ "kind": "PieChart",
+ "width": 400,
+ "height": 300,
+ "margin": null,
+ "chartProps": {
+  "className": "shares",
+  "style": {
+   "background": "#fafafa"
+  }
+ },
+ "source": "Pictor's details catalog: className on a pie chart and its pie",
+ "data": null,
+ "children": [
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "name": "Page A",
+      "value": 4000
+     },
+     {
+      "name": "Page B",
+      "value": 3000
+     },
+     {
+      "name": "Page C",
+      "value": 2000
+     },
+     {
+      "name": "Page D",
+      "value": 2780
+     }
+    ],
+    "dataKey": "value",
+    "cx": "50%",
+    "cy": "50%",
+    "outerRadius": 80,
+    "fill": "#8884d8",
+    "className": "pages",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ]
+}

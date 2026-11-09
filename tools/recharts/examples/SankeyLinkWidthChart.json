@@ -1,0 +1,57 @@
+{
+ "name": "SankeyLinkWidthChart",
+ "kind": "Sankey",
+ "width": 600,
+ "height": 300,
+ "margin": null,
+ "source": "Recharts' Sankey API example with link={{strokeWidth: 4}} (a fixed width overrides every link's own, as Recharts spreads the link props last)",
+ "data": {
+  "nodes": [
+   {
+    "name": "Visit"
+   },
+   {
+    "name": "Direct-Favourite"
+   },
+   {
+    "name": "Page-Click"
+   },
+   {
+    "name": "Detail-Favourite"
+   },
+   {
+    "name": "Lost"
+   }
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1,
+    "value": 3728.3
+   },
+   {
+    "source": 0,
+    "target": 2,
+    "value": 354170
+   },
+   {
+    "source": 2,
+    "target": 3,
+    "value": 62429
+   },
+   {
+    "source": 2,
+    "target": 4,
+    "value": 291741
+   }
+  ]
+ },
+ "props": {
+  "link": {
+   "strokeWidth": 4,
+   "stroke": "#413ea0",
+   "strokeOpacity": 0.6
+  }
+ },
+ "children": []
+}

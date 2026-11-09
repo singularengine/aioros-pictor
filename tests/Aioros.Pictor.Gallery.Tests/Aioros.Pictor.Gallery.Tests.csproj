@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\..\samples\Gallery\Gallery\Gallery.csproj" />
+    <PackageReference Include="Microsoft.Playwright" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Remove="$(MSBuildThisFileDirectory)..\..\BannedSymbols.txt" />
+    <AdditionalFiles Include="BannedSymbols.Gallery.txt" />
+  </ItemGroup>
+  <Target Name="LeaveTheGalleryItsGenerators" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <Analyzer Remove="@(Analyzer)" Condition="$([System.String]::Copy('%(Filename)').StartsWith('Aioros.Generators'))" />
+    </ItemGroup>
+  </Target>
+</Project>

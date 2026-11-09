@@ -1,0 +1,103 @@
+{
+ "name": "GapPaddingChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 20,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "two numeric XAxis over the same values, padded with 'gap' (bottom) and 'no-gap' (top)",
+ "data": [
+  {
+   "x": 5,
+   "y": 12,
+   "z": 3
+  },
+  {
+   "x": 18,
+   "y": 45,
+   "z": 7
+  },
+  {
+   "x": 26,
+   "y": 31,
+   "z": 1
+  },
+  {
+   "x": 41,
+   "y": 77,
+   "z": 9
+  },
+  {
+   "x": 63,
+   "y": 58,
+   "z": 4
+  },
+  {
+   "x": 87,
+   "y": 96,
+   "z": 6
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "x",
+    "type": "number",
+    "padding": "gap"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "x",
+    "type": "number",
+    "xAxisId": "top",
+    "orientation": "top",
+    "padding": "no-gap"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "y",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "z",
+    "xAxisId": "top",
+    "stroke": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

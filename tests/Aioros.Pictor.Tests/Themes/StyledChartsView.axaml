@@ -1,0 +1,47 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor"
+             x:Class="Aioros.Pictor.Tests.Themes.StyledChartsView">
+  <UserControl.Resources>
+    <ControlTheme x:Key="{x:Type p:Bar}" TargetType="p:Bar">
+      <Setter Property="Fill" Value="#123456" />
+    </ControlTheme>
+    <ControlTheme x:Key="Thick" TargetType="p:Line">
+      <Setter Property="StrokeWidth" Value="3" />
+      <Setter Property="Stroke" Value="#654321" />
+    </ControlTheme>
+  </UserControl.Resources>
+  <UserControl.Styles>
+    <Style Selector="p|CartesianGrid">
+      <Setter Property="Stroke" Value="#eeeeee" />
+    </Style>
+    <Style Selector="p|Line.accent">
+      <Setter Property="Stroke" Value="#ff0000" />
+      <Setter Property="StrokeWidth" Value="2" />
+    </Style>
+    <Style Selector="p|Cell.hot">
+      <Setter Property="Fill" Value="#00ff00" />
+    </Style>
+    <Style Selector="p|LineChart.muted p|XAxis">
+      <Setter Property="Stroke" Value="#999999" />
+    </Style>
+  </UserControl.Styles>
+  <StackPanel>
+    <p:LineChart x:Name="Lines" Width="500" Height="300">
+      <p:CartesianGrid />
+      <p:XAxis DataKey="name" />
+      <p:Line DataKey="uv" Name="uv" Classes="accent" />
+      <p:Line DataKey="uv" Name="uv" />
+      <p:Line DataKey="uv" Name="pv" Classes="accent" Stroke="#0000ff" />
+      <p:Line DataKey="uv" Name="pv" Theme="{StaticResource Thick}" />
+      <p:Line DataKey="uv" Name="pv" Theme="{StaticResource Thick}" Classes="accent" />
+      <p:Line DataKey="uv" Name="dynamic" Stroke="{DynamicResource PictorPalette10}" />
+    </p:LineChart>
+    <p:BarChart x:Name="Bars" Width="500" Height="300">
+      <p:Bar DataKey="uv" Name="uv">
+        <p:Cell Classes="hot" />
+        <p:Cell />
+      </p:Bar>
+      <p:Bar DataKey="uv" Name="uv" Fill="#abcdef" />
+    </p:BarChart>
+  </StackPanel>
+</UserControl>

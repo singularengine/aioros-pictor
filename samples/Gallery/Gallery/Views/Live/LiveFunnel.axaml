@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models"
+             x:Class="Gallery.Views.Live.LiveFunnel" x:DataType="m:LiveFamilies">
+  <Border Classes="card">
+    <StackPanel Spacing="8">
+      <TextBlock Classes="title" Text="Funnel chart" />
+      <TextBlock Classes="muted small" Text="{Binding Updated}" />
+      <p:FunnelChart Data="{Binding Stages}" MaxWidth="700" Aspect="1.6203703703703705" Padding="0,0,30,0">
+        <p:Tooltip />
+        <p:Funnel DataKey="Value" NameKey="Name" FillKey="Fill">
+          <p:LabelList DataKey="Name" Position="Right" Fill="{DynamicResource SampleInk}" />
+        </p:Funnel>
+      </p:FunnelChart>
+    </StackPanel>
+  </Border>
+</UserControl>

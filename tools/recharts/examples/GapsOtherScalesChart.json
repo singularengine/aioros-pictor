@@ -1,0 +1,130 @@
+{
+ "name": "GapsOtherScalesChart",
+ "kind": "LineChart",
+ "width": 600,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "Pictor's gaps catalog: value axes with d3's identity and sequential scales",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400,
+   "px": 40
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210,
+   "px": 180
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290,
+   "px": 90
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000,
+   "px": 150
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181,
+   "px": 60
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500,
+   "px": 200
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100,
+   "px": 120
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "yAxisId": "identity",
+    "scale": "identity",
+    "type": "number",
+    "dataKey": "px"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "yAxisId": "sequential",
+    "scale": "sequential",
+    "type": "number",
+    "orientation": "right"
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "yAxisId": "identity",
+    "dataKey": "px",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "yAxisId": "sequential",
+    "dataKey": "uv",
+    "stroke": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "yAxisId": "sequential",
+    "dataKey": "amt",
+    "stroke": "#ff7300",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

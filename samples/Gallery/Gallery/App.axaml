@@ -1,0 +1,245 @@
+<Application xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:a="https://aioros.dev" xmlns:p="https://aioros.dev/pictor" x:Class="Gallery.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <x:String x:Key="PictorPalette1">#2563eb</x:String>
+          <x:String x:Key="PictorPalette2">#db2777</x:String>
+          <SolidColorBrush x:Key="AppBg" Color="#F7F7F8" />
+          <SolidColorBrush x:Key="Surface" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="SurfaceAlt" Color="#F2F2F4" />
+          <SolidColorBrush x:Key="Line" Color="#E6E6EA" />
+          <SolidColorBrush x:Key="Text" Color="#111113" />
+          <SolidColorBrush x:Key="Muted" Color="#5F5F68" />
+          <SolidColorBrush x:Key="Faint" Color="#8B8B94" />
+          <SolidColorBrush x:Key="Hover" Color="#EDEDF0" />
+          <SolidColorBrush x:Key="Selected" Color="#E6E6EB" />
+          <SolidColorBrush x:Key="Accent" Color="#2A78D6" />
+          <SolidColorBrush x:Key="AccentSoft" Color="#E7F0FB" />
+          <SolidColorBrush x:Key="Positive" Color="#067A3A" />
+          <SolidColorBrush x:Key="PositiveSoft" Color="#E3F4EA" />
+          <SolidColorBrush x:Key="Negative" Color="#C42B30" />
+          <SolidColorBrush x:Key="NegativeSoft" Color="#FBE7E7" />
+          <SolidColorBrush x:Key="Live" Color="#16A34A" />
+          <BoxShadows x:Key="CardShadow">0 1 2 0 #0D101828</BoxShadows>
+          <BoxShadows x:Key="ChipShadow">0 1 2 0 #1F101828</BoxShadows>
+          <x:String x:Key="SampleInk">#000</x:String>
+          <x:String x:Key="SampleInkSoft">#333</x:String>
+          <x:String x:Key="SampleWash">#eee</x:String>
+          <x:String x:Key="SampleGridSoft">#f5f5f5</x:String>
+          <x:String x:Key="SampleStripes">#f4f4f4 #fff</x:String>
+          <x:String x:Key="SampleRing">#fff</x:String>
+          <x:String x:Key="SampleWatermark">#ccc</x:String>
+          <SolidColorBrush x:Key="SampleInkSoftBrush" Color="#333333" />
+          <SolidColorBrush x:Key="SampleRingBrush" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="SampleTickSoftBrush" Color="#666666" />
+          <SolidColorBrush x:Key="SampleTipBgBrush" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="SampleTipBorderBrush" Color="#CCCCCC" />
+          <SolidColorBrush x:Key="SampleWatermarkBrush" Color="#CCCCCC" />
+          <x:String x:Key="ThemeIcon">moon</x:String>
+          <x:String x:Key="ThemeName">Dark theme</x:String>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <x:String x:Key="PictorPalette1">#60a5fa</x:String>
+          <x:String x:Key="PictorPalette2">#f472b6</x:String>
+          <SolidColorBrush x:Key="AppBg" Color="#09090B" />
+          <SolidColorBrush x:Key="Surface" Color="#131316" />
+          <SolidColorBrush x:Key="SurfaceAlt" Color="#1B1B1F" />
+          <SolidColorBrush x:Key="Line" Color="#26262C" />
+          <SolidColorBrush x:Key="Text" Color="#EDEDF0" />
+          <SolidColorBrush x:Key="Muted" Color="#A1A1AA" />
+          <SolidColorBrush x:Key="Faint" Color="#71717A" />
+          <SolidColorBrush x:Key="Hover" Color="#1D1D22" />
+          <SolidColorBrush x:Key="Selected" Color="#25252B" />
+          <SolidColorBrush x:Key="Accent" Color="#5C9DF0" />
+          <SolidColorBrush x:Key="AccentSoft" Color="#15233A" />
+          <SolidColorBrush x:Key="Positive" Color="#3DD68C" />
+          <SolidColorBrush x:Key="PositiveSoft" Color="#0F2A1D" />
+          <SolidColorBrush x:Key="Negative" Color="#FF7A7A" />
+          <SolidColorBrush x:Key="NegativeSoft" Color="#341616" />
+          <SolidColorBrush x:Key="Live" Color="#22C55E" />
+          <BoxShadows x:Key="CardShadow">0 1 2 0 #66000000</BoxShadows>
+          <BoxShadows x:Key="ChipShadow">0 1 2 0 #80000000</BoxShadows>
+          <x:String x:Key="SampleInk">#ededf0</x:String>
+          <x:String x:Key="SampleInkSoft">#c9c9c9</x:String>
+          <x:String x:Key="SampleWash">#161616</x:String>
+          <x:String x:Key="SampleGridSoft">#1b1b1f</x:String>
+          <x:String x:Key="SampleStripes">#1b1b1f #09090b</x:String>
+          <x:String x:Key="SampleRing">#09090b</x:String>
+          <x:String x:Key="SampleWatermark">#313131</x:String>
+          <SolidColorBrush x:Key="SampleInkSoftBrush" Color="#C9C9C9" />
+          <SolidColorBrush x:Key="SampleRingBrush" Color="#09090B" />
+          <SolidColorBrush x:Key="SampleTickSoftBrush" Color="#868686" />
+          <SolidColorBrush x:Key="SampleTipBgBrush" Color="#131316" />
+          <SolidColorBrush x:Key="SampleTipBorderBrush" Color="#313131" />
+          <SolidColorBrush x:Key="SampleWatermarkBrush" Color="#313131" />
+          <x:String x:Key="ThemeIcon">sun</x:String>
+          <x:String x:Key="ThemeName">Light theme</x:String>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+      <Color x:Key="SystemAccentColor">#2A78D6</Color>
+    </ResourceDictionary>
+  </Application.Resources>
+  <Application.Styles>
+    <FluentTheme />
+    <p:PictorTheme />
+    <Style Selector="Window">
+      <Setter Property="Background" Value="{DynamicResource AppBg}" />
+      <Setter Property="Foreground" Value="{DynamicResource Text}" />
+      <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="FontSize" Value="26" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="TextBlock.h2">
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="FontSize" Value="15" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="TextBlock.muted"><Setter Property="Foreground" Value="{DynamicResource Muted}" /></Style>
+    <Style Selector="TextBlock.small">
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style Selector="TextBlock.caption">
+      <Setter Property="FontSize" Value="11" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="LetterSpacing" Value="0.6" />
+      <Setter Property="Foreground" Value="{DynamicResource Faint}" />
+    </Style>
+
+    <Style Selector="Border.nav">
+      <Setter Property="Padding" Value="10,6" />
+      <Setter Property="CornerRadius" Value="6" />
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Border.nav:pointerover"><Setter Property="Background" Value="{DynamicResource Hover}" /></Style>
+    <Style Selector="Border.nav TextBlock"><Setter Property="Foreground" Value="{DynamicResource Muted}" /></Style>
+    <Style Selector="Border.nav Path"><Setter Property="Stroke" Value="{DynamicResource Faint}" /></Style>
+    <Style Selector="Border.nav a|Icon"><Setter Property="Foreground" Value="{DynamicResource Faint}" /></Style>
+    <Style Selector="Border.nav:pointerover TextBlock"><Setter Property="Foreground" Value="{DynamicResource Text}" /></Style>
+    <Style Selector="Border.nav:current"><Setter Property="Background" Value="{DynamicResource Selected}" /></Style>
+    <Style Selector="Border.nav:current TextBlock">
+      <Setter Property="Foreground" Value="{DynamicResource Text}" />
+      <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+    <Style Selector="Border.nav:current Path"><Setter Property="Stroke" Value="{DynamicResource Accent}" /></Style>
+    <Style Selector="Border.nav:current a|Icon"><Setter Property="Foreground" Value="{DynamicResource Accent}" /></Style>
+    <Style Selector="Border.brand">
+      <Setter Property="Padding" Value="8,6" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Border.brand:pointerover"><Setter Property="Background" Value="{DynamicResource Hover}" /></Style>
+    <Style Selector="Border.iconbtn">
+      <Setter Property="Padding" Value="8" />
+      <Setter Property="CornerRadius" Value="8" />
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Border.iconbtn:pointerover"><Setter Property="Background" Value="{DynamicResource Hover}" /></Style>
+    <Style Selector="Border.iconbtn a|Icon"><Setter Property="Foreground" Value="{DynamicResource Muted}" /></Style>
+    <Style Selector="Button.ghost">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="Padding" Value="8" />
+      <Setter Property="CornerRadius" Value="8" />
+    </Style>
+    <Style Selector="Border.textlink">
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Border.textlink TextBlock"><Setter Property="Foreground" Value="{DynamicResource Accent}" /></Style>
+    <Style Selector="Border.textlink:pointerover TextBlock"><Setter Property="TextDecorations" Value="Underline" /></Style>
+
+    <Style Selector="Border.card">
+      <Setter Property="Background" Value="{DynamicResource Surface}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Line}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="12" />
+      <Setter Property="Padding" Value="20" />
+      <Setter Property="BoxShadow" Value="{DynamicResource CardShadow}" />
+    </Style>
+    <Style Selector="TextBlock.title">
+      <Setter Property="TextWrapping" Value="Wrap" />
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="TextBlock.kpi">
+      <Setter Property="FontSize" Value="28" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="LetterSpacing" Value="-0.5" />
+      <Setter Property="FontFeatures" Value="+tnum" />
+    </Style>
+    <Style Selector="TextBlock.figure">
+      <Setter Property="FontFeatures" Value="+tnum" />
+    </Style>
+    <Style Selector="Border.segment">
+      <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
+      <Setter Property="CornerRadius" Value="9" />
+      <Setter Property="Padding" Value="3" />
+    </Style>
+    <Style Selector="Border.seg">
+      <Setter Property="Padding" Value="11,5" />
+      <Setter Property="CornerRadius" Value="6" />
+      <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style Selector="Border.seg TextBlock">
+      <Setter Property="Foreground" Value="{DynamicResource Muted}" />
+      <Setter Property="FontSize" Value="13" />
+      <Setter Property="FontWeight" Value="Medium" />
+    </Style>
+    <Style Selector="Border.seg:pointerover TextBlock"><Setter Property="Foreground" Value="{DynamicResource Text}" /></Style>
+    <Style Selector="Border.seg.on">
+      <Setter Property="Background" Value="{DynamicResource Surface}" />
+      <Setter Property="BoxShadow" Value="{DynamicResource ChipShadow}" />
+    </Style>
+    <Style Selector="Border.seg.on TextBlock"><Setter Property="Foreground" Value="{DynamicResource Text}" /></Style>
+    <Style Selector="Border.pill">
+      <Setter Property="CornerRadius" Value="999" />
+      <Setter Property="Padding" Value="7,2" />
+      <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
+    </Style>
+    <Style Selector="Border.pill TextBlock">
+      <Setter Property="FontSize" Value="12" />
+      <Setter Property="FontWeight" Value="Medium" />
+      <Setter Property="Foreground" Value="{DynamicResource Muted}" />
+    </Style>
+    <Style Selector="Border.pill.good"><Setter Property="Background" Value="{DynamicResource PositiveSoft}" /></Style>
+    <Style Selector="Border.pill.good TextBlock"><Setter Property="Foreground" Value="{DynamicResource Positive}" /></Style>
+    <Style Selector="Border.pill.bad"><Setter Property="Background" Value="{DynamicResource NegativeSoft}" /></Style>
+    <Style Selector="Border.pill.bad TextBlock"><Setter Property="Foreground" Value="{DynamicResource Negative}" /></Style>
+    <Style Selector="Border.livedot">
+      <Setter Property="Width" Value="8" />
+      <Setter Property="Height" Value="8" />
+      <Setter Property="CornerRadius" Value="4" />
+      <Setter Property="Background" Value="{DynamicResource Live}" />
+      <Style.Animations>
+        <Animation Duration="0:0:1.2" IterationCount="Infinite" PlaybackDirection="Alternate">
+          <KeyFrame Cue="0%"><Setter Property="Opacity" Value="1" /></KeyFrame>
+          <KeyFrame Cue="100%"><Setter Property="Opacity" Value="0.35" /></KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+    <Style Selector="Border.swatch">
+      <Setter Property="Width" Value="10" />
+      <Setter Property="Height" Value="10" />
+      <Setter Property="CornerRadius" Value="3" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Border.row">
+      <Setter Property="Padding" Value="0,9" />
+      <Setter Property="BorderBrush" Value="{DynamicResource Line}" />
+      <Setter Property="BorderThickness" Value="0,0,0,1" />
+    </Style>
+    <Style Selector="Border.tone">
+      <Setter Property="Width" Value="8" />
+      <Setter Property="Height" Value="8" />
+      <Setter Property="CornerRadius" Value="4" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="Background" Value="{DynamicResource Faint}" />
+    </Style>
+  </Application.Styles>
+</Application>

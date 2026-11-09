@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:a="https://aioros.dev" xmlns:p="https://aioros.dev/pictor" xmlns:l="using:Gallery.Landing"
+             x:DataType="l:LandingModel">
+  <StackPanel MaxWidth="1200" Margin="24,48,24,64" Spacing="56">
+    <StackPanel Spacing="18" MaxWidth="860" HorizontalAlignment="Left">
+      <TextBlock Classes="caption" Foreground="{DynamicResource Accent}" Text="{Binding Copy.Eyebrow}" />
+      <TextBlock Classes="h1" FontSize="48" LineHeight="54" TextWrapping="Wrap" Text="{Binding Copy.Title}" />
+      <TextBlock Classes="muted" FontSize="18" LineHeight="28" TextWrapping="Wrap" Text="{Binding Copy.Lead}" />
+      <WrapPanel ItemSpacing="12" LineSpacing="12">
+        <Border Classes="pill good" a:Web.Href="/line" Padding="18,10"><TextBlock Text="{Binding Copy.Start}" /></Border>
+        <Border Classes="pill" a:Web.Href="/compare" Padding="18,10"><TextBlock Text="{Binding Copy.Compare}" /></Border>
+      </WrapPanel>
+    </StackPanel>
+    <Grid ColumnDefinitions="*,*,*" ColumnSpacing="20" RowSpacing="20" a:Web.StackBelow="720">
+      <StackPanel Spacing="4"><TextBlock Classes="kpi" FontSize="44" Foreground="{DynamicResource Accent}" Text="12" /><TextBlock Classes="muted" TextWrapping="Wrap" Text="{Binding Copy.ChartsLabel}" /></StackPanel>
+      <StackPanel Grid.Column="1" Spacing="4"><TextBlock Classes="kpi" FontSize="44" Foreground="{DynamicResource Accent}" Text="96×" /><TextBlock Classes="muted" TextWrapping="Wrap" Text="{Binding Copy.FasterLabel}" /></StackPanel>
+      <StackPanel Grid.Column="2" Spacing="4"><TextBlock Classes="kpi" FontSize="44" Foreground="{DynamicResource Accent}" Text="2.15.4" /><TextBlock Classes="muted" TextWrapping="Wrap" Text="{Binding Copy.VersionLabel}" /></StackPanel>
+    </Grid>
+    <Border Classes="card">
+      <StackPanel Spacing="6"><TextBlock Classes="title" Text="{Binding Copy.MeasuredTitle}" /><TextBlock Classes="muted" TextWrapping="Wrap" Text="{Binding Copy.Measured}" /></StackPanel>
+    </Border>
+    <StackPanel Spacing="20">
+      <StackPanel Spacing="8"><TextBlock Classes="h1" Text="{Binding Copy.FamiliesTitle}" /><TextBlock Classes="muted" TextWrapping="Wrap" Text="{Binding Copy.FamiliesLead}" /></StackPanel>
+      <UniformGrid Columns="3" ColumnSpacing="20" RowSpacing="20" a:Web.StackBelow="900">
+        <Border Classes="card" a:Web.Href="/line"><StackPanel Spacing="12"><Border Height="210"><p:LineChart Data="{Binding Pages}" Height="200" ResponsiveWidths="260 360"><p:CartesianGrid Vertical="False" /><p:XAxis DataKey="Name" /><p:Tooltip /><p:Line Type="Monotone" DataKey="Pv" Stroke="{DynamicResource PictorPalette1}" StrokeWidth="2" /><p:Line Type="Monotone" DataKey="Uv" Stroke="{DynamicResource PictorPalette2}" StrokeWidth="2" /></p:LineChart></Border><TextBlock Classes="title" Text="{Binding Copy.Line}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/area"><StackPanel Spacing="12"><Border Height="210"><p:AreaChart Data="{Binding Pages}" Height="200" ResponsiveWidths="260 360"><p:CartesianGrid Vertical="False" /><p:XAxis DataKey="Name" /><p:Tooltip /><p:Area Type="Monotone" DataKey="Uv" StackId="1" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource PictorPalette1}" FillOpacity="0.4" /><p:Area Type="Monotone" DataKey="Pv" StackId="1" Stroke="{DynamicResource PictorPalette3}" Fill="{DynamicResource PictorPalette3}" FillOpacity="0.4" /></p:AreaChart></Border><TextBlock Classes="title" Text="{Binding Copy.Area}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/bar"><StackPanel Spacing="12"><Border Height="210"><p:BarChart Data="{Binding Pages}" Height="200" ResponsiveWidths="260 360"><p:CartesianGrid Vertical="False" /><p:XAxis DataKey="Name" /><p:Tooltip /><p:Bar DataKey="Pv" Fill="{DynamicResource PictorPalette1}" Radius="4" /><p:Bar DataKey="Uv" Fill="{DynamicResource PictorPalette2}" Radius="4" /></p:BarChart></Border><TextBlock Classes="title" Text="{Binding Copy.Bar}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/composed"><StackPanel Spacing="12"><Border Height="210"><p:ComposedChart Data="{Binding Composed}" Height="200" ResponsiveWidths="260 360"><p:CartesianGrid Vertical="False" /><p:XAxis DataKey="Name" Scale="band" /><p:Tooltip /><p:Area Type="Monotone" DataKey="Amt" Fill="{DynamicResource PictorPalette3}" Stroke="{DynamicResource PictorPalette3}" FillOpacity="0.3" /><p:Bar DataKey="Pv" BarSize="16" Fill="{DynamicResource PictorPalette1}" /><p:Line Type="Monotone" DataKey="Uv" Stroke="{DynamicResource PictorPalette2}" StrokeWidth="2" /></p:ComposedChart></Border><TextBlock Classes="title" Text="{Binding Copy.Composed}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/scatter"><StackPanel Spacing="12"><Border Height="210"><p:ScatterChart Data="{Binding Scatter}" Height="200" ResponsiveWidths="260 360"><p:CartesianGrid /><p:XAxis Type="Number" DataKey="X" /><p:YAxis Type="Number" DataKey="Y" Width="36" /><p:Tooltip /><p:Scatter Fill="{DynamicResource PictorPalette4}" /></p:ScatterChart></Border><TextBlock Classes="title" Text="{Binding Copy.Scatter}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/pie"><StackPanel Spacing="12"><Border Height="210"><p:PieChart Data="{Binding Slices}" Width="200" Height="200" HorizontalAlignment="Center"><p:Tooltip /><p:Pie Data="{Binding Slices}" DataKey="Value" NameKey="Name" InnerRadius="50" PaddingAngle="3"><p:Cell Fill="{DynamicResource PictorPalette1}" /><p:Cell Fill="{DynamicResource PictorPalette2}" /><p:Cell Fill="{DynamicResource PictorPalette3}" /><p:Cell Fill="{DynamicResource PictorPalette4}" /></p:Pie></p:PieChart></Border><TextBlock Classes="title" Text="{Binding Copy.Pie}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/radar"><StackPanel Spacing="12"><Border Height="210"><p:RadarChart Data="{Binding Subjects}" Width="240" Height="200" HorizontalAlignment="Center" OuterRadius="70%"><p:PolarGrid /><p:PolarAngleAxis DataKey="Name" /><p:Radar DataKey="A" Stroke="{DynamicResource PictorPalette1}" Fill="{DynamicResource PictorPalette1}" FillOpacity="0.5" /><p:Radar DataKey="B" Stroke="{DynamicResource PictorPalette2}" Fill="{DynamicResource PictorPalette2}" FillOpacity="0.4" /></p:RadarChart></Border><TextBlock Classes="title" Text="{Binding Copy.Radar}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/radial-bar"><StackPanel Spacing="12"><Border Height="210"><p:RadialBarChart Data="{Binding Ages}" InnerRadius="18" OuterRadius="96" Width="200" Height="200" HorizontalAlignment="Center"><p:RadialBar DataKey="Uv" FillKey="Fill" /></p:RadialBarChart></Border><TextBlock Classes="title" Text="{Binding Copy.Radial}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/funnel"><StackPanel Spacing="12"><Border Height="210"><p:FunnelChart Data="{Binding Funnel}" Height="200" ResponsiveWidths="260 360"><p:Tooltip /><p:Funnel DataKey="Value" NameKey="Name" FillKey="Fill"><p:LabelList Position="Center" Fill="#fff" Stroke="none" DataKey="Name" /></p:Funnel></p:FunnelChart></Border><TextBlock Classes="title" Text="{Binding Copy.Funnel}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/treemap"><StackPanel Spacing="12"><Border Height="210"><p:Treemap Data="{Binding Flare}" Height="200" ResponsiveWidths="260 360" DataKey="Size" NameKey="Name" Stroke="#fff" Fill="{DynamicResource PictorPalette1}" /></Border><TextBlock Classes="title" Text="{Binding Copy.Treemap}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/sankey"><StackPanel Spacing="12"><Border Height="210"><p:Sankey Data="{Binding Visits}" Height="200" ResponsiveWidths="260 360" NodePadding="30" Padding="0,0,0,20" LinkStroke="{DynamicResource PictorPalette3}" NodeFill="{DynamicResource PictorPalette1}"><p:Tooltip /></p:Sankey></Border><TextBlock Classes="title" Text="{Binding Copy.Sankey}" /></StackPanel></Border>
+        <Border Classes="card" a:Web.Href="/sunburst"><StackPanel Spacing="12"><Border Height="210"><p:SunburstChart Data="{Binding Sunburst}" Width="200" Height="200" HorizontalAlignment="Center" FillKey="Fill"><p:Tooltip /></p:SunburstChart></Border><TextBlock Classes="title" Text="{Binding Copy.Sunburst}" /></StackPanel></Border>
+      </UniformGrid>
+    </StackPanel>
+    <Grid ColumnDefinitions="*,*" ColumnSpacing="32" RowSpacing="24" a:Web.StackBelow="900">
+      <StackPanel Spacing="8"><TextBlock Classes="h1" Text="{Binding Copy.CodeTitle}" /><TextBlock Classes="muted" TextWrapping="Wrap" Text="{Binding Copy.CodeLead}" /></StackPanel>
+      <Border Grid.Column="1" Classes="card" Background="#0b0b0f">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled"><TextBlock FontFamily="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" FontSize="13" Foreground="#e4e4e7" Text="{Binding Sample}" /></ScrollViewer>
+      </Border>
+    </Grid>
+    <WrapPanel ItemSpacing="16" LineSpacing="8">
+      <Border Classes="textlink" a:Web.Href="/line"><TextBlock Text="{Binding Copy.Gallery}" /></Border>
+      <Border Classes="textlink" a:Web.Href="{Binding AiorosSite}"><TextBlock Text="{Binding Copy.Ecosystem}" /></Border>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

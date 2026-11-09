@@ -1,0 +1,83 @@
+{
+ "name": "SankeyOptionsChart",
+ "kind": "Sankey",
+ "width": 800,
+ "height": 400,
+ "margin": {
+  "top": 10,
+  "right": 10,
+  "bottom": 10,
+  "left": 10
+ },
+ "source": "Recharts' Sankey API example (recharts.org/en-US/api/Sankey: node and link props, nodePadding, nodeWidth, linkCurvature, iterations, sort and dataKey, which 2.15.4 does not read) on SankeyCustomNodeExample's data",
+ "data": {
+  "nodes": [
+   {
+    "name": "Visit"
+   },
+   {
+    "name": "Direct-Favourite"
+   },
+   {
+    "name": "Page-Click"
+   },
+   {
+    "name": "Detail-Favourite"
+   },
+   {
+    "name": "Lost"
+   }
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1,
+    "value": 3728.3
+   },
+   {
+    "source": 0,
+    "target": 2,
+    "value": 354170
+   },
+   {
+    "source": 2,
+    "target": 3,
+    "value": 62429
+   },
+   {
+    "source": 2,
+    "target": 4,
+    "value": 291741
+   }
+  ]
+ },
+ "props": {
+  "dataKey": "other",
+  "nodePadding": 30,
+  "nodeWidth": 20,
+  "linkCurvature": 0.3,
+  "iterations": 4,
+  "sort": false,
+  "node": {
+   "fill": "#8884d8",
+   "fillOpacity": 1,
+   "stroke": "#333",
+   "strokeWidth": 2,
+   "strokeOpacity": 0.5,
+   "strokeDasharray": "4 2"
+  },
+  "link": {
+   "stroke": "#82ca9d",
+   "strokeOpacity": 0.5,
+   "strokeDasharray": "8 4",
+   "fill": "#eee"
+  }
+ },
+ "children": [
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ]
+}

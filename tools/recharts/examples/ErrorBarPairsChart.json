@@ -1,0 +1,176 @@
+{
+ "name": "ErrorBarPairsChart",
+ "kind": "ComposedChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "Recharts' ErrorBar API example (recharts.org/en-US/api/ErrorBar) with errors given as [low, high] pairs (and a plain value and a missing one) on a bar and a line",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400,
+   "pvError": [
+    200,
+    600
+   ],
+   "uvError": [
+    400,
+    100
+   ]
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210,
+   "pvError": [
+    100,
+    300
+   ],
+   "uvError": 250
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290,
+   "pvError": [
+    900,
+    400
+   ],
+   "uvError": [
+    300,
+    600
+   ]
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000,
+   "pvError": 400,
+   "uvError": [
+    280,
+    0
+   ]
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181,
+   "pvError": [
+    0,
+    500
+   ],
+   "uvError": [
+    190,
+    400
+   ]
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500,
+   "pvError": null,
+   "uvError": [
+    240,
+    240
+   ]
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100,
+   "pvError": [
+    450,
+    150
+   ],
+   "uvError": [
+    350,
+    100
+   ]
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "dataKey": "pv",
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "ErrorBar",
+     "props": {
+      "dataKey": "pvError",
+      "width": 4,
+      "strokeWidth": 2,
+      "stroke": "green",
+      "direction": "y"
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "uv",
+    "stroke": "#ff7300",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "ErrorBar",
+     "props": {
+      "dataKey": "uvError",
+      "width": 6,
+      "stroke": "#ff7300",
+      "direction": "y"
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

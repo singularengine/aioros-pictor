@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:InteractionData" a:Page.Title="Legend toggles and brushes">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Legend toggles and brushes" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Click a legend item to hide or show its series: on the web a checkbox and CSS do it without script, on the desktop the click. The chart is not laid out again. A brush selects the window of items the chart shows: drag its travellers or its slide in the native app; the web draws it where its StartIndex and EndIndex put it." />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="SimpleLineChart with legend toggles" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend Toggles="True" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="BrushBarChart" />
+        <p:BarChart Data="{Binding Samples}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend VerticalAlign="top" LineHeight="40" Toggles="True" />
+          <p:ReferenceLine Y="0" Stroke="{DynamicResource SampleInk}" />
+          <p:Brush DataKey="Name" Height="30" Stroke="#8884d8" StartIndex="{Binding WholeStart}" EndIndex="{Binding WholeEnd}" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="BrushBarChart from item 5 to 15" />
+        <p:BarChart Data="{Binding Samples}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:ReferenceLine Y="0" Stroke="{DynamicResource SampleInk}" />
+          <p:Brush DataKey="Name" Height="30" Stroke="#8884d8" StartIndex="{Binding WindowStart}" EndIndex="{Binding WindowEnd}" />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+        </p:BarChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

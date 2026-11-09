@@ -1,0 +1,127 @@
+{
+ "name": "MatrixClickRadialBarChart",
+ "kind": "RadialBarChart",
+ "width": 500,
+ "height": 300,
+ "margin": null,
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "innerRadius": "10%",
+  "outerRadius": "80%",
+  "barSize": 10,
+  "onClick": {
+   "$click": "chart"
+  }
+ },
+ "source": "Pictor's fidelity matrix: SimpleRadialBarChart with the chart's onClick and the radial bar's onClick, clicked on a bar and on a band's background",
+ "data": [
+  {
+   "name": "18-24",
+   "uv": 31.47,
+   "pv": 2400,
+   "fill": "#8884d8"
+  },
+  {
+   "name": "25-29",
+   "uv": 26.69,
+   "pv": 4567,
+   "fill": "#83a6ed"
+  },
+  {
+   "name": "30-34",
+   "uv": 15.69,
+   "pv": 1398,
+   "fill": "#8dd1e1"
+  },
+  {
+   "name": "35-39",
+   "uv": 8.22,
+   "pv": 9800,
+   "fill": "#82ca9d"
+  },
+  {
+   "name": "40-49",
+   "uv": 8.63,
+   "pv": 3908,
+   "fill": "#a4de6c"
+  },
+  {
+   "name": "50+",
+   "uv": 2.63,
+   "pv": 4800,
+   "fill": "#d0ed57"
+  },
+  {
+   "name": "unknow",
+   "uv": 6.67,
+   "pv": 4800,
+   "fill": "#ffc658"
+  }
+ ],
+ "children": [
+  {
+   "type": "RadialBar",
+   "props": {
+    "minAngle": 15,
+    "label": {
+     "position": "insideStart",
+     "fill": "#fff"
+    },
+    "background": true,
+    "clockWise": true,
+    "dataKey": "uv",
+    "isAnimationActive": false,
+    "onClick": {
+     "$click": "bar"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {
+    "iconSize": 10,
+    "layout": "vertical",
+    "verticalAlign": "middle",
+    "align": "right"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     180,
+     150
+    ]
+   },
+   {
+    "click": [
+     180,
+     150
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     250,
+     60
+    ]
+   },
+   {
+    "click": [
+     250,
+     60
+    ]
+   }
+  ]
+ ]
+}

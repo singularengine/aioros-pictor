@@ -1,0 +1,204 @@
+{
+ "name": "GapsOwnDataErrorBarChart",
+ "kind": "BarChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "Pictor's gaps catalog: error bars on bars that carry their own data over a category axis, in a chart with data of its own (without it Recharts draws no bar)",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500
+  },
+  {
+   "name": "Page G",
+   "uv": 3490,
+   "pv": 4300,
+   "amt": 2100
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name",
+    "allowDuplicatedCategory": false
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "dataKey": "pv",
+    "data": [
+     {
+      "name": "Page A",
+      "uv": 4000,
+      "pv": 2400,
+      "amt": 2400,
+      "pvError": 300,
+      "uvError": 400
+     },
+     {
+      "name": "Page B",
+      "uv": 3000,
+      "pv": 1398,
+      "amt": 2210,
+      "pvError": 200,
+      "uvError": 250
+     },
+     {
+      "name": "Page C",
+      "uv": 2000,
+      "pv": 9800,
+      "amt": 2290,
+      "pvError": 900,
+      "uvError": 300
+     },
+     {
+      "name": "Page D",
+      "uv": 2780,
+      "pv": 3908,
+      "amt": 2000,
+      "pvError": 400,
+      "uvError": 280
+     },
+     {
+      "name": "Page E",
+      "uv": 1890,
+      "pv": 4800,
+      "amt": 2181,
+      "pvError": 500,
+      "uvError": 190
+     }
+    ],
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "ErrorBar",
+     "props": {
+      "dataKey": "pvError",
+      "width": 4,
+      "strokeWidth": 2,
+      "stroke": "green",
+      "direction": "y"
+     },
+     "children": []
+    }
+   ]
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "dataKey": "uv",
+    "data": [
+     {
+      "name": "Page A",
+      "uv": 4000,
+      "pv": 2400,
+      "amt": 2400,
+      "pvError": 300,
+      "uvError": 400
+     },
+     {
+      "name": "Page B",
+      "uv": 3000,
+      "pv": 1398,
+      "amt": 2210,
+      "pvError": 200,
+      "uvError": 250
+     },
+     {
+      "name": "Page C",
+      "uv": 2000,
+      "pv": 9800,
+      "amt": 2290,
+      "pvError": 900,
+      "uvError": 300
+     },
+     {
+      "name": "Page D",
+      "uv": 2780,
+      "pv": 3908,
+      "amt": 2000,
+      "pvError": 400,
+      "uvError": 280
+     },
+     {
+      "name": "Page E",
+      "uv": 1890,
+      "pv": 4800,
+      "amt": 2181,
+      "pvError": 500,
+      "uvError": 190
+     }
+    ],
+    "fill": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "ErrorBar",
+     "props": {
+      "dataKey": "uvError",
+      "width": 4,
+      "stroke": "#333",
+      "direction": "y"
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

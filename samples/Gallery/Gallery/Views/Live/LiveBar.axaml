@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models"
+             x:Class="Gallery.Views.Live.LiveBar" x:DataType="m:LiveFamilies">
+  <Border Classes="card">
+    <StackPanel Spacing="8">
+      <TextBlock Classes="title" Text="Bar chart" />
+      <TextBlock Classes="muted small" Text="{Binding Updated}" />
+      <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+        <p:CartesianGrid StrokeDashArray="3 3" />
+        <p:XAxis DataKey="Name" />
+        <p:YAxis />
+        <p:Tooltip />
+        <p:Legend />
+        <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" />
+        <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" />
+      </p:BarChart>
+    </StackPanel>
+  </Border>
+</UserControl>

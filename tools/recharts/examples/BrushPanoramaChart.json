@@ -1,0 +1,242 @@
+{
+ "name": "BrushPanoramaChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "recharts.org src/docs/exampleComponents/LineChart/SynchronizedLineChart.tsx's brush with a panorama (an area chart inside the brush), its texts always shown (alwaysShowText) through a tickFormatter, and a window from 5 to 20",
+ "data": [
+  {
+   "name": "Day 1",
+   "uv": 300,
+   "pv": 456
+  },
+  {
+   "name": "Day 2",
+   "uv": 145,
+   "pv": 230
+  },
+  {
+   "name": "Day 3",
+   "uv": 100,
+   "pv": 345
+  },
+  {
+   "name": "Day 4",
+   "uv": 8,
+   "pv": 450
+  },
+  {
+   "name": "Day 5",
+   "uv": 100,
+   "pv": 321
+  },
+  {
+   "name": "Day 6",
+   "uv": 9,
+   "pv": 235
+  },
+  {
+   "name": "Day 7",
+   "uv": 53,
+   "pv": 267
+  },
+  {
+   "name": "Day 8",
+   "uv": 252,
+   "pv": 378
+  },
+  {
+   "name": "Day 9",
+   "uv": 79,
+   "pv": 210
+  },
+  {
+   "name": "Day 10",
+   "uv": 294,
+   "pv": 23
+  },
+  {
+   "name": "Day 11",
+   "uv": 43,
+   "pv": 45
+  },
+  {
+   "name": "Day 12",
+   "uv": 74,
+   "pv": 90
+  },
+  {
+   "name": "Day 13",
+   "uv": 71,
+   "pv": 130
+  },
+  {
+   "name": "Day 14",
+   "uv": 117,
+   "pv": 11
+  },
+  {
+   "name": "Day 15",
+   "uv": 186,
+   "pv": 107
+  },
+  {
+   "name": "Day 16",
+   "uv": 16,
+   "pv": 926
+  },
+  {
+   "name": "Day 17",
+   "uv": 125,
+   "pv": 653
+  },
+  {
+   "name": "Day 18",
+   "uv": 222,
+   "pv": 366
+  },
+  {
+   "name": "Day 19",
+   "uv": 372,
+   "pv": 486
+  },
+  {
+   "name": "Day 20",
+   "uv": 182,
+   "pv": 512
+  },
+  {
+   "name": "Day 21",
+   "uv": 164,
+   "pv": 302
+  },
+  {
+   "name": "Day 22",
+   "uv": 316,
+   "pv": 425
+  },
+  {
+   "name": "Day 23",
+   "uv": 131,
+   "pv": 467
+  },
+  {
+   "name": "Day 24",
+   "uv": 291,
+   "pv": 190
+  },
+  {
+   "name": "Day 25",
+   "uv": 47,
+   "pv": 194
+  },
+  {
+   "name": "Day 26",
+   "uv": 415,
+   "pv": 371
+  },
+  {
+   "name": "Day 27",
+   "uv": 182,
+   "pv": 376
+  },
+  {
+   "name": "Day 28",
+   "uv": 93,
+   "pv": 295
+  },
+  {
+   "name": "Day 29",
+   "uv": 99,
+   "pv": 322
+  },
+  {
+   "name": "Day 30",
+   "uv": 52,
+   "pv": 246
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotone",
+    "dataKey": "pv",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "type": "monotone",
+    "dataKey": "uv",
+    "stroke": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Brush",
+   "props": {
+    "dataKey": "name",
+    "height": 40,
+    "stroke": "#8884d8",
+    "startIndex": 5,
+    "endIndex": 20,
+    "alwaysShowText": true,
+    "tickFormatter": "on {0}"
+   },
+   "children": [
+    {
+     "type": "AreaChart",
+     "props": {},
+     "children": [
+      {
+       "type": "Area",
+       "props": {
+        "type": "monotone",
+        "dataKey": "pv",
+        "stroke": "#8884d8",
+        "fill": "#8884d8",
+        "isAnimationActive": false
+       },
+       "children": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

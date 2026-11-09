@@ -1,0 +1,94 @@
+{
+ "name": "TwoSimplePieChart",
+ "kind": "PieChart",
+ "width": 800,
+ "height": 400,
+ "margin": null,
+ "source": "recharts.org's src/docs/exampleComponents (Recharts 2.x site): PieChart/TwoSimplePieChart.tsx (800 wide and the first pie at cx 200, so that the second pie, at cx 500, is inside the chart)",
+ "data": [],
+ "children": [
+  {
+   "type": "Pie",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "name": "Group A",
+      "value": 400
+     },
+     {
+      "name": "Group B",
+      "value": 300
+     },
+     {
+      "name": "Group C",
+      "value": 300
+     },
+     {
+      "name": "Group D",
+      "value": 200
+     },
+     {
+      "name": "Group E",
+      "value": 278
+     },
+     {
+      "name": "Group F",
+      "value": 189
+     }
+    ],
+    "cx": 200,
+    "cy": "50%",
+    "outerRadius": 80,
+    "fill": "#8884d8",
+    "label": true,
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Pie",
+   "props": {
+    "dataKey": "value",
+    "data": [
+     {
+      "name": "Group A",
+      "value": 2400
+     },
+     {
+      "name": "Group B",
+      "value": 4567
+     },
+     {
+      "name": "Group C",
+      "value": 1398
+     },
+     {
+      "name": "Group D",
+      "value": 9800
+     },
+     {
+      "name": "Group E",
+      "value": 3908
+     },
+     {
+      "name": "Group F",
+      "value": 4800
+     }
+    ],
+    "cx": 500,
+    "cy": 200,
+    "innerRadius": 40,
+    "outerRadius": 80,
+    "fill": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ]
+}

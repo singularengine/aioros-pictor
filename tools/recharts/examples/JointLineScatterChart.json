@@ -1,0 +1,135 @@
+{
+ "name": "JointLineScatterChart",
+ "kind": "ScatterChart",
+ "width": 500,
+ "height": 400,
+ "margin": {
+  "top": 20,
+  "right": 20,
+  "bottom": 20,
+  "left": 20
+ },
+ "source": "recharts.org src/docs/exampleComponents/ScatterChart/JointLineScatterChart.js (ResponsiveContainer replaced by a width of 500)",
+ "data": null,
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "x",
+    "name": "stature",
+    "unit": "cm"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "type": "number",
+    "dataKey": "y",
+    "name": "weight",
+    "unit": "kg"
+   },
+   "children": []
+  },
+  {
+   "type": "ZAxis",
+   "props": {
+    "type": "number",
+    "range": [
+     100
+    ]
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {
+    "cursor": {
+     "strokeDasharray": "3 3"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Scatter",
+   "props": {
+    "name": "A school",
+    "data": [
+     {
+      "x": 10,
+      "y": 30
+     },
+     {
+      "x": 30,
+      "y": 200
+     },
+     {
+      "x": 45,
+      "y": 100
+     },
+     {
+      "x": 50,
+      "y": 400
+     },
+     {
+      "x": 70,
+      "y": 150
+     },
+     {
+      "x": 100,
+      "y": 250
+     }
+    ],
+    "fill": "#8884d8",
+    "line": true,
+    "shape": "cross",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Scatter",
+   "props": {
+    "name": "B school",
+    "data": [
+     {
+      "x": 30,
+      "y": 20
+     },
+     {
+      "x": 50,
+      "y": 180
+     },
+     {
+      "x": 75,
+      "y": 240
+     },
+     {
+      "x": 100,
+      "y": 100
+     },
+     {
+      "x": 120,
+      "y": 190
+     }
+    ],
+    "fill": "#82ca9d",
+    "line": true,
+    "shape": "diamond",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

@@ -1,0 +1,100 @@
+{
+ "name": "ExplicitTicksChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "a numeric XAxis with an explicit ticks list and domain, a YAxis with an explicit ticks list",
+ "data": [
+  {
+   "x": 5,
+   "y": 12,
+   "z": 3
+  },
+  {
+   "x": 18,
+   "y": 45,
+   "z": 7
+  },
+  {
+   "x": 26,
+   "y": 31,
+   "z": 1
+  },
+  {
+   "x": 41,
+   "y": 77,
+   "z": 9
+  },
+  {
+   "x": 63,
+   "y": 58,
+   "z": 4
+  },
+  {
+   "x": 87,
+   "y": 96,
+   "z": 6
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "x",
+    "type": "number",
+    "domain": [
+     0,
+     100
+    ],
+    "ticks": [
+     0,
+     25,
+     50,
+     75,
+     100
+    ]
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "ticks": [
+     0,
+     30,
+     60,
+     90,
+     120
+    ]
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "y",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

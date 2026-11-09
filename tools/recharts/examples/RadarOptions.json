@@ -1,0 +1,128 @@
+{
+ "name": "RadarOptions",
+ "kind": "RadarChart",
+ "width": 500,
+ "height": 400,
+ "margin": null,
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "outerRadius": "80%"
+ },
+ "source": "Recharts' API (recharts.org/en-US/api): Radar's dot and activeDot objects, connectNulls over a missing value, a label and a LabelList",
+ "data": [
+  {
+   "subject": "Math",
+   "A": 120,
+   "B": 110
+  },
+  {
+   "subject": "Chinese",
+   "A": 98,
+   "B": null
+  },
+  {
+   "subject": "English",
+   "A": 86,
+   "B": 130
+  },
+  {
+   "subject": "Geography",
+   "A": 99,
+   "B": 100
+  },
+  {
+   "subject": "Physics",
+   "A": 85,
+   "B": 90
+  },
+  {
+   "subject": "History",
+   "A": 65,
+   "B": 85
+  }
+ ],
+ "children": [
+  {
+   "type": "PolarGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "PolarAngleAxis",
+   "props": {
+    "dataKey": "subject"
+   },
+   "children": []
+  },
+  {
+   "type": "PolarRadiusAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Mike",
+    "dataKey": "A",
+    "stroke": "#8884d8",
+    "fill": "#8884d8",
+    "fillOpacity": 0.6,
+    "dot": {
+     "r": 4,
+     "fill": "red"
+    },
+    "activeDot": {
+     "r": 6,
+     "fill": "#000",
+     "stroke": "#fff",
+     "strokeWidth": 3
+    },
+    "label": {
+     "position": "top",
+     "fill": "#333"
+    },
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Lily",
+    "dataKey": "B",
+    "stroke": "#82ca9d",
+    "fill": "#82ca9d",
+    "fillOpacity": 0.6,
+    "connectNulls": true,
+    "dot": true,
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "right",
+      "fill": "#82ca9d"
+     },
+     "children": []
+    }
+   ]
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     250,
+     120
+    ]
+   }
+  ]
+ ]
+}

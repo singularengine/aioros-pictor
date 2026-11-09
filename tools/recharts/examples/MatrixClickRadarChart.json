@@ -1,0 +1,167 @@
+{
+ "name": "MatrixClickRadarChart",
+ "kind": "RadarChart",
+ "width": 500,
+ "height": 400,
+ "margin": null,
+ "chartProps": {
+  "cx": "50%",
+  "cy": "50%",
+  "outerRadius": "80%",
+  "onClick": {
+   "$click": "chart"
+  }
+ },
+ "source": "Pictor's fidelity matrix: SpecifiedDomainRadarChart with the chart's onClick and both radars' activeDot onClick, clicked on Mike's and Lily's active dots and in an angle's sector away from the dots",
+ "data": [
+  {
+   "subject": "Math",
+   "A": 120,
+   "B": 110,
+   "fullMark": 150
+  },
+  {
+   "subject": "Chinese",
+   "A": 98,
+   "B": 130,
+   "fullMark": 150
+  },
+  {
+   "subject": "English",
+   "A": 86,
+   "B": 130,
+   "fullMark": 150
+  },
+  {
+   "subject": "Geography",
+   "A": 99,
+   "B": 100,
+   "fullMark": 150
+  },
+  {
+   "subject": "Physics",
+   "A": 85,
+   "B": 90,
+   "fullMark": 150
+  },
+  {
+   "subject": "History",
+   "A": 65,
+   "B": 85,
+   "fullMark": 150
+  }
+ ],
+ "children": [
+  {
+   "type": "PolarGrid",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "PolarAngleAxis",
+   "props": {
+    "dataKey": "subject"
+   },
+   "children": []
+  },
+  {
+   "type": "PolarRadiusAxis",
+   "props": {
+    "angle": 30,
+    "domain": [
+     0,
+     150
+    ]
+   },
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Mike",
+    "dataKey": "A",
+    "stroke": "#8884d8",
+    "fill": "#8884d8",
+    "fillOpacity": 0.6,
+    "isAnimationActive": false,
+    "activeDot": {
+     "onClick": {
+      "$click": "mike"
+     }
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Radar",
+   "props": {
+    "name": "Lily",
+    "dataKey": "B",
+    "stroke": "#82ca9d",
+    "fill": "#82ca9d",
+    "fillOpacity": 0.6,
+    "isAnimationActive": false,
+    "activeDot": {
+     "onClick": {
+      "$click": "lily"
+     }
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     250,
+     80.64
+    ]
+   },
+   {
+    "click": [
+     250,
+     80.64
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     361.983,
+     135.347
+    ]
+   },
+   {
+    "click": [
+     361.983,
+     135.347
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     280,
+     230
+    ]
+   },
+   {
+    "click": [
+     280,
+     230
+    ]
+   }
+  ]
+ ]
+}

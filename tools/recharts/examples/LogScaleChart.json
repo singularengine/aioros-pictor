@@ -1,0 +1,103 @@
+{
+ "name": "LogScaleChart",
+ "kind": "LineChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "a YAxis with scale log and domain ['auto', 'auto'] (d3's log ticks, no nice ticks) beside a YAxis with scale linear (d3's linear ticks over the unrounded domain)",
+ "data": [
+  {
+   "name": "2016",
+   "users": 12
+  },
+  {
+   "name": "2017",
+   "users": 95
+  },
+  {
+   "name": "2018",
+   "users": 410
+  },
+  {
+   "name": "2019",
+   "users": 1800
+  },
+  {
+   "name": "2020",
+   "users": 5200
+  },
+  {
+   "name": "2021",
+   "users": 21000
+  },
+  {
+   "name": "2022",
+   "users": 64000
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "scale": "log",
+    "domain": [
+     "auto",
+     "auto"
+    ]
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {
+    "yAxisId": "linear",
+    "orientation": "right",
+    "scale": "linear"
+   },
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "users",
+    "stroke": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  },
+  {
+   "type": "Line",
+   "props": {
+    "dataKey": "users",
+    "yAxisId": "linear",
+    "stroke": "#82ca9d",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}

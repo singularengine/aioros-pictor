@@ -1,0 +1,120 @@
+{
+ "name": "CustomContentOfTooltip",
+ "kind": "BarChart",
+ "width": 500,
+ "height": 300,
+ "margin": {
+  "top": 5,
+  "right": 30,
+  "left": 20,
+  "bottom": 5
+ },
+ "source": "recharts.org www/src/docs/exampleComponents/Tooltip/CustomContentOfTooltip.tsx (the page's intro read from its item rather than a switch)",
+ "data": [
+  {
+   "name": "Page A",
+   "uv": 4000,
+   "pv": 2400,
+   "amt": 2400,
+   "intro": "Page A is about men's clothing"
+  },
+  {
+   "name": "Page B",
+   "uv": 3000,
+   "pv": 1398,
+   "amt": 2210,
+   "intro": "Page B is about women's dress"
+  },
+  {
+   "name": "Page C",
+   "uv": 2000,
+   "pv": 9800,
+   "amt": 2290,
+   "intro": "Page C is about women's bag"
+  },
+  {
+   "name": "Page D",
+   "uv": 2780,
+   "pv": 3908,
+   "amt": 2000,
+   "intro": "Page D is about household goods"
+  },
+  {
+   "name": "Page E",
+   "uv": 1890,
+   "pv": 4800,
+   "amt": 2181,
+   "intro": "Page E is about food"
+  },
+  {
+   "name": "Page F",
+   "uv": 2390,
+   "pv": 3800,
+   "amt": 2500,
+   "intro": "Page F is about baby food"
+  }
+ ],
+ "children": [
+  {
+   "type": "CartesianGrid",
+   "props": {
+    "strokeDasharray": "3 3"
+   },
+   "children": []
+  },
+  {
+   "type": "XAxis",
+   "props": {
+    "dataKey": "name"
+   },
+   "children": []
+  },
+  {
+   "type": "YAxis",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Tooltip",
+   "props": {
+    "content": {
+     "$content": "CustomTooltip"
+    }
+   },
+   "children": []
+  },
+  {
+   "type": "Legend",
+   "props": {},
+   "children": []
+  },
+  {
+   "type": "Bar",
+   "props": {
+    "dataKey": "pv",
+    "barSize": 20,
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ],
+ "interactions": [
+  [
+   {
+    "hover": [
+     150,
+     150
+    ]
+   }
+  ],
+  [
+   {
+    "hover": [
+     437,
+     150
+    ]
+   }
+  ]
+ ]
+}

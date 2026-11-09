@@ -1,0 +1,124 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:MoreData" a:Page.Title="More props">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="More props" />
+    <TextBlock TextWrapping="Wrap" MaxWidth="900" HorizontalAlignment="Left" Text="Recharts props closed after the coverage audit, each compared with Recharts' own render: titles, bridged gaps and units, bars on named axes, label children, radial bar layouts, the discrete scales, grid values and backgrounds." />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Title, connectNulls, units, a legend 60 high" />
+        <p:ComposedChart Data="{Binding Gaps}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5" Title="Visits per page" Desc="Views, visitors and amounts with gaps">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend Height="60" />
+          <p:Area Type="Monotone" DataKey="Amt" Name="amt" Fill="#ffc658" Stroke="#ffc658" ConnectNulls="True" Unit=" $" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ConnectNulls="True" Unit=" views" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" Unit=" visitors" />
+        </p:ComposedChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Bars on named axes, radius, sizes, a label format" />
+        <p:BarChart Data="{Binding Small}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" XAxisId="pages" />
+          <p:YAxis YAxisId="views" />
+          <p:YAxis YAxisId="small" Orientation="Right" />
+          <p:Tooltip />
+          <p:Legend />
+          <p:ReferenceArea XAxisId="pages" YAxisId="small" X1="Page B" X2="Page C" Y1="0" Y2="1000" Fill="#ff7300" FillOpacity="0.2" />
+          <p:ReferenceLine XAxisId="pages" YAxisId="small" Y="2000" Stroke="red" StrokeDashArray="4 4" />
+          <p:Bar XAxisId="pages" YAxisId="views" DataKey="Pv" Name="Page views" Unit=" views" Fill="#8884d8" Stroke="{DynamicResource SampleInkSoft}" StrokeWidth="2" FillOpacity="0.6" Radius="8,8,0,0" MaxBarSize="18" />
+          <p:Bar XAxisId="pages" YAxisId="small" DataKey="Cnt" Name="Small" Fill="#82ca9d" MinPointSize="12">
+            <p:LabelList DataKey="Cnt" Position="Top" Format="{}{0} u" />
+          </p:Bar>
+          <p:Bar XAxisId="pages" YAxisId="views" DataKey="Uv" Name="uv" Fill="#ffc658" Hide="True" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Label children, positions and formats" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.5625" Padding="30,20,40,30">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" Label="pages" LabelPosition="InsideBottomRight" LabelOffset="0">
+            <p:Label Position="InsideBottomLeft" Offset="0" Fill="#c00">left</p:Label>
+            <p:Label PositionX="50%" PositionY="28" FontSize="11">at</p:Label>
+          </p:XAxis>
+          <p:YAxis Label="views" LabelAngle="-90" LabelPosition="InsideLeft">
+            <p:Label Position="InsideTopLeft" Format="[{0}]">unit</p:Label>
+          </p:YAxis>
+          <p:ReferenceLine Y="5000" Stroke="red" Label="max">
+            <p:Label Position="InsideTopLeft">start</p:Label>
+            <p:Label Position="InsideBottomRight" Fill="#00f">end</p:Label>
+          </p:ReferenceLine>
+          <p:Line DataKey="Pv" Stroke="#8884d8" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Stacked label lists show the stack's top" />
+        <p:ComposedChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Bar DataKey="Pv" StackId="b" Fill="#8884d8">
+            <p:LabelList Position="InsideTop" Fill="#fff" FontSize="10" />
+          </p:Bar>
+          <p:Bar DataKey="Uv" StackId="b" Fill="#413ea0">
+            <p:LabelList Position="Top" FontSize="10" />
+          </p:Bar>
+        </p:ComposedChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="A half-circle radial bar chart" />
+        <p:RadialBarChart Data="{Binding Bands}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5" Cy="80%" InnerRadius="20%" OuterRadius="100%" StartAngle="180" EndAngle="0" BarGap="2" BarCategoryGap="30%">
+          <p:RadialBar DataKey="Uv" Name="Share" FillKey="Fill" BarSize="10" MinPointSize="8" Unit="%" LegendType="Circle" Background="{DynamicResource SampleWash}" />
+          <p:Legend />
+          <p:Tooltip />
+        </p:RadialBarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="RadialBarChart layout centric" />
+        <p:RadialBarChart Data="{Binding Bands}" MaxWidth="500" Aspect="1.25" Padding="20,5,30,5" InnerRadius="10%" OuterRadius="80%" Layout="centric">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Name" />
+          <p:PolarRadiusAxis Angle="90" />
+          <p:RadialBar DataKey="Uv" Name="share" Fill="#8884d8" MinPointSize="4" />
+          <p:RadialBar DataKey="Amt" Name="small" Fill="#82ca9d" />
+          <p:Tooltip />
+        </p:RadialBarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="600" Spacing="8">
+        <TextBlock Classes="h2" Text="Quantile, quantize and threshold scales" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="600" Aspect="2" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis YAxisId="quantile" Scale="quantile" Type="Number" />
+          <p:YAxis YAxisId="quantize" Scale="quantize" Type="Number" Orientation="Right" />
+          <p:Line YAxisId="quantile" DataKey="Pv" Stroke="#8884d8" />
+          <p:Line YAxisId="quantize" DataKey="Uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Grid values and bar backgrounds" />
+        <p:BarChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid Stroke="{DynamicResource SampleWatermark}" HorizontalValues="1000, 2500, 7000" VerticalValues="Page B, Page F" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Bar DataKey="Pv" Fill="#8884d8" Radius="10,10,0,0" Background="{DynamicResource SampleWash}" />
+          <p:Bar DataKey="Uv" Fill="#82ca9d" Background="{DynamicResource SampleGridSoft}" BackgroundStroke="#999" BackgroundStrokeWidth="2" BackgroundRadius="6" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="Two radius axes by id" />
+        <p:RadarChart Data="{Binding Scores}" MaxWidth="500" Aspect="1.25" Padding="20,5,30,5">
+          <p:PolarGrid />
+          <p:PolarAngleAxis DataKey="Subject" />
+          <p:PolarRadiusAxis RadiusAxisId="scores" Angle="30" />
+          <p:PolarRadiusAxis RadiusAxisId="hours" Angle="120" Stroke="#82ca9d" />
+          <p:Radar Name="score" DataKey="A" RadiusAxisId="scores" Stroke="#8884d8" Fill="#8884d8" FillOpacity="0.5" />
+          <p:Radar Name="hours" DataKey="Hours" RadiusAxisId="hours" Stroke="#82ca9d" Fill="#82ca9d" FillOpacity="0.5" />
+        </p:RadarChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

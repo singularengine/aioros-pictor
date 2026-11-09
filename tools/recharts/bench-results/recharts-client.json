@@ -1,0 +1,437 @@
+{
+ "benchmark": "Recharts client render in Chromium: createRoot on a fresh container, then flushSync(root.render(chart)) timed with performance.now; includes the synchronous componentDidMount work (legend measurement and its re-render, axis font reads); unmount is not timed",
+ "node": "v22.20.0",
+ "recharts": "2.15.4",
+ "react": "18.3.1",
+ "reactDom": "18.3.1",
+ "machine": "Intel(R) Core(TM) i7-14700, 28 threads",
+ "date": "2026-10-15T10:04:50.659Z",
+ "loadAverage": 1.9,
+ "chromium": "153.0.8010.12",
+ "crossOriginIsolated": true,
+ "timerResolution": "5 us (cross-origin isolated)",
+ "bundle": "esbuild, React production build, minified",
+ "methodology": "100 warm-up renders, then 500 timed renders per example; opsPerSec = 1e6 / median",
+ "results": [
+  {
+   "name": "SimpleLineChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 6080,
+   "p95Us": 8090,
+   "minUs": 4750,
+   "meanUs": 6261.97,
+   "opsPerSec": 164.47
+  },
+  {
+   "name": "DashedLineChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 6035,
+   "p95Us": 7515,
+   "minUs": 4815,
+   "meanUs": 6233.19,
+   "opsPerSec": 165.7
+  },
+  {
+   "name": "LineChartWithReferenceLines",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 6275,
+   "p95Us": 7740,
+   "minUs": 5090,
+   "meanUs": 6439.53,
+   "opsPerSec": 159.36
+  },
+  {
+   "name": "CustomizedLabelLineChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 7425,
+   "p95Us": 8995,
+   "minUs": 5690,
+   "meanUs": 7535.57,
+   "opsPerSec": 134.68
+  },
+  {
+   "name": "SimpleAreaChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 3350,
+   "p95Us": 4090,
+   "minUs": 2540,
+   "meanUs": 3423.54,
+   "opsPerSec": 298.51
+  },
+  {
+   "name": "StackedAreaChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 3620,
+   "p95Us": 4585,
+   "minUs": 2945,
+   "meanUs": 3752.11,
+   "opsPerSec": 276.24
+  },
+  {
+   "name": "SimpleBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 7460,
+   "p95Us": 9250,
+   "minUs": 6070,
+   "meanUs": 7593.41,
+   "opsPerSec": 134.05
+  },
+  {
+   "name": "StackedBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 7655,
+   "p95Us": 9240,
+   "minUs": 6145,
+   "meanUs": 7802.62,
+   "opsPerSec": 130.63
+  },
+  {
+   "name": "MixBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 9200,
+   "p95Us": 11245,
+   "minUs": 7380,
+   "meanUs": 9361.43,
+   "opsPerSec": 108.7
+  },
+  {
+   "name": "PositiveAndNegativeBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 7915,
+   "p95Us": 10135,
+   "minUs": 6455,
+   "meanUs": 8175.48,
+   "opsPerSec": 126.34
+  },
+  {
+   "name": "BarChartWithCell",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 3655,
+   "p95Us": 4780,
+   "minUs": 3085,
+   "meanUs": 3865.62,
+   "opsPerSec": 273.6
+  },
+  {
+   "name": "BarChartHasBackground",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 8490,
+   "p95Us": 10665,
+   "minUs": 6910,
+   "meanUs": 8776.65,
+   "opsPerSec": 117.79
+  },
+  {
+   "name": "LineBarAreaComposedChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 9525,
+   "p95Us": 11640,
+   "minUs": 7535,
+   "meanUs": 9665.42,
+   "opsPerSec": 104.99
+  },
+  {
+   "name": "BiaxialLineChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 7070,
+   "p95Us": 8850,
+   "minUs": 5745,
+   "meanUs": 7310.33,
+   "opsPerSec": 141.44
+  },
+  {
+   "name": "TinyLineChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 725,
+   "p95Us": 830,
+   "minUs": 505,
+   "meanUs": 713.47,
+   "opsPerSec": 1379.31
+  },
+  {
+   "name": "BrushBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 20295,
+   "p95Us": 24500,
+   "minUs": 15770,
+   "meanUs": 20634.72,
+   "opsPerSec": 49.27
+  },
+  {
+   "name": "BrushWindowBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 6380,
+   "p95Us": 7550,
+   "minUs": 4860,
+   "meanUs": 6360.56,
+   "opsPerSec": 156.74
+  },
+  {
+   "name": "VerticalLineChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 6170,
+   "p95Us": 7630,
+   "minUs": 4810,
+   "meanUs": 6275.96,
+   "opsPerSec": 162.07
+  },
+  {
+   "name": "VerticalComposedChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 7340,
+   "p95Us": 9085,
+   "minUs": 5935,
+   "meanUs": 7494.9,
+   "opsPerSec": 136.24
+  },
+  {
+   "name": "VerticalBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 8125,
+   "p95Us": 9695,
+   "minUs": 6245,
+   "meanUs": 8171.04,
+   "opsPerSec": 123.08
+  },
+  {
+   "name": "ComposedChartWithErrorBars",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 8280,
+   "p95Us": 10360,
+   "minUs": 6720,
+   "meanUs": 8552.41,
+   "opsPerSec": 120.77
+  },
+  {
+   "name": "LineChartWithReferenceAreas",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 6585,
+   "p95Us": 8215,
+   "minUs": 5285,
+   "meanUs": 6767.18,
+   "opsPerSec": 151.86
+  },
+  {
+   "name": "TwoLevelPieChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 2830,
+   "p95Us": 3380,
+   "minUs": 2175,
+   "meanUs": 2884.29,
+   "opsPerSec": 353.36
+  },
+  {
+   "name": "StraightAnglePieChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 1440,
+   "p95Us": 1800,
+   "minUs": 1170,
+   "meanUs": 1470.95,
+   "opsPerSec": 694.44
+  },
+  {
+   "name": "TwoSimplePieChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 2515,
+   "p95Us": 3190,
+   "minUs": 2060,
+   "meanUs": 2624.77,
+   "opsPerSec": 397.61
+  },
+  {
+   "name": "PieChartWithPaddingAngle",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 990,
+   "p95Us": 1280,
+   "minUs": 820,
+   "meanUs": 1042.74,
+   "opsPerSec": 1010.1
+  },
+  {
+   "name": "ActiveShapePieChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 905,
+   "p95Us": 1130,
+   "minUs": 715,
+   "meanUs": 936.82,
+   "opsPerSec": 1104.97
+  },
+  {
+   "name": "SimpleRadarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 1380,
+   "p95Us": 1685,
+   "minUs": 1095,
+   "meanUs": 1436.71,
+   "opsPerSec": 724.64
+  },
+  {
+   "name": "SpecifiedDomainRadarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 4150,
+   "p95Us": 4990,
+   "minUs": 3250,
+   "meanUs": 4199.24,
+   "opsPerSec": 240.96
+  },
+  {
+   "name": "SimpleRadialBarChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 4810,
+   "p95Us": 5740,
+   "minUs": 3665,
+   "meanUs": 4856.05,
+   "opsPerSec": 207.9
+  },
+  {
+   "name": "SimpleScatterChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 3825,
+   "p95Us": 4575,
+   "minUs": 2935,
+   "meanUs": 3869.63,
+   "opsPerSec": 261.44
+  },
+  {
+   "name": "ThreeDimScatterChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 7580,
+   "p95Us": 9080,
+   "minUs": 5780,
+   "meanUs": 7660.55,
+   "opsPerSec": 131.93
+  },
+  {
+   "name": "JointLineScatterChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 6880,
+   "p95Us": 8765,
+   "minUs": 5755,
+   "meanUs": 7174.56,
+   "opsPerSec": 145.35
+  },
+  {
+   "name": "ScatterChartWithLabels",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 4100,
+   "p95Us": 5100,
+   "minUs": 3290,
+   "meanUs": 4242.97,
+   "opsPerSec": 243.9
+  },
+  {
+   "name": "ScatterChartWithErrorBars",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 4265,
+   "p95Us": 5340,
+   "minUs": 3400,
+   "meanUs": 4412.68,
+   "opsPerSec": 234.47
+  },
+  {
+   "name": "FunnelChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 1070,
+   "p95Us": 1450,
+   "minUs": 925,
+   "meanUs": 1156.15,
+   "opsPerSec": 934.58
+  },
+  {
+   "name": "ReversedFunnelChart",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 2530,
+   "p95Us": 3100,
+   "minUs": 1955,
+   "meanUs": 2612.94,
+   "opsPerSec": 395.26
+  },
+  {
+   "name": "SimpleTreemap",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 4635,
+   "p95Us": 6060,
+   "minUs": 3825,
+   "meanUs": 4830.83,
+   "opsPerSec": 215.75
+  },
+  {
+   "name": "ColorPanelTreemap",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 5750,
+   "p95Us": 7340,
+   "minUs": 4590,
+   "meanUs": 5966.16,
+   "opsPerSec": 173.91
+  },
+  {
+   "name": "NestedTreemap",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 1330,
+   "p95Us": 1605,
+   "minUs": 1025,
+   "meanUs": 1363.8,
+   "opsPerSec": 751.88
+  },
+  {
+   "name": "SimpleSankey",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 555,
+   "p95Us": 685,
+   "minUs": 430,
+   "meanUs": 585.81,
+   "opsPerSec": 1801.8
+  },
+  {
+   "name": "BudgetSankey",
+   "warmup": 100,
+   "samples": 500,
+   "medianUs": 800,
+   "p95Us": 940,
+   "minUs": 645,
+   "meanUs": 818.05,
+   "opsPerSec": 1250
+  }
+ ]
+}

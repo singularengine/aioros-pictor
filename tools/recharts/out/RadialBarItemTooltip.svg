@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" cx="50%" cy="50%" class="recharts-surface" width="500" height="300" style="width:100%;height:100%" viewBox="0 0 500 300"><title></title><desc></desc><defs><clipPath id="recharts1-clip"><rect x="5" y="5" height="290" width="490"></rect></clipPath></defs><g class="recharts-layer recharts-area"><g class="recharts-layer recharts-radial-bar-background"><path cx="250" cy="150" name="18-24" fill="#eee" class="recharts-sector recharts-radial-bar-background-sector" d="M 270.9,150
+    A 20.9,20.9,0,
+    1,0,
+    270.89999999681675,150.00036477381366
+  L 256.89999999894906,150.00012042771837
+            A 6.9,6.9,0,
+            1,1,
+            256.9,150 Z" role="img"></path><path cx="250" cy="150" name="25-29" fill="#eee" class="recharts-sector recharts-radial-bar-background-sector" d="M 294.1,150
+    A 44.1,44.1,0,
+    1,0,
+    294.0999999932832,150.0007696902001
+  L 280.0999999954155,150.00052534410483
+            A 30.1,30.1,0,
+            1,1,
+            280.1,150 Z" role="img"></path><path cx="250" cy="150" name="30-34" fill="#eee" class="recharts-sector recharts-radial-bar-background-sector" d="M 317.3,150
+    A 67.3,67.3,0,
+    1,0,
+    317.2999999897496,150.00117460658655
+  L 303.2999999918819,150.00093026049126
+            A 53.3,53.3,0,
+            1,1,
+            303.3,150 Z" role="img"></path><path cx="250" cy="150" name="35-39" fill="#eee" class="recharts-sector recharts-radial-bar-background-sector" d="M 340.5,150
+    A 90.5,90.5,0,
+    1,0,
+    340.49999998621604,150.00157952297297
+  L 326.49999998834835,150.00133517687772
+            A 76.5,76.5,0,
+            1,1,
+            326.5,150 Z" role="img"></path><path cx="250" cy="150" name="40-49" fill="#eee" class="recharts-sector recharts-radial-bar-background-sector" d="M 363.7,150
+    A 113.7,113.7,0,
+    1,0,
+    363.69999998268247,150.0019844393594
+  L 349.69999998481484,150.00174009326415
+            A 99.7,99.7,0,
+            1,1,
+            349.7,150 Z" role="img"></path></g><g class="recharts-layer recharts-radial-bar-sectors"><path cx="250" cy="150" name="18-24" fill="#8884d8" class="recharts-sector recharts-radial-bar-sector undefined" d="M 270.9,150
+    A 20.9,20.9,0,
+    1,0,
+    270.89999999681675,150.00036477381366
+  L 256.89999999894906,150.00012042771837
+            A 6.9,6.9,0,
+            1,1,
+            256.9,150 Z" role="img"></path><path cx="250" cy="150" name="25-29" fill="#83a6ed" class="recharts-sector recharts-radial-bar-sector undefined" d="M 294.1,150
+    A 44.1,44.1,0,
+    1,0,
+    275.49567603896605,185.98305855977355
+  L 267.40181062977047,174.55986536619466
+            A 30.1,30.1,0,
+            1,1,
+            280.1,150 Z" role="img"></path><path cx="250" cy="150" name="30-34" fill="#8dd1e1" class="recharts-sector recharts-radial-bar-sector undefined" d="M 317.3,150
+    A 67.3,67.3,0,
+    0,0,
+    182.70271627305536,149.39534888149348
+  L 196.70215122368276,149.52113068920656
+            A 53.3,53.3,0,
+            0,1,
+            303.3,150 Z" role="img"></path><path cx="250" cy="150" name="35-39" fill="#82ca9d" class="recharts-sector recharts-radial-bar-sector undefined" d="M 340.5,150
+    A 90.5,90.5,0,
+    0,0,
+    243.63596963242992,59.72403909411628
+  L 244.62046051802088,73.68938111270603
+            A 76.5,76.5,0,
+            0,1,
+            326.5,150 Z" role="img"></path><path cx="250" cy="150" name="40-49" fill="#a4de6c" class="recharts-sector recharts-radial-bar-sector undefined" d="M 363.7,150
+    A 113.7,113.7,0,
+    0,0,
+    362.8851460134891,136.41199758929787
+  L 348.9854798376857,138.08510254751977
+            A 99.7,99.7,0,
+            0,1,
+            349.7,150 Z" role="img"></path></g></g></svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" cx="50%" cy="50%" class="recharts-surface" width="400" height="400" style="width:100%;height:100%" viewBox="0 0 400 400"><title></title><desc></desc><defs><clipPath id="recharts1-clip"><rect x="5" y="5" height="390" width="390"></rect></clipPath></defs><g class="recharts-layer recharts-pie" tabindex="0"><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group A" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 120,200
+    A 80,80,0,
+    0,1,
+    141.67425393868592,145.24502445995336
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group B" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 141.67425393868592,145.24502445995336
+    A 80,80,0,
+    0,1,
+    180.08436556239744,122.51859897402616
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group C" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 180.08436556239744,122.51859897402616
+    A 80,80,0,
+    0,1,
+    224.69268034135814,123.90616623168798
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group D" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 224.69268034135814,123.90616623168798
+    A 80,80,0,
+    0,1,
+    250.96603378254085,138.33588239115954
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group E" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 250.96603378254085,138.33588239115954
+    A 80,80,0,
+    0,1,
+    274.97870456279094,172.10387370824196
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-sector" tabindex="-1"><path cx="200" cy="200" name="Group F" stroke="#fff" fill="#8884d8" tabindex="-1" class="recharts-sector" d="M 274.97870456279094,172.10387370824196
+    A 80,80,0,
+    0,1,
+    280,199.99999999999997
+  L 200,200 Z" role="img"></path></g><g class="recharts-layer recharts-pie-labels"><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#8884d8" name="Group A" class="recharts-curve recharts-pie-label-line" d="M125.616,170.556L107.02,163.195"></path><text cx="200" cy="200" stroke="none" name="Group A" alignment-baseline="middle" x="107.01957663662674" y="163.19455378387772" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#8884d8"><tspan x="107.01957663662674" dy="0em">400</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#8884d8" name="Group B" class="recharts-curve recharts-pie-label-line" d="M159.262,131.149L149.078,113.936"></path><text cx="200" cy="200" stroke="none" name="Group B" alignment-baseline="middle" x="149.07801602211856" y="113.93635176361401" class="recharts-text recharts-pie-label-text" text-anchor="end" fill="#8884d8"><tspan x="149.07801602211856" dy="0em">300</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#8884d8" name="Group C" class="recharts-curve recharts-pie-label-line" d="M202.487,120.039L203.109,100.048"></path><text cx="200" cy="200" stroke="none" name="Group C" alignment-baseline="middle" x="203.10905371839667" y="100.04834276023172" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#8884d8"><tspan x="203.10905371839667" dy="0em">300</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#8884d8" name="Group D" class="recharts-curve recharts-pie-label-line" d="M238.511,129.879L248.139,112.349"></path><text cx="200" cy="200" stroke="none" name="Group D" alignment-baseline="middle" x="248.13903095512774" y="112.34936566857456" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#8884d8"><tspan x="248.13903095512774" dy="0em">200</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#8884d8" name="Group E" class="recharts-curve recharts-pie-label-line" d="M265.197,153.638L281.496,142.048"></path><text cx="200" cy="200" stroke="none" name="Group E" alignment-baseline="middle" x="281.4956727054434" y="142.04781858905352" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#8884d8"><tspan x="281.4956727054434" dy="0em">278</tspan></text></g><g class="recharts-layer"><path cx="200" cy="200" fill="none" stroke="#8884d8" name="Group F" class="recharts-curve recharts-pie-label-line" d="M278.735,185.828L298.418,182.285"></path><text cx="200" cy="200" stroke="none" name="Group F" alignment-baseline="middle" x="298.41833688482257" y="182.28472509878645" class="recharts-text recharts-pie-label-text" text-anchor="start" fill="#8884d8"><tspan x="298.41833688482257" dy="0em">189</tspan></text></g></g></g></svg>

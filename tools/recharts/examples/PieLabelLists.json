@@ -1,0 +1,108 @@
+{
+ "name": "PieLabelLists",
+ "kind": "PieChart",
+ "width": 400,
+ "height": 400,
+ "margin": null,
+ "source": "Recharts' LabelList API (recharts.org/en-US/api/LabelList): LabelLists on a donut: names outside, values at the ring's middle, and centerTop and centerBottom at the center",
+ "data": [],
+ "children": [
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "name": "Group A",
+      "value": 400
+     },
+     {
+      "name": "Group B",
+      "value": 300
+     },
+     {
+      "name": "Group C",
+      "value": 300
+     },
+     {
+      "name": "Group D",
+      "value": 200
+     }
+    ],
+    "dataKey": "value",
+    "cx": "50%",
+    "cy": "50%",
+    "innerRadius": 60,
+    "outerRadius": 100,
+    "fill": "#8884d8",
+    "isAnimationActive": false
+   },
+   "children": [
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#0088FE"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#00C49F"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#FFBB28"
+     },
+     "children": []
+    },
+    {
+     "type": "Cell",
+     "props": {
+      "fill": "#FF8042"
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "dataKey": "name",
+      "position": "outside",
+      "offset": 12
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "inside",
+      "fill": "#fff",
+      "stroke": "none"
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "dataKey": "name",
+      "position": "centerTop",
+      "fill": "#333",
+      "stroke": "none"
+     },
+     "children": []
+    },
+    {
+     "type": "LabelList",
+     "props": {
+      "position": "centerBottom",
+      "fill": "#999",
+      "stroke": "none"
+     },
+     "children": []
+    }
+   ]
+  }
+ ]
+}

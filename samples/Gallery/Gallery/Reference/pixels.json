@@ -1,0 +1,975 @@
+{
+ "chromium": "153.0.8010.52",
+ "commit": "0330edd",
+ "date": "2026-10-15",
+ "results": {
+  "ActiveIndexBarChart": {
+   "share": 0,
+   "markup": "8214b8bc05ba2a84"
+  },
+  "ActiveIndexFunnelChart": {
+   "share": 0,
+   "markup": "26c22510699921ed"
+  },
+  "ActiveIndexPieChart": {
+   "share": 0,
+   "markup": "21a380be6590227c"
+  },
+  "ActiveIndexRadialBarChart": {
+   "share": 0.01983,
+   "markup": "001672b8436d36d6"
+  },
+  "ActiveIndexScatterChart": {
+   "share": 0,
+   "markup": "ef16b0a5c87f8d44"
+  },
+  "ActiveShapePieChart": {
+   "share": 0,
+   "markup": "3d250399561d2879"
+  },
+  "AreaBaseValueChart": {
+   "share": 0,
+   "markup": "190dae16b2f35773"
+  },
+  "AreaChartGradient": {
+   "share": 0,
+   "markup": "c1a60877291628ed"
+  },
+  "AreaDotProps": {
+   "share": 0,
+   "markup": "fb79baaa1025a2dc"
+  },
+  "AxisLabelLineChart": {
+   "share": 0,
+   "markup": "2690e98553ca215c"
+  },
+  "AxisOptionsChart": {
+   "share": 0,
+   "markup": "5a60aa6ed2ebf582"
+  },
+  "BarChartHasBackground": {
+   "share": 0,
+   "markup": "ced5acad2bac4237"
+  },
+  "BarChartWithCell": {
+   "share": 0,
+   "markup": "9a936c5b1a8e2a9b"
+  },
+  "BarGapsChart": {
+   "share": 0,
+   "markup": "66243367f39ee134"
+  },
+  "BiaxialLineChart": {
+   "share": 0,
+   "markup": "9d0e3a1cf9210518"
+  },
+  "BrushBarChart": {
+   "share": 0,
+   "markup": "f4729e0d3e8ebd32"
+  },
+  "BrushOptionsBarChart": {
+   "share": 0,
+   "markup": "a49f61520fc8ebf9"
+  },
+  "BrushPanoramaChart": {
+   "share": 0,
+   "markup": "2938ef547910802c"
+  },
+  "BrushWindowBarChart": {
+   "share": 0,
+   "markup": "cb9b1d780cac25f6"
+  },
+  "BudgetSankey": {
+   "share": 0,
+   "markup": "c9e42ad95fc9080c"
+  },
+  "CellProps": {
+   "share": 0,
+   "markup": "4d0196178bd0bc3b"
+  },
+  "ColorPanelTreemap": {
+   "share": 0,
+   "markup": "6350c9945e2c6b1a"
+  },
+  "ComposedChartWithErrorBars": {
+   "share": 0,
+   "markup": "ceaec3d34dcccf10"
+  },
+  "CurveTypesChart": {
+   "share": 0,
+   "markup": "fecc5624063670c5"
+  },
+  "CustomActiveBarChart": {
+   "share": 0.681292,
+   "markup": "7b4f40d512c1fe93"
+  },
+  "CustomActiveDotChart": {
+   "share": 0,
+   "markup": "3ef2147036de09d4"
+  },
+  "CustomActiveFunnelChart": {
+   "share": 0.1782,
+   "markup": "7d2170f5fa6583a0"
+  },
+  "CustomActiveFunnelLabels": {
+   "share": 0.178453,
+   "markup": "f0ce6b97510c6a12"
+  },
+  "CustomActiveIndexFunnelChart": {
+   "share": 0.182993,
+   "markup": "6239f3c0282b9175"
+  },
+  "CustomActiveIndexScatterChart": {
+   "share": 0.063751,
+   "markup": "ef16b0a5c87f8d44"
+  },
+  "CustomActiveRadialBarChart": {
+   "share": 0,
+   "markup": "2ce4250b20f9b471"
+  },
+  "CustomActiveShapePieChart": {
+   "share": 0.126342,
+   "markup": "6645037cb02891ad"
+  },
+  "CustomContentLegend": {
+   "share": 0.482813,
+   "markup": "73643277947c693b"
+  },
+  "CustomContentOfTooltip": {
+   "share": 0,
+   "markup": "e97b875ebd559c42"
+  },
+  "CustomContentTreemap": {
+   "share": 0.78238,
+   "markup": "74f2d24b884b0045"
+  },
+  "CustomElementLabels": {
+   "share": 0.096677,
+   "markup": "c63aa3c2237396b2"
+  },
+  "CustomFramedLegend": {
+   "share": 0.445662,
+   "markup": "73643277947c693b"
+  },
+  "CustomLinkSankey": {
+   "share": 0.012617,
+   "markup": "9b364b9bf95d6f36"
+  },
+  "CustomNestIndexTreemap": {
+   "share": 0.00275,
+   "markup": "f07b895f67933929"
+  },
+  "CustomNodeSankey": {
+   "share": 0.024747,
+   "markup": "e172c9838960e2fa"
+  },
+  "CustomReferenceShapes": {
+   "share": 0.046878,
+   "markup": "f8305d7783313b18"
+  },
+  "CustomShapeBarChart": {
+   "share": 0.683806,
+   "markup": "048b31dfef9b5147"
+  },
+  "CustomShapeFunnelChart": {
+   "share": 0.175251,
+   "markup": "fc82eb295880c607"
+  },
+  "CustomShapeRadarChart": {
+   "share": 0.838369,
+   "markup": "d32fdf50aac18ffe"
+  },
+  "CustomShapeRadialBarChart": {
+   "share": 0.057503,
+   "markup": "0a58ecc8690aea11"
+  },
+  "CustomShapeScatterChart": {
+   "share": 0.0404,
+   "markup": "488f60a4596f0141"
+  },
+  "CustomSunburst": {
+   "share": 0,
+   "markup": "8063854499ddfc12"
+  },
+  "CustomTravellerBrush": {
+   "share": 0.000805,
+   "markup": "a50c0e7908a28841"
+  },
+  "CustomizedBarLabel": {
+   "share": 0.036328,
+   "markup": "dfdd5acc31386606"
+  },
+  "CustomizedChart": {
+   "share": 0.000113,
+   "markup": "d80914e28c572f73"
+  },
+  "CustomizedDotLineChart": {
+   "share": 0.178898,
+   "markup": "fecb78b00d9abc65"
+  },
+  "CustomizedLabelLineChart": {
+   "share": 0,
+   "markup": "244d7d13a4718cd2"
+  },
+  "CustomizedLabelTickLineChart": {
+   "share": 0.288421,
+   "markup": "1b9f0ec218f34639"
+  },
+  "DashedLineChart": {
+   "share": 0,
+   "markup": "e85835cc883bcad5"
+  },
+  "DataOverflowComposedChart": {
+   "share": 0,
+   "markup": "e233cea8f1b54f72"
+  },
+  "DataOverflowScatterChart": {
+   "share": 0,
+   "markup": "eabe7fb6e7d27cbb"
+  },
+  "DefaultActiveIndexRadialBarChart": {
+   "share": 0,
+   "markup": "3127e0250fd50e05"
+  },
+  "DetailsClassedChart": {
+   "share": 0,
+   "markup": "1459218a67a55636"
+  },
+  "DetailsClassedPieChart": {
+   "share": 0,
+   "markup": "db998a654f3328de"
+  },
+  "DetailsFollowEscapeChart": {
+   "share": 0,
+   "markup": "fb57a9c699a9ab66"
+  },
+  "DetailsFollowFixedChart": {
+   "share": 0,
+   "markup": "32e25b581169ff20"
+  },
+  "DetailsFollowLineChart": {
+   "share": 0,
+   "markup": "1ea62030bb82c3f1"
+  },
+  "DetailsFollowRadarChart": {
+   "share": 0,
+   "markup": "519f16e90d96a241"
+  },
+  "DetailsFollowRadialBarChart": {
+   "share": 0,
+   "markup": "bda5bcc24eea9fd9"
+  },
+  "DetailsFollowReversedChart": {
+   "share": 0,
+   "markup": "763fbda1645a7931"
+  },
+  "DetailsFollowVerticalChart": {
+   "share": 0,
+   "markup": "66674a5db7769530"
+  },
+  "DetailsKeyboardScatterChart": {
+   "share": 0,
+   "markup": "8da49619963c7e98"
+  },
+  "DetailsKeyboardTwoScatterChart": {
+   "share": 0,
+   "markup": "058df267c7ff54a5"
+  },
+  "DetailsNestTreemapWithoutNameKey": {
+   "share": 0,
+   "markup": "812ac3c509a3e8fb"
+  },
+  "DetailsPresentationChart": {
+   "share": 0,
+   "markup": "39f6a07a6afd2f95"
+  },
+  "DetailsRoleRadialBarChart": {
+   "share": 0,
+   "markup": "e4d8945548b5afa8"
+  },
+  "DomainOptionsChart": {
+   "share": 0,
+   "markup": "5b5875382b6fa118"
+  },
+  "DotProps": {
+   "share": 0,
+   "markup": "c837a1707a3a4159"
+  },
+  "EquidistantTicksChart": {
+   "share": 0,
+   "markup": "617dbcd8617fbfbd"
+  },
+  "ErrorBarPairsChart": {
+   "share": 0,
+   "markup": "e9f23d22cb07a247"
+  },
+  "ExplicitTicksChart": {
+   "share": 0,
+   "markup": "894dba0a2dbe4443"
+  },
+  "FittingLineScatterChart": {
+   "share": 0,
+   "markup": "15137f5b4c541c41"
+  },
+  "FunnelChart": {
+   "share": 0,
+   "markup": "dabc1cbf0756a7a5"
+  },
+  "FunnelLabelListContent": {
+   "share": 0.04209,
+   "markup": "a947d195b1f90209"
+  },
+  "FunnelLabelLists": {
+   "share": 0,
+   "markup": "5bc128805ad659f0"
+  },
+  "FunnelTooltipContent": {
+   "share": 0,
+   "markup": "7d2170f5fa6583a0"
+  },
+  "GapPaddingChart": {
+   "share": 0,
+   "markup": "2238d17806e2be9a"
+  },
+  "GapsAreaLegendBrushChart": {
+   "share": 0,
+   "markup": "b58e60a49d00ba07"
+  },
+  "GapsAxisHideStrokeChart": {
+   "share": 0,
+   "markup": "deb80eb30b1ef3bc"
+  },
+  "GapsBarBackgroundChart": {
+   "share": 0,
+   "markup": "97729b29a0c0f594"
+  },
+  "GapsBarOptionsChart": {
+   "share": 0,
+   "markup": "63bcdd407cc280b2"
+  },
+  "GapsBrushScatterChart": {
+   "share": 0,
+   "markup": "ea00d44cedf5a99b"
+  },
+  "GapsCentricRadialChart": {
+   "share": 0,
+   "markup": "a28a4b02a7b23360"
+  },
+  "GapsCompactChart": {
+   "share": 0,
+   "markup": "355ea0064566f720"
+  },
+  "GapsComposedBrushChart": {
+   "share": 0,
+   "markup": "131c7e5bd7a1d902"
+  },
+  "GapsDiscreteScalesChart": {
+   "share": 0,
+   "markup": "223ed587ae1baa35"
+  },
+  "GapsExpandRadialChart": {
+   "share": 0,
+   "markup": "6a04d820cc522b18"
+  },
+  "GapsFunnelOptionsChart": {
+   "share": 0,
+   "markup": "f2856b09b16190c2"
+  },
+  "GapsGridValuesChart": {
+   "share": 0,
+   "markup": "82a8e071d9021f1a"
+  },
+  "GapsHiddenPolarAxesChart": {
+   "share": 0,
+   "markup": "13df638092ced5ce"
+  },
+  "GapsImplicitPolarAxesChart": {
+   "share": 0,
+   "markup": "d08448802bddc730"
+  },
+  "GapsLabelsChart": {
+   "share": 0,
+   "markup": "a7a5d9f01176e177"
+  },
+  "GapsOtherScalesChart": {
+   "share": 0,
+   "markup": "964f3e478034f113"
+  },
+  "GapsOwnDataErrorBarChart": {
+   "share": 0,
+   "markup": "f223f9b836d419ae"
+  },
+  "GapsPieOptionsChart": {
+   "share": 0,
+   "markup": "79e55b09bb1a52ed"
+  },
+  "GapsPolarAxisScalesChart": {
+   "share": 0,
+   "markup": "50f836aebdd9d501"
+  },
+  "GapsRadarOptionsChart": {
+   "share": 0,
+   "markup": "1e2fe7863edd704f"
+  },
+  "GapsRadarTwoScalesChart": {
+   "share": 0,
+   "markup": "28974a24bc6b0904"
+  },
+  "GapsRadialGaugeChart": {
+   "share": 0,
+   "markup": "a2d0795c81123418"
+  },
+  "GapsRadialTwoAnglesChart": {
+   "share": 0,
+   "markup": "dba54463ffbf6475"
+  },
+  "GapsRadiusLabelsChart": {
+   "share": 0,
+   "markup": "34102e6ec3084d4b"
+  },
+  "GapsResponsiveContainerChart": {
+   "share": 0.437385,
+   "markup": "ac91e3b4c1c78054"
+  },
+  "GapsScatterAxesChart": {
+   "share": 0,
+   "markup": "15db81d65d293bc7"
+  },
+  "GapsSignRadialChart": {
+   "share": 0,
+   "markup": "4cbf7c4caf0d5931"
+  },
+  "GapsStackedLabelsChart": {
+   "share": 0,
+   "markup": "0ed37b174fe9d161"
+  },
+  "GapsTitledComposedChart": {
+   "share": 0,
+   "markup": "81f7c919753c2a7d"
+  },
+  "GapsTooltipTypeFunnelChart": {
+   "share": 0,
+   "markup": "b3e9ca5d299bf1cd"
+  },
+  "GapsTooltipTypePieChart": {
+   "share": 0,
+   "markup": "5775d54d512dab40"
+  },
+  "GapsTooltipTypeRadarChart": {
+   "share": 0,
+   "markup": "cfee708e62f46646"
+  },
+  "GapsTooltipTypeRadialChart": {
+   "share": 0,
+   "markup": "9e8488e7b21aef80"
+  },
+  "GapsTooltipTypeScatterChart": {
+   "share": 0,
+   "markup": "bd6281cc64c3c15b"
+  },
+  "GapsZTooltipChart": {
+   "share": 0,
+   "markup": "fa9224b5ad86df0e"
+  },
+  "GridPoints": {
+   "share": 0,
+   "markup": "d200bde7bd01040c"
+  },
+  "GridStripes": {
+   "share": 0,
+   "markup": "2c84579e5b4e7706"
+  },
+  "GridSyncWithTicks": {
+   "share": 0,
+   "markup": "420cab3cffe79233"
+  },
+  "JointLineScatterChart": {
+   "share": 0,
+   "markup": "fa1f4eebbfee199c"
+  },
+  "LabelListsBarChart": {
+   "share": 0,
+   "markup": "40b0b121f4fc153f"
+  },
+  "LabelListsBreakAll": {
+   "share": 0,
+   "markup": "171ad1d188a075b4"
+  },
+  "LabelListsLineChart": {
+   "share": 0,
+   "markup": "f4fc11a389a9b54e"
+  },
+  "LegendDashed": {
+   "share": 0,
+   "markup": "79a4b6d4fa9286d3"
+  },
+  "LegendFormatter": {
+   "share": 0,
+   "markup": "9fd5a672ba1448b0"
+  },
+  "LegendIconType": {
+   "share": 0,
+   "markup": "53a7cd572df2e67e"
+  },
+  "LegendInactive": {
+   "share": 0,
+   "markup": "6e399a9cbb47ba1d"
+  },
+  "LegendMiddle": {
+   "share": 0,
+   "markup": "bc04fa922a671ad5"
+  },
+  "LegendPayload": {
+   "share": 0,
+   "markup": "0346cea15236e0bc"
+  },
+  "LegendStarSquare": {
+   "share": 0,
+   "markup": "f8c952948d3f67a7"
+  },
+  "LegendTypes": {
+   "share": 0,
+   "markup": "43fb2f589a1376ea"
+  },
+  "LegendVerticalCenter": {
+   "share": 0,
+   "markup": "f4022ef2f7921b34"
+  },
+  "LegendVerticalLeft": {
+   "share": 0,
+   "markup": "6114d47b508fb1e7"
+  },
+  "LegendWidth": {
+   "share": 0,
+   "markup": "b09a6d19c984657c"
+  },
+  "LegendWrapperStyle": {
+   "share": 0,
+   "markup": "b0873cd28b2875db"
+  },
+  "LineBarAreaComposedChart": {
+   "share": 0,
+   "markup": "b40cb05675f9a3ed"
+  },
+  "LineChartWithReferenceAreas": {
+   "share": 0,
+   "markup": "1d8d8c93bb8e5a2d"
+  },
+  "LineChartWithReferenceLines": {
+   "share": 0,
+   "markup": "cd52e643c9b92004"
+  },
+  "LogScaleChart": {
+   "share": 0,
+   "markup": "8a7d183a2e336ce8"
+  },
+  "MatrixClickAreaChart": {
+   "share": 0,
+   "markup": "5f83961f1645115a"
+  },
+  "MatrixClickComposedChart": {
+   "share": 0,
+   "markup": "b40cb05675f9a3ed"
+  },
+  "MatrixClickRadarChart": {
+   "share": 0,
+   "markup": "519f16e90d96a241"
+  },
+  "MatrixClickRadialBarChart": {
+   "share": 0,
+   "markup": "bda5bcc24eea9fd9"
+  },
+  "MatrixClickScatterChart": {
+   "share": 0,
+   "markup": "488f60a4596f0141"
+  },
+  "MixBarChart": {
+   "share": 0,
+   "markup": "47638587fa975cf2"
+  },
+  "MultiSeriesLineChart": {
+   "share": 0,
+   "markup": "91e4fb7f43b06ee9"
+  },
+  "NestedTreemap": {
+   "share": 0,
+   "markup": "f07b895f67933929"
+  },
+  "OwnBarSizesChart": {
+   "share": 0,
+   "markup": "5e6ecb7483578ffb"
+  },
+  "PercentAreaChart": {
+   "share": 0,
+   "markup": "228f7fcf2df1c824"
+  },
+  "PieActiveShapes": {
+   "share": 0,
+   "markup": "b0944dc869084c8c"
+  },
+  "PieAngles": {
+   "share": 0,
+   "markup": "8bab3c75ee533ff9"
+  },
+  "PieChartWithPaddingAngle": {
+   "share": 0,
+   "markup": "e80aa02f7015b277"
+  },
+  "PieLabelListContent": {
+   "share": 0.022436,
+   "markup": "522cd6dcb4ad49d9"
+  },
+  "PieLabelLists": {
+   "share": 0,
+   "markup": "ce2f18af123a3dcf"
+  },
+  "PieLabelProps": {
+   "share": 0,
+   "markup": "03c745c3cf663d80"
+  },
+  "PieTooltipContent": {
+   "share": 0,
+   "markup": "bd0e259ef289e82a"
+  },
+  "PolarGridAngles": {
+   "share": 0,
+   "markup": "ff850cd4e4df80bf"
+  },
+  "PolarGridProps": {
+   "share": 0,
+   "markup": "546c64896d5c5d81"
+  },
+  "PolarRadiusLabelContent": {
+   "share": 0.000089,
+   "markup": "25d2d1a4773bf806"
+  },
+  "PolarTickContent": {
+   "share": 0.069558,
+   "markup": "d0ef6e0217a54da8"
+  },
+  "PositiveAndNegativeBarChart": {
+   "share": 0,
+   "markup": "9383c9e5a2363809"
+  },
+  "PositiveStackedBarChart": {
+   "share": 0,
+   "markup": "596da2caccd2bc9f"
+  },
+  "PowerScalesChart": {
+   "share": 0,
+   "markup": "754b25bf1a25343c"
+  },
+  "RadarAxesChart": {
+   "share": 0,
+   "markup": "5a70b7c9a1665c1d"
+  },
+  "RadarCategoryAngleChart": {
+   "share": 0,
+   "markup": "5070c728eed071e7"
+  },
+  "RadarLabelListContent": {
+   "share": 0.028674,
+   "markup": "4452716c672024f8"
+  },
+  "RadarOptions": {
+   "share": 0,
+   "markup": "93d8ee799b4cd851"
+  },
+  "RadarTooltipContent": {
+   "share": 0,
+   "markup": "946ebe1ee8a2b508"
+  },
+  "RadialAngleAxisChart": {
+   "share": 0,
+   "markup": "380dbac4dfd830ec"
+  },
+  "RadialBarItemTooltip": {
+   "share": 0,
+   "markup": "e36f52757b539529"
+  },
+  "RadialBarLabelListContent": {
+   "share": 0.009244,
+   "markup": "646c0194174ae03e"
+  },
+  "RadialBarLabelLists": {
+   "share": 0,
+   "markup": "bcee3f59e44a5425"
+  },
+  "RadialBarOptions": {
+   "share": 0,
+   "markup": "4c707f38cc24f947"
+  },
+  "RadialBarTooltipContent": {
+   "share": 0,
+   "markup": "2ce4250b20f9b471"
+  },
+  "RangeAreaChart": {
+   "share": 0,
+   "markup": "b01ffa37fcf07773"
+  },
+  "RangeBarChart": {
+   "share": 0,
+   "markup": "4e0da3ecce0d1bbe"
+  },
+  "RangeRadarChart": {
+   "share": 0,
+   "markup": "842ace13fb343511"
+  },
+  "ReferenceLabelsChart": {
+   "share": 0,
+   "markup": "c45050029f33b907"
+  },
+  "ReferenceOverflowLineChart": {
+   "share": 0,
+   "markup": "f3e5989f317377ec"
+  },
+  "ReferenceSegmentBarChart": {
+   "share": 0,
+   "markup": "226e37c07a0a9ac6"
+  },
+  "ResponsiveAspect": {
+   "share": 0,
+   "markup": "e6aa2bb96a79162c"
+  },
+  "ResponsiveMaxHeight": {
+   "share": 0,
+   "markup": "1891a37c473e0b26"
+  },
+  "ReverseStackBarChart": {
+   "share": 0,
+   "markup": "3d5c0fbcb588242e"
+  },
+  "ReversedFunnelChart": {
+   "share": 0,
+   "markup": "bde1170f4f0c9058"
+  },
+  "RotatedTickBarChart": {
+   "share": 0,
+   "markup": "4bc9f644f8e4eeae"
+  },
+  "SankeyLinkWidthChart": {
+   "share": 0,
+   "markup": "f8f5fcecb28af2ed"
+  },
+  "SankeyOptionsChart": {
+   "share": 0,
+   "markup": "3fb66e72ed470ec8"
+  },
+  "SankeyTooltipContent": {
+   "share": 0,
+   "markup": "dfa6cf2a582741cf"
+  },
+  "ScatterChartWithErrorBars": {
+   "share": 0,
+   "markup": "7a92cdf561cc953e"
+  },
+  "ScatterChartWithLabels": {
+   "share": 0,
+   "markup": "9af86ff9fed2efd7"
+  },
+  "SignStackedBarChart": {
+   "share": 0,
+   "markup": "efa7d2a733dac7b9"
+  },
+  "SilhouetteAreaChart": {
+   "share": 0,
+   "markup": "f6aebfe936ab0662"
+  },
+  "SimpleAreaChart": {
+   "share": 0,
+   "markup": "5f83961f1645115a"
+  },
+  "SimpleBarChart": {
+   "share": 0,
+   "markup": "29e7198c878aa01a"
+  },
+  "SimpleLineChart": {
+   "share": 0,
+   "markup": "1ea62030bb82c3f1"
+  },
+  "SimpleRadarChart": {
+   "share": 0,
+   "markup": "13df638092ced5ce"
+  },
+  "SimpleRadialBarChart": {
+   "share": 0,
+   "markup": "bda5bcc24eea9fd9"
+  },
+  "SimpleSankey": {
+   "share": 0,
+   "markup": "dfa6cf2a582741cf"
+  },
+  "SimpleScatterChart": {
+   "share": 0,
+   "markup": "488f60a4596f0141"
+  },
+  "SimpleSunburst": {
+   "share": 0,
+   "markup": "dea89b61b2841a0c"
+  },
+  "SimpleTreemap": {
+   "share": 0,
+   "markup": "607e745fac1753f4"
+  },
+  "SpecifiedDomainRadarChart": {
+   "share": 0,
+   "markup": "519f16e90d96a241"
+  },
+  "StackedAreaChart": {
+   "share": 0,
+   "markup": "39cb5255a1a55ea9"
+  },
+  "StackedBarChart": {
+   "share": 0,
+   "markup": "cde51e85a41fe4c7"
+  },
+  "StackedErrorBarChart": {
+   "share": 0,
+   "markup": "d2913a707cd4ba9e"
+  },
+  "StackedOwnDataAreaChart": {
+   "share": 0,
+   "markup": "4cfe5d22e54e13a1"
+  },
+  "StackedRadialBarChart": {
+   "share": 0,
+   "markup": "36a40abefc8bdbbd"
+  },
+  "SteepTickLineChart": {
+   "share": 0,
+   "markup": "522ee3313c2b44b4"
+  },
+  "StraightAnglePieChart": {
+   "share": 0,
+   "markup": "734ff1237c25ddd6"
+  },
+  "StyledAxesChart": {
+   "share": 0,
+   "markup": "6d5a61fe533a062c"
+  },
+  "ThreeDimScatterChart": {
+   "share": 0,
+   "markup": "e06ab5a5f79d9c3b"
+  },
+  "TickClickChart": {
+   "share": 0,
+   "markup": "4461f9bcc569b207"
+  },
+  "TimeScaleChart": {
+   "share": 0,
+   "markup": "9f687ead9df28817"
+  },
+  "TinyLineChart": {
+   "share": 0,
+   "markup": "b2d67efaf7b5cea1"
+  },
+  "TooltipActiveFalse": {
+   "share": 0,
+   "markup": "855d9f34a9c27939"
+  },
+  "TooltipBarCursor": {
+   "share": 0,
+   "markup": "0c0b1595ad4cb7bb"
+  },
+  "TooltipClick": {
+   "share": 0,
+   "markup": "79a6e9a2d1bd4332"
+  },
+  "TooltipDefaultIndex": {
+   "share": 0.095189,
+   "markup": "8d95b882f638cd3a"
+  },
+  "TooltipEscape": {
+   "share": 0,
+   "markup": "86b8cccbc2597583"
+  },
+  "TooltipFormats": {
+   "share": 0,
+   "markup": "581571cd3556a214"
+  },
+  "TooltipGaps": {
+   "share": 0,
+   "markup": "6e851efb68fc7338"
+  },
+  "TooltipHiddenSeries": {
+   "share": 0,
+   "markup": "c8a185f1db129014"
+  },
+  "TooltipItemBarChart": {
+   "share": 0,
+   "markup": "177bf6738278c757"
+  },
+  "TooltipKeepNulls": {
+   "share": 0,
+   "markup": "f449c6a694acf845"
+  },
+  "TooltipLineCursor": {
+   "share": 0,
+   "markup": "da772bed4ca47b63"
+  },
+  "TooltipNoCursor": {
+   "share": 0,
+   "markup": "8abca9765888ca25"
+  },
+  "TooltipOffset": {
+   "share": 0,
+   "markup": "a6f35d5228c06e2f"
+  },
+  "TooltipPosition": {
+   "share": 0,
+   "markup": "0d7d1eab6a00c5c9"
+  },
+  "TooltipSharedLineChart": {
+   "share": 0,
+   "markup": "fecb78b00d9abc65"
+  },
+  "TreemapTooltipContent": {
+   "share": 0,
+   "markup": "aa35e07cfb645ead"
+  },
+  "TwoLevelPieChart": {
+   "share": 0,
+   "markup": "8cf75d7323a1c413"
+  },
+  "TwoSimplePieChart": {
+   "share": 0,
+   "markup": "b20f276f16c3bcb4"
+  },
+  "VerticalBarChart": {
+   "share": 0,
+   "markup": "2fb0a630058f7e92"
+  },
+  "VerticalBumpChart": {
+   "share": 0,
+   "markup": "c5d1e2e2a2cdea47"
+  },
+  "VerticalComposedChart": {
+   "share": 0,
+   "markup": "288e9a7281ac4399"
+  },
+  "VerticalLineChart": {
+   "share": 0,
+   "markup": "66674a5db7769530"
+  },
+  "VerticalRangeAreaChart": {
+   "share": 0,
+   "markup": "ac6aa98aeafddb83"
+  },
+  "VerticalTimeChart": {
+   "share": 0,
+   "markup": "46a2bfb8c9205b1a"
+  },
+  "WiggleAreaChart": {
+   "share": 0,
+   "markup": "a32400d798943b59"
+  },
+  "WrappedTicksChart": {
+   "share": 0,
+   "markup": "2e51c190b7d9f3a1"
+  },
+  "ZAxisOptionsChart": {
+   "share": 0,
+   "markup": "07508381e20a1c44"
+  }
+ }
+}

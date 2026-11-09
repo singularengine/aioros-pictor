@@ -1,0 +1,11 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models"
+             x:Class="Gallery.Views.Live.LiveTreemap" x:DataType="m:LiveFamilies">
+  <Border Classes="card">
+    <StackPanel Spacing="8">
+      <TextBlock Classes="title" Text="Treemap" />
+      <TextBlock Classes="muted small" Text="{Binding Updated}" />
+      <p:Treemap Data="{Binding Packages}" MaxWidth="500" Aspect="1.3333333333333333" DataKey="Size" AspectRatio="1.3333333333333333" Stroke="{DynamicResource SampleRing}" Fill="#8884d8" />
+    </StackPanel>
+  </Border>
+</UserControl>

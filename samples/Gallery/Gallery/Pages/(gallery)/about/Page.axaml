@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:Datasets" a:Page.Title="Getting started">
+  <UserControl.Styles>
+    <Style Selector="Border.code">
+      <Setter Property="Background" Value="{DynamicResource SurfaceAlt}" />
+      <Setter Property="CornerRadius" Value="10" />
+      <Setter Property="Padding" Value="16,14" />
+    </Style>
+    <Style Selector="Border.code TextBlock">
+      <Setter Property="FontFamily" Value="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" />
+      <Setter Property="FontSize" Value="13" />
+    </Style>
+  </UserControl.Styles>
+  <StackPanel Spacing="20" MaxWidth="900" HorizontalAlignment="Left">
+    <TextBlock Classes="h1" Text="Getting started" />
+    <TextBlock Classes="muted" TextWrapping="Wrap"
+               Text="Pictor is an independent port of Recharts to XAML: the same charts, with the same props, as XAML controls. On the web an Aioros page writes each chart as SVG on the server; on the desktop the same control draws itself natively. Every chart in this Gallery is one of Recharts' own examples, written as XAML." />
+    <Border Classes="card">
+      <StackPanel Spacing="12">
+        <TextBlock Classes="title" Text="1. Include the theme once" />
+        <Border Classes="code">
+          <TextBlock TextWrapping="Wrap" Text="&lt;Application.Styles&gt;&#10;  &lt;FluentTheme /&gt;&#10;  &lt;p:PictorTheme /&gt;&#10;&lt;/Application.Styles&gt;" />
+        </Border>
+        <TextBlock Classes="title" Text="2. Write a chart" />
+        <Border Classes="code">
+          <TextBlock TextWrapping="Wrap" Text="&lt;p:LineChart Data=&quot;{Binding Pages}&quot; Height=&quot;300&quot;&gt;&#10;  &lt;p:CartesianGrid StrokeDashArray=&quot;3 3&quot; /&gt;&#10;  &lt;p:XAxis DataKey=&quot;Name&quot; /&gt;&#10;  &lt;p:YAxis /&gt;&#10;  &lt;p:Tooltip /&gt;&#10;  &lt;p:Legend /&gt;&#10;  &lt;p:Line Type=&quot;Monotone&quot; DataKey=&quot;Pv&quot; Name=&quot;pv&quot; Stroke=&quot;#8884d8&quot; /&gt;&#10;  &lt;p:Line Type=&quot;Monotone&quot; DataKey=&quot;Uv&quot; Name=&quot;uv&quot; Stroke=&quot;#82ca9d&quot; /&gt;&#10;&lt;/p:LineChart&gt;" />
+        </Border>
+        <TextBlock Classes="title" Text="3. It renders the same on both targets" />
+        <p:LineChart Data="{Binding Pages}" Height="300">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+        <TextBlock Classes="muted small" TextWrapping="Wrap" Text="The chart above has no width: like Recharts' ResponsiveContainer, it fills its parent." />
+      </StackPanel>
+    </Border>
+    <TextBlock Classes="muted small" TextWrapping="Wrap"
+               Text="Pictor is an independent port of Recharts and is not affiliated with or endorsed by the Recharts project. Recharts is MIT-licensed; see THIRD-PARTY-NOTICES." />
+  </StackPanel>
+</UserControl>

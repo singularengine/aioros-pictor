@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models"
+             x:Class="Gallery.Views.Live.LiveComposed" x:DataType="m:LiveFamilies">
+  <Border Classes="card">
+    <StackPanel Spacing="8">
+      <TextBlock Classes="title" Text="Composed chart" />
+      <TextBlock Classes="muted small" Text="{Binding Updated}" />
+      <p:ComposedChart Data="{Binding Composed}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,20,20">
+        <p:CartesianGrid Stroke="{DynamicResource SampleGridSoft}" />
+        <p:XAxis DataKey="Name" Scale="band" />
+        <p:YAxis />
+        <p:Tooltip />
+        <p:Legend />
+        <p:Area Type="Monotone" DataKey="Amt" Name="amt" Fill="#8884d8" Stroke="#8884d8" />
+        <p:Bar DataKey="Pv" Name="pv" BarSize="20" Fill="#413ea0" />
+        <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#ff7300" />
+      </p:ComposedChart>
+    </StackPanel>
+  </Border>
+</UserControl>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" cx="50%" cy="50%" class="recharts-surface" width="500" height="400" style="width:100%;height:100%" viewBox="0 0 500 400"><title></title><desc></desc><defs><clipPath id="recharts1-clip"><rect x="20" y="5" height="390" width="450"></rect></clipPath></defs><g class="recharts-layer recharts-polar-angle-axis angleAxis"><path cx="250" cy="200" orientation="outer" radius="165.75" fill="none" class="recharts-polygon angleAxis" d="M415.75,200L250,34.25L84.25,199.99999999999997L249.99999999999997,365.75L415.75,200.00000000000003L415.75,200Z"></path><g class="recharts-layer recharts-polar-angle-axis-ticks"><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="415.75" y1="200" x2="423.75" y2="200"></line><text cx="250" cy="200" orientation="outer" radius="165.75" stroke="none" x="423.75" y="200" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="start" fill="#808080"><tspan x="423.75" dy="0em">0</tspan></text></g><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="250" y1="34.25" x2="250" y2="26.25"></line><text cx="250" cy="200" orientation="outer" radius="165.75" stroke="none" x="250" y="26.25" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="middle" fill="#808080"><tspan x="250" dy="0em">8</tspan></text></g><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="84.25" y1="199.99999999999997" x2="76.25" y2="199.99999999999997"></line><text cx="250" cy="200" orientation="outer" radius="165.75" stroke="none" x="76.25" y="199.99999999999997" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="end" fill="#808080"><tspan x="76.25" dy="0em">16</tspan></text></g><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="249.99999999999997" y1="365.75" x2="249.99999999999997" y2="373.75"></line><text cx="250" cy="200" orientation="outer" radius="165.75" stroke="none" x="249.99999999999997" y="373.75" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="middle" fill="#808080"><tspan x="249.99999999999997" dy="0em">24</tspan></text></g><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="415.75" y1="200.00000000000003" x2="423.75" y2="200.00000000000003"></line><text cx="250" cy="200" orientation="outer" radius="165.75" stroke="none" x="423.75" y="200.00000000000003" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="start" fill="#808080"><tspan x="423.75" dy="0em">32</tspan></text></g></g></g><g class="recharts-layer recharts-polar-angle-axis angleAxis"><path stroke="#82ca9d" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" class="recharts-polygon angleAxis" d="M415.75,200L84.25,199.99999999999997L415.75,200.00000000000003L415.75,200Z"></path><g class="recharts-layer recharts-polar-angle-axis-ticks"><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" stroke="#82ca9d" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="415.75" y1="200" x2="423.75" y2="200"></line><text stroke="none" cx="250" cy="200" orientation="outer" radius="165.75" x="423.75" y="200" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="start" fill="#82ca9d"><tspan x="423.75" dy="0em">0</tspan></text></g><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" stroke="#82ca9d" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="84.25" y1="199.99999999999997" x2="76.25" y2="199.99999999999997"></line><text stroke="none" cx="250" cy="200" orientation="outer" radius="165.75" x="76.25" y="199.99999999999997" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="end" fill="#82ca9d"><tspan x="76.25" dy="0em">5000</tspan></text></g><g class="recharts-layer recharts-polar-angle-axis-tick"><line class="angleAxis" stroke="#82ca9d" cx="250" cy="200" orientation="outer" radius="165.75" fill="none" x1="415.75" y1="200.00000000000003" x2="423.75" y2="200.00000000000003"></line><text stroke="none" cx="250" cy="200" orientation="outer" radius="165.75" x="423.75" y="200.00000000000003" class="recharts-text recharts-polar-angle-axis-tick-value" text-anchor="start" fill="#82ca9d"><tspan x="423.75" dy="0em">10000</tspan></text></g></g></g><g class="recharts-layer recharts-area"><g class="recharts-layer recharts-radial-bar-sectors"><path cx="250" cy="200" fill="#8884d8" class="recharts-sector recharts-radial-bar-sector undefined" d="M 277.15,200
+    A 27.15,27.15,0,
+    1,0,
+    277.00312110835,202.82027488159963
+  L 270.0409904358472,202.0931321865279
+            A 20.15,20.15,0,
+            1,1,
+            270.15,200 Z" role="img"></path><path cx="250" cy="200" fill="#83a6ed" class="recharts-sector recharts-radial-bar-sector undefined" d="M 299.9,200
+    A 49.9,49.9,0,
+    1,0,
+    275.1477249938832,243.09990635293798
+  L 271.61998802079336,237.05382730543164
+            A 42.9,42.9,0,
+            1,1,
+            292.9,200 Z" role="img"></path><path cx="250" cy="200" fill="#8dd1e1" class="recharts-sector recharts-radial-bar-sector undefined" d="M 322.65,200
+    A 72.65,72.65,0,
+    0,0,
+    177.48454101498805,195.5806439164678
+  L 184.47157766874005,196.00645936842548
+            A 65.65,65.65,0,
+            0,1,
+            315.65,200 Z" role="img"></path><path cx="250" cy="200" fill="#82ca9d" class="recharts-sector recharts-radial-bar-sector undefined" d="M 345.4,200
+    A 95.4,95.4,0,
+    0,0,
+    245.88029732398667,104.68899302881513
+  L 246.1825815874258,111.68246314200479
+            A 88.4,88.4,0,
+            0,1,
+            338.4,200 Z" role="img"></path><path cx="250" cy="200" fill="#a4de6c" class="recharts-sector recharts-radial-bar-sector undefined" d="M 368.15,200
+    A 118.15,118.15,0,
+    0,0,
+    367.7857829805691,190.73005783975512
+  L 360.80736164443715,191.27927150985005
+            A 111.15,111.15,0,
+            0,1,
+            361.15,200 Z" role="img"></path><path cx="250" cy="200" fill="#d0ed57" class="recharts-sector recharts-radial-bar-sector undefined" d="M 390.9,200
+    A 140.9,140.9,0,
+    0,0,
+    372.5270162326574,130.43032059063296
+  L 366.439797541184,133.88658571388044
+            A 133.9,133.9,0,
+            0,1,
+            383.9,200 Z" role="img"></path></g></g><g class="recharts-layer recharts-area"><g class="recharts-layer recharts-radial-bar-sectors"><path cx="250" cy="200" fill="#8884d8" class="recharts-sector recharts-radial-bar-sector undefined" d="M 288.15,200
+    A 38.15,38.15,0,
+    0,0,
+    252.3954583200433,161.92528031046143
+  L 251.9559246833381,168.91146740945933
+            A 31.15,31.15,0,
+            0,1,
+            281.15,200 Z" role="img"></path><path cx="250" cy="200" fill="#83a6ed" class="recharts-sector recharts-radial-bar-sector undefined" d="M 310.9,200
+    A 60.9,60.9,0,
+    0,0,
+    191.3399709322075,183.63506829327596
+  L 198.0825030089653,185.51609492623274
+            A 53.9,53.9,0,
+            0,1,
+            303.9,200 Z" role="img"></path><path cx="250" cy="200" fill="#8dd1e1" class="recharts-sector recharts-radial-bar-sector undefined" d="M 333.65,200
+    A 83.65,83.65,0,
+    0,0,
+    303.4014691933147,135.61362265202786
+  L 298.9327270014055,141.00160402005898
+            A 76.65,76.65,0,
+            0,1,
+            326.65,200 Z" role="img"></path><path cx="250" cy="200" fill="#82ca9d" class="recharts-sector recharts-radial-bar-sector undefined" d="M 356.4,200
+    A 106.4,106.4,0,
+    1,0,
+    355.5610042198605,213.33545605124192
+  L 348.6162013106591,212.45812341629178
+            A 99.4,99.4,0,
+            1,1,
+            349.4,200 Z" role="img"></path><path cx="250" cy="200" fill="#a4de6c" class="recharts-sector recharts-radial-bar-sector undefined" d="M 379.15,200
+    A 129.15,129.15,0,
+    0,0,
+    150.0756714962938,118.17793040332324
+  L 155.49162426072235,122.61273092346833
+            A 122.15,122.15,0,
+            0,1,
+            372.15,200 Z" role="img"></path><path cx="250" cy="200" fill="#d0ed57" class="recharts-sector recharts-radial-bar-sector undefined" d="M 401.9,200
+    A 151.9,151.9,0,
+    0,0,
+    99.29777687033084,180.96188182158215
+  L 106.24257977953218,181.83921445653226
+            A 144.9,144.9,0,
+            0,1,
+            394.9,200 Z" role="img"></path></g></g></svg>

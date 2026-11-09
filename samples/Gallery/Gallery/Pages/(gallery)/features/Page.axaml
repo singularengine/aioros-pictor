@@ -1,0 +1,78 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="https://aioros.dev/pictor" xmlns:m="using:Gallery.Models" xmlns:a="https://aioros.dev"
+             x:DataType="m:FeatureData" a:Page.Title="Vertical layouts, error bars and references">
+  <StackPanel Spacing="32">
+    <TextBlock Classes="h1" Text="Vertical layouts, error bars and references" />
+    <WrapPanel ItemSpacing="32" LineSpacing="32">
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="VerticalLineChart" />
+        <p:LineChart Layout="Vertical" Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis Type="Number" />
+          <p:YAxis DataKey="Name" Type="Category" />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Line DataKey="Pv" Name="pv" Stroke="#8884d8" />
+          <p:Line DataKey="Uv" Name="uv" Stroke="#82ca9d" />
+        </p:LineChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="VerticalComposedChart" />
+        <p:ComposedChart Layout="Vertical" Data="{Binding Composed}" MaxWidth="500" Aspect="1.25" Padding="20">
+          <p:CartesianGrid Stroke="{DynamicResource SampleGridSoft}" />
+          <p:XAxis Type="Number" />
+          <p:YAxis DataKey="Name" Type="Category" Scale="band" />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Area DataKey="Amt" Name="amt" Fill="#8884d8" Stroke="#8884d8" />
+          <p:Bar DataKey="Pv" Name="pv" BarSize="20" Fill="#413ea0" />
+          <p:Line DataKey="Uv" Name="uv" Stroke="#ff7300" />
+        </p:ComposedChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="VerticalBarChart" />
+        <p:BarChart Layout="Vertical" Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis Type="Number" />
+          <p:YAxis DataKey="Name" Type="Category" />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8" ActiveFill="pink" ActiveStroke="blue" />
+          <p:Bar DataKey="Uv" Name="uv" Fill="#82ca9d" ActiveFill="gold" ActiveStroke="purple" />
+        </p:BarChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="ComposedChartWithErrorBars" />
+        <p:ComposedChart Data="{Binding Errors}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,5,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:Bar DataKey="Pv" Name="pv" Fill="#8884d8">
+            <p:ErrorBar DataKey="PvError" Width="4" StrokeWidth="2" Stroke="green" />
+          </p:Bar>
+          <p:Line DataKey="Uv" Name="uv" Stroke="#ff7300" ActiveDot="6" ActiveDotFill="#ff7300" ActiveDotStroke="{DynamicResource SampleRing}" ActiveDotStrokeWidth="3">
+            <p:ErrorBar DataKey="UvError" Width="6" Stroke="#ff7300" />
+          </p:Line>
+        </p:ComposedChart>
+      </StackPanel>
+      <StackPanel MaxWidth="500" Spacing="8">
+        <TextBlock Classes="h2" Text="LineChartWithReferenceAreas" />
+        <p:LineChart Data="{Binding Pages}" MaxWidth="500" Aspect="1.6666666666666667" Padding="20,20,30,5">
+          <p:CartesianGrid StrokeDashArray="3 3" />
+          <p:XAxis DataKey="Name" />
+          <p:YAxis />
+          <p:Tooltip />
+          <p:Legend />
+          <p:ReferenceArea X1="Page B" X2="Page D" Fill="#8884d8" FillOpacity="0.2" Label="Peak" />
+          <p:ReferenceArea Y1="2000" Y2="3000" Stroke="red" StrokeOpacity="0.3" />
+          <p:ReferenceDot X="Page C" Y="9800" R="10" Fill="red" Stroke="none" Label="Max" />
+          <p:ReferenceDot X="Page E" Y="20000" R="6" Fill="blue" />
+          <p:Line Type="Monotone" DataKey="Pv" Name="pv" Stroke="#8884d8" ActiveDot="8" />
+          <p:Line Type="Monotone" DataKey="Uv" Name="uv" Stroke="#82ca9d" ActiveDot="0" />
+        </p:LineChart>
+      </StackPanel>
+    </WrapPanel>
+  </StackPanel>
+</UserControl>

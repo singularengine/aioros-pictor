@@ -1,0 +1,12 @@
+[
+ {
+  "handler": "scatter",
+  "index": 0,
+  "label": "Page A"
+ },
+ {
+  "handler": "chart",
+  "index": 0,
+  "label": "Page A"
+ }
+]

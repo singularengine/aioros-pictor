@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageType>Template</PackageType>
+    <IsPackable>true</IsPackable>
+    <PackageId>Aioros.Pictor.Templates</PackageId>
+    <Version>0.1.0-preview.1</Version>
+    <Title>Aioros.Pictor templates</Title>
+    <Authors>Aioros contributors</Authors>
+    <Description>Templates for Aioros apps built with Aioros.Pictor: dotnet new pictor.</Description>
+    <PackageTags>aioros;pictor;charts;xaml;template</PackageTags>
+    <TargetFramework>net10.0</TargetFramework>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)../artifacts/packages</PackageOutputPath>
+    <NoWarn>$(NoWarn);NU5128</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="content/**/*" Exclude="content/**/bin/**;content/**/obj/**" />
+  </ItemGroup>
+</Project>

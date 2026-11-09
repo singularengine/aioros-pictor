@@ -1,0 +1,55 @@
+{
+ "name": "PieAngles",
+ "kind": "PieChart",
+ "width": 400,
+ "height": 400,
+ "margin": null,
+ "source": "Recharts' RadialBar and Pie API (recharts.org/en-US/api): a clockwise pie from 90° to -270° with a padding angle and a minimum angle that widens a small sector",
+ "data": [],
+ "children": [
+  {
+   "type": "Pie",
+   "props": {
+    "data": [
+     {
+      "name": "Group A",
+      "value": 400
+     },
+     {
+      "name": "Group B",
+      "value": 300
+     },
+     {
+      "name": "Group C",
+      "value": 300
+     },
+     {
+      "name": "Group D",
+      "value": 200
+     },
+     {
+      "name": "Group E",
+      "value": 6
+     },
+     {
+      "name": "Group F",
+      "value": 189
+     }
+    ],
+    "dataKey": "value",
+    "cx": "50%",
+    "cy": "50%",
+    "innerRadius": 60,
+    "outerRadius": 100,
+    "startAngle": 90,
+    "endAngle": -270,
+    "paddingAngle": 3,
+    "minAngle": 10,
+    "fill": "#82ca9d",
+    "label": true,
+    "isAnimationActive": false
+   },
+   "children": []
+  }
+ ]
+}
